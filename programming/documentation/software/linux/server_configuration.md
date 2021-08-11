@@ -33,6 +33,8 @@
 
   + debian apt update 
 
+    - copy src/sources.list to /etc/apt/sources.list
+
     - apt update 
 
     - apt upgrade
