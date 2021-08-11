@@ -1,0 +1,16 @@
+" add tab space
+set ts=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+
+filetype on (if the system is linux)
+autocmd FileType html setlocal ts=2 sts=2
+sw=2
+autocmd FileType css setlocal ts=2 sts=2 sw=2
+autocmd FileType scss setlocal ts=2 sts=2 sw=2
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+autocmd FileType json setlocal ts=2 sts=2 sw=2
+autocmd FileType dart setlocal ts=2 sts=2 sw=2
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2
