@@ -8,6 +8,8 @@
   
     - download the installation package from anaconda.com
 
+    - bash Anaconda.sh
+
     - source ~/.bashrc
 
   + Update: conda update conda
