@@ -6,12 +6,12 @@
 
 ```
 /workspace
-/bash
-/c
-/cc
-/javascript
+  /bash
+  /c
+  /cc
+  /javascript
     /react_chnxish
-/python
+  /python
     /chnxish
     /api
     /chnxish
@@ -19,11 +19,11 @@
     /testtest
     /media
     /static
-        /css
-        /image
-        /js
+      /css
+      /image
+      /js
     /templates
-        /web_page_name
+      /web_page_name
 /download
 ```
 
