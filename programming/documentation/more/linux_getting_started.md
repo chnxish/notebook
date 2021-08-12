@@ -49,6 +49,10 @@
   + 命令格式：命令 -选项 参数
  
   + ![avatar](./resources/linux_common_commands.png)
+
+  + 查看操作系统
+
+    - cat /etc/issue
  
 ## Linux系统常用快捷键及符号命令
 

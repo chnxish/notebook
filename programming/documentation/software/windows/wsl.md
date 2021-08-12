@@ -19,3 +19,17 @@
     - ubuntu config --default-user username
 
     - del d:\ubuntu.tar
+
+  + WSL占用过多内存
+
+    - restart WSL
+
+      - wsl -l -v
+
+      - wsl --shutdown
+
+    - copy src/.wslconfig to C:\Users\chnxish\.wslconfig
+
+    - echo 3 > /proc/sys/vm/drop_caches
+
+    

@@ -155,7 +155,13 @@ for mysql-server_8.0.21-1debian10_amd64.deb
 
     - apt install nodejs
 
+    - install yarn
+  
+      - To install the Yarn package manager, run:(after nodejs installation is completed)
+
     - copy src/.npmrc to ~/.npmrc
+
+    - yarn config set registry 'https://registry.npm.taobao.org'
 
     - update nodejs
 
