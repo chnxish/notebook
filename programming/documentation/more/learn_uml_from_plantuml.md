@@ -1,5 +1,13 @@
 # 从PlantUML上学习UML
 
+## 运行
+
+  + create sequenceDiagram.txt
+
+  + java -jar plantuml.jar sequenceDiagram.txt
+
+  + import sequenceDiagram.png to markdown file
+
 ## UML
 
 ### 时序图
