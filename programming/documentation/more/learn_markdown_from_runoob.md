@@ -172,15 +172,89 @@ Markdown是一种轻量级标记语言[1]
 
     - 四个空格或一个制表符
 
+    - 六个反单引号
+
 ```
+    def hello():
+        print('Hello, World')
 ```
 
-    - 六个反单引号
+```
+like this
+```
 
 ## 链接
 
+  + 文本链接
+
+```
+[python](https://www.python.org)
+```
+
+  + 地址链接
+
+```
+<https://www.python.org>
+```
+
+  + 高级链接
+
+```
+[google][1]
+
+[1]: https://www.google.com
+```
+
 ## 图片
+
+  + 图片显示
+
+```
+![RUNOOB 图标](https://static.runoob.com/images/runoob-logo.png "RUNOOB")
+```
+
+  + 图片尺寸
+
+```
+<img src="https://static.runoob.com/images/runoob-logo.png" width="50%">
+```
 
 ## 表格
 
+  + 表格显示
+
+```
+| align left | align right | align center | not align |
+| :--------- | ----------: | :----------: | --------- |
+| cell       | cell        | cell         | cell      |
+```
+
 ## 高级技巧
+
+  + HTML元素
+
+```
+<kbd>键盘文本</kbd>  
+<b>粗体文本</b>  
+<i>斜体文本</i>  
+<em>强调文本</em>  
+<sup>上标文本</sup>  
+<sub>下标文本</sub>  
+<br>  
+```
+
+  + 转义字符
+
+```
+\
+```
+
+  + 公式
+
+    - 用四个美元符包裹TeX或LaTex格式的数学公式
+
+```
+$$
+e^{i \pi} + 1 = 0
+$$
+```
