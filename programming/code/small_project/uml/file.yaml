@@ -1,0 +1,45 @@
+'sequence diagram':
+  - 'sequenceDiagram1.txt'
+  - 'sequenceDiagram2.txt'
+  - 'sequenceDiagram3.txt'
+  - 'sequenceDiagram4.txt'
+'usecase diagram':
+  - 'usecaseDiagram1.txt'
+'class diagram':
+  - 'classDiagram1.txt'
+'object diagram':
+  - 'objectDiagram1.txt'
+'activity diagram':
+  - 'activityDiagram1.txt'
+'component diagram':
+  - 'componentDiagram1.txt'
+'deployment diagram':
+  - 'deploymentDiagram1.txt'
+'state diagram':
+  - 'stateDiagram1.txt'
+'timing diagram':
+  - 'timingDiagram1.txt'
+'json data':
+  - 'jsonData1.txt'
+'yaml data':
+  - 'yamlData1.txt'
+'network diagram':
+  - 'networkDiagram1.txt'
+'wireframe graphical interface':
+  - 'wireframeGraphicalInterface1.txt'
+'archimate diagram':
+  - 'archimateDiagram1.txt'
+'specification and description language':
+  - 'specificationAndDescriptionLanguage1.txt'
+'ditaa diagram':
+  - 'ditaaDiagram1.txt'
+'gantt diagram':
+  - 'ganttDiagram1.txt'
+'mindMap diagram':
+  - 'mindMapDiagram1.txt'
+'work breakdown structure diagram':
+  - 'workBreakdownStructureDiagram1.txt'
+'mathematic with asciimath or jlatexmath notation':
+  - 'mathematicWithAsciiMathOrJLaTeXMathNotation1.txt'
+'entity relationship diagram':
+  - 'entityRelationshipDiagram1.txt'

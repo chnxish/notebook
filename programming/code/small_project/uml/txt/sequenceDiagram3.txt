@@ -1,0 +1,21 @@
+@startuml
+
+header Page Header
+footer Page %page% of %lastpage%
+
+title Example Title
+
+skinparam responseMessageBelowArrow true
+
+newpage
+
+Alice -> "Bob()" : Hello
+"Bob()" -> "This is very\nlong" as Long
+' You can also declare:
+' "Bob()" -> Long as "This is very\nlong"
+Long --> "Bob()" : ok
+
+newpage A title for the\nlast page
+
+Alice->Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
+@enduml
