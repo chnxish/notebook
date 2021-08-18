@@ -1,6 +1,13 @@
 # Linux下的C/C++编译器
 
+  + [Linux下的库](#linux下的库)
+
+  + [GCC、gcc和g++](#gccgcc和g)
+  
+
 ## Linux下的库
+
+***
 
   + libc是Linux下原来的标准C库。
  
@@ -27,10 +34,10 @@
     - glib提供了C语言常用的数据结构的定义以及处理函数，有趣的宏以及可移植的封装等。
   
   + libstdc++是针对GCC编译器特别重写的C++标准库，libc++是针对Clang编译器特别重写的C++标准库
-  
-***
  
 ## GCC、gcc和g++
+
+***
  
   + GCC:GNU Compiler Collection(GUN 编译器集合)，它可以编译C、C++、JAVA、Fortran、Pascal、Object-C、Ada等语言。gcc是GCC中的GUN C Compiler（C 编译器）。g++是GCC中的GUN C++ Compiler（C++编译器）。
 
@@ -66,5 +73,3 @@
       - #define __private_extern__ extern
 
     - 在用gcc编译c++文件时，为了能够使用STL，需要加参数–lstdc++，但这并不代表gcc –lstdc++和g++等价，它们的区别不仅仅是这个。
-
-***

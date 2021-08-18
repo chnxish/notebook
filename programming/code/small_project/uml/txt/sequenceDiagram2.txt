@@ -1,18 +1,44 @@
 @startuml
-participant Participant as Foo  order 10 
-actor       Actor       as Foo1 order 20 #red 
-boundary    Boundary    as Foo2 order 30 
-control     Control     as Foo3 order 40 
-entity      Entity      as Foo4 order 80 
-database    Database    as Foo5 order 70 
-collections Collections as Foo6 order 60 
-queue       Queue       as Foo7 order 50 
-Foo -> Foo1 : To actor 
-Foo -> Foo2 : To boundary
-Foo -> Foo3 : To control
-Foo -> Foo4 : To entity
-Foo -> Foo5 : To database
-Foo -> Foo6 : To collections
-Foo -> Foo7 : To queue
-@enduml
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
 
+skinparam sequence {
+ArrowColor DeepSkyBlue
+ActorBorderColor DeepSkyBlue
+LifeLineBorderColor blue
+LifeLineBackgroundColor #A9DCDF
+
+ParticipantBorderColor DeepSkyBlue
+ParticipantBackgroundColor DodgerBlue
+ParticipantFontName Impact
+ParticipantFontSize 17
+ParticipantFontColor #A9DCDF
+
+ActorBackgroundColor aqua
+ActorFontColor DeepSkyBlue
+ActorFontSize 17
+ActorFontName Aapex
+}
+
+actor User
+participant "First Class" as A
+participant "Second Class" as B
+participant "Last Class" as C
+
+User -> A: DoWork
+activate A
+
+A -> B: Create Request
+activate B
+
+B -> C: DoWork
+activate C
+C --> B: WorkDone
+destroy C
+
+B --> A: Request Created
+deactivate B
+
+A --> User: Done
+deactivate A
+@enduml

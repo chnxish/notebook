@@ -1,5 +1,11 @@
 # Server Configuration
 
+  + [Folder](#folder)
+
+  + [Software](#software)
+
+  + [Library](#library)
+
 ## Folder
 
 ***
@@ -186,6 +192,8 @@ for mysql-server_8.0.21-1debian10_amd64.deb
       - npm install npm@latest -g
 
 ## Library
+
+***
 
   + python
 

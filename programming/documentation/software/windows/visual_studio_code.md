@@ -1,6 +1,14 @@
 # Anaconda
 
+  + [Command](#command)
+
+  + [Configuration](#configuration)
+
+  + [Question](#question)
+
 ## Command
+
+***
 
   + Command Palette
 
@@ -9,8 +17,6 @@
   + Search Files
 
     - ctrl + p
-
-***
 
 ## Configuration
 

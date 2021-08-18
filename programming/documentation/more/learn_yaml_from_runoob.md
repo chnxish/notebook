@@ -1,6 +1,14 @@
 # 从Runoob上学习Yaml
 
+  + [基本语法](#基本语法)
+
+  + [数据类型](#数据类型)
+
+  + [引用](#引用)
+
 ## 基本语法
+
+***
 
   + 大小写敏感
 
@@ -14,15 +22,17 @@
 
 ## 数据类型
 
+***
+
   + 字典
 
-```
+```yaml
 key:
   child-key1: value1
   child-key2: value2
 ```
 
-```
+```yaml
 ?
   - complexkey1
   - complexkey2
@@ -33,13 +43,13 @@ key:
 
   + 列表
 
-```
+```yaml
 - A
 - B
 - C
 ```
 
-```
+```yaml
 companies:
   -
     id: 1
@@ -53,7 +63,7 @@ companies:
 
   + 复合结构
 
-```
+```yaml
 languages:
   - Ruby
   - Perl
@@ -65,7 +75,7 @@ websites:
   Perl: use.perl.org
 ```
 
-```
+```yaml
 Json:
   {
     languages: ['Ruby', 'Perl', 'Python'],
@@ -94,7 +104,7 @@ Json:
 
     - 日期
 
-```
+```yaml
 boolean:
   - TRUE
   - FALSE
@@ -119,11 +129,13 @@ datetime:
 
 ## 引用
 
+***
+
   + 锚点和别名
 
     - 使用&建立锚点，<<合并数据，*引用锚点
 
-```
+```yaml
 defaults: &defaults
   adapter:  postgres
   host:     localhost
@@ -137,7 +149,7 @@ test:
   <<: *defaults
 ```
 
-```
+```yaml
 Equivalent:
   defaults:
     adapter:  postgres
@@ -154,7 +166,7 @@ Equivalent:
     host:     localhost
 ```
 
-```
+```yaml
 - &showell Steve 
 - Clark 
 - Brian 
@@ -162,7 +174,7 @@ Equivalent:
 - *showell 
 ```
 
-```
+```yaml
 Json:
   [ 'Steve', 'Clark', 'Brian', 'Oren', 'Steve' ]
 ```

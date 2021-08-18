@@ -1,26 +1,58 @@
-# -*- coding:utf-8 -*-
+import hashlib
 import os
 import yaml
 
 def main():
-    # 读取yaml数据
-    yaml_files = []
-    with open('./file.yaml', 'r') as f:
-        d = yaml.load(f, Loader=yaml.FullLoader)
-        for values in d.values():
-            for value in values:
-                yaml_files.append(value)
-    
-    # 读取txt数据
-    dir_files = os.listdir('./txt')
+    text_folder_path = './txt/'
+    png_folder_path = '../png'
+    yaml_file_path = './file.yaml'
 
-    # 求交集
-    files = list(set(yaml_files).intersection(set(dir_files)))
+    text_file_names = os.listdir(text_folder_path)
+
+    file_names_and_md5_value = []
+    for file_name in text_file_names:
+        with open(text_folder_path + file_name, 'rb') as fp:
+            data = fp.read()
+        md5_value = hashlib.md5(data).hexdigest()
+        file_names_and_md5_value.append({file_name: md5_value})
+
+    new_yaml_file_data = []
+    new_png_file_data = []
+    with open(yaml_file_path, 'r') as fp:
+        yaml_file_data = yaml.load(fp, Loader=yaml.FullLoader)
+        for l1 in yaml_file_data:
+            nl1 = dict()
+            for k1, v1 in l1.items():
+                nv1 = []
+                for l2 in v1:
+                    new_fn, m = new_fnamv(l2, file_names_and_md5_value)
+                    if m:
+                        for fn in new_fn.keys():
+                            new_png_file_data.append(fn)
+                    nv1.append(new_fn)
+                nl1 = {k1: nv1}
+            new_yaml_file_data.append(nl1)
     
-    # java -jar plantuml.jar file_name
-    for f in files:
-        os.system('java -jar ./plantuml.jar ./txt/' + f + ' -o ../png/')
-        print(f)
+    with open('./file.yaml', 'w') as f:
+        yaml.dump(new_yaml_file_data, f)
+                
+    for npfd in new_png_file_data:
+        os.system('java -jar ./plantuml.jar ' + text_folder_path + npfd + ' -o ' + png_folder_path)
+        print(npfd)
+
+
+def new_fnamv(ds, fnamv):
+    m = False
+    for k1, v1 in ds.items():
+        for fn in fnamv:
+            for k2, v2 in fn.items():
+                if (k1 == k2):
+                    if (v1 != v2):
+                        v1 = v2
+                        m = True
+                    return {k1: v1}, m
+    return ds, m
+
 
 
 if __name__ == '__main__':

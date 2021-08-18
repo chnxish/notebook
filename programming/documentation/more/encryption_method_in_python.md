@@ -1,6 +1,12 @@
 # Python中加密的方法
 
+  + [基础知识扫盲](#基础知识扫盲)
+
+  + [库](#库)
+
 ## 基础知识扫盲
+
+***
 
   + 对称加密
 
@@ -34,9 +40,9 @@
 
     - 解决的方法是将对称加密的密钥使用非对称加密的公钥进行加密，然后发送出去，接收方使用私钥进行解密得到对称加密的密钥，然后双方可以使用对称加密来进行沟通。
 
-***
-
 ## 库
+
+***
 
   + Base64
 
@@ -64,7 +70,7 @@
 
     - from Crypto.Cipher import AES
 
-```
+```python
 from Cryptodome.Cipher import AES
 from Cryptodome import Random
 
@@ -98,5 +104,3 @@ print(decrytext.decode())
     - RSA加密算法是一种非对称加密算法。在公开密钥加密和电子商业中RSA被广泛使用。
 
     - import rsa
-
-***

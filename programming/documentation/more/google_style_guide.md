@@ -1,22 +1,33 @@
 # Google开源项目风格指南
+每个较大的开源项目都有自己的风格指南：关于如何为该项目编写代码的一系列约定（有时候会比较武断）。当所有的代码均保持一致的风格，在理解大型代码库时更为轻松。
 
   + [Google Style Guide](https://github.com/google/styleguide)
 
   + [Google Style Guide -zh](https://github.com/zh-google-styleguide/zh-google-styleguide)
 
-  + 每个较大的开源项目都有自己的风格指南：关于如何为该项目编写代码的一系列约定（有时候会比较武断）。当所有的代码均保持一致的风格，在理解大型代码库时更为轻松。
-  
-***
+  + [Google C++ 风格指南](#google-c-风格指南)
+
+    - [0.背景](#0背景)
+
+    - [1.头文件](#1头文件)
+
+    - [2.作用域](#2作用域)
 
 ## Google C++ 风格指南
 
+***
+
 ### 0.背景
+
+***
 
   + 使代码易于管理的方法之一是加强代码一致性，让任何程序员都可以快速读懂你的代码这点非常重要，保持统一编程风格并遵守约定意味着可以很容易根据“模式匹配”规则来推断各种标识符的含义，创建通用、必需的习惯用语和模式可以使代码更容易理解。在一些情况下可能有充分的理由改变某些编程风格，但我们还是应该遵循一致性原则，尽量不这么做。
 
   + 本指南的另一观点是C++特性的臃肿。C++是一门包含大量高级特性的庞大语言。某些情况下，我们会限制甚至禁用某些特性，这样做是为了保持代码清爽，避免这些特性可能导致的各种问题。指南中举例了这类特性，并解释为什么这些特性被限制使用。
 
 ### 1.头文件
+
+***
 
   + 正确使用头文件可令代码在可读性、文件大小和性能上大为改观。
 
@@ -64,7 +75,7 @@
 
     - 按字母顺序分别对每种类型的头文件进行二次排序是不错的主意。注意较老的代码可不符合这条规则，要在方便的时候改正它们。
 
-```
+```c++
 // 举例来说，google-awesome-project/src/foo/internal/fooserver.cc
 
 #include "foo/public/fooserver.h"
@@ -86,6 +97,8 @@
 
 ### 2.作用域
 
+***
+
   + 命名空间
 
     - 鼓励在.cc文件内使用匿名命名空间或static声明。使用具名的命名空间时，其名称可基于项目名或相对路径。禁止使用using指示（using-directive）。禁止使用内联命名空间（inline namespace）.
@@ -106,7 +119,7 @@
 
       - 禁止用内联命名空间
 
-```
+```c++
 // .h 文件
 namespace mynamespace {
 
@@ -121,7 +134,7 @@ class MyClass {
 } // namespace mynamespace
 ```
 
-```
+```c++
 // .cc 文件
 namespace mynamespace {
 
@@ -133,7 +146,7 @@ void MyClass::Foo() {
 } // namespace mynamespace
 ```
 
-```
+```c++
 #include "a.h"
 
 DEFINE_FLAG(bool, someflag, false, "dummy flag");
@@ -145,17 +158,17 @@ namespace a {
 } // namespace a
 ```
 
-```
+```c++
 // 禁止 —— 污染命名空间
 using namespace foo;
 ```
 
-```
+```c++
 // 在 .cc 中使用别名缩短常用的命名空间
 namespace baz = ::foo::bar::baz;
 ```
 
-```
+```c++
 namespace librarian {
 namespace impl {  // 仅限内部使用
 namespace sidetable = ::pipeline_diagnostics::sidetable;
@@ -177,7 +190,7 @@ inline void my_inline_function() {
 
     - 匿名命名空间的声明和具名的格式相同，在最后注释上namespace。
 
-```
+```c++
 namespace {
 ...
 }  // namespace
@@ -189,7 +202,7 @@ namespace {
 
     - 有时，把函数的定义同类的实例脱钩是有益的，甚至是必要的。这样的函数可以被定义成静态成员，或是非成员函数。非成员函数不应依赖于外部变量，应尽量置于某个命名空间内。相比单纯为了封装若干不共享任何静态数据的静态成员函数而创建类，不如使用命名空间。
 
-```
+```c++
 // Right
 namespace myproject {
 namespace foo_bar {
@@ -199,7 +212,7 @@ void Function2();
 }  // namespace myproject
 ```
 
-```
+```c++
 // Wrong
 namespace myproject {
 class FooBar {

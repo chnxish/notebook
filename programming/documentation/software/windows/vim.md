@@ -1,10 +1,22 @@
 # VIM
 
+  + [Command](#command)
+
+  + [Configuration](#configuration)
+
+  + [Question](#question)
+
 ## Command
+
+***
 
 ## Configuration
 
+***
+
 ## Question
+
+***
 
   + 禁止VIM生成备份文件
 
