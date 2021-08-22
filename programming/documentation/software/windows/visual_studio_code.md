@@ -66,6 +66,16 @@
 
     - Python
 
+    - Remote - SSH
+
+    - Remote - SSH: Editing Configuration Files
+
+      - remote explorer
+
+      - add new
+
+      - ssh://root:password@ip_address:22
+
     - Remote - WSL
 
 ## Question
