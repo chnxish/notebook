@@ -35,7 +35,8 @@ def main():
     
     with open('./file.yaml', 'w') as f:
         yaml.dump(new_yaml_file_data, f)
-                
+            
+    # java -jar ./plantuml.jar filename.txt -o imagename.png
     for npfd in new_png_file_data:
         os.system('java -jar ./plantuml.jar ' + text_folder_path + npfd + ' -o ' + png_folder_path)
         print(npfd)
