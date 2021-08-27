@@ -1,3 +1,11 @@
+"""Create multiple UML diagrams with PlantUML
+
+Input: filenames in yaml file & filenams under txt folder
+
+Run PlatnUML, commands like java -jar ./plantuml.jar
+
+Ouput: store all output in the png folder
+"""
 import hashlib
 import os
 import yaml
