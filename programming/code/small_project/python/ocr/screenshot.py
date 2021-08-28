@@ -30,7 +30,7 @@ def specified_size_screenshot():
 
     pf = sys.platform
     if pf == 'linux':
-        pass
+        zoom_ratio = 1
     elif pf == 'win32':
         zoom_ratio = 1
     elif pf == 'darwin':
