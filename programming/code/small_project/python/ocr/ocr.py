@@ -4,13 +4,9 @@ class Ocr:
     def __init__(self, image_path):
         self.path = image_path
 
-        app_id = '18324674'
-        api_key = 'uW03bp4ewRDe4NKPgCTc2kOR'
-        secrey_key = 'dLGeeCKXTnUHnfEfnuMoElVHvj9pqeaR'
-
-        APP_ID = app_id
-        API_KEY = api_key
-        SECREY_KEY = secrey_key
+        APP_ID = 'app_id'
+        API_KEY = 'api_key'
+        SECREY_KEY = 'secrey_key'
         self.client = AipOcr(APP_ID, API_KEY, SECREY_KEY)
 
     def __get_image_content(self, file_path):
