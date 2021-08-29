@@ -116,7 +116,6 @@ class TimerWindow(QMainWindow):
         super().__init__()
         self.widget = TimerWidget(self)
         self.setWindowTitle('Timer')
-        self.setWindowIcon(QIcon('clock.ico'))
         self.setCentralWidget(self.widget)
         self.setWindowFlags(Qt.WindowStaysOnTopHint)
         self.resize(width, height)
@@ -124,12 +123,14 @@ class TimerWindow(QMainWindow):
 
 
 if __name__ == '__main__':
-    # https://stackoverflow.com/questions/1551605/how-to-set-applications-taskbar-icon-in-windows-7/1552105#1552105
-    myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
-    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
-
+    if sys.platform == 'win32':
+        # for windows
+        # https://stackoverflow.com/questions/1551605/how-to-set-applications-taskbar-icon-in-windows-7/1552105#1552105
+        myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
     app = QApplication(sys.argv)
+    app.setWindowIcon(QIcon('clock.ico')) # for macos
     window = TimerWindow()
     window.show()
     sys.exit(app.exec_())
