@@ -4,7 +4,7 @@ import sys
 
 from PyQt5.QtCore import Qt, QTimer, QEvent
 from PyQt5.QtGui import QColorConstants, QIcon
-from PyQt5.QtWidgets import QApplication, QHBoxLayout, QLabel, QMainWindow, QPushButton, QSpinBox, QTextEdit, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QHBoxLayout, QLabel, QMainWindow, QMessageBox, QPushButton, QSpinBox, QTextEdit, QVBoxLayout, QWidget
 
 
 class TimerStatus(enum.Enum):
@@ -64,6 +64,8 @@ class TimerWidget(QWidget):
             self.startButton.setText(ButtonText.start)
             self._status = TimerStatus.init
             self._left_seconds = self.minutesSpinBox.value() * 60
+
+            QMessageBox.about(self, 'Message', 'Time is Over')
 
     def _start_event(self):
         if (self._status == TimerStatus.init or self._status == TimerStatus.paused) and self._left_seconds > 0:
