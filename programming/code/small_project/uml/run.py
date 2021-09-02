@@ -6,12 +6,14 @@ Run PlatnUML, commands like java -jar ./plantuml.jar
 
 Ouput: store all output in the png folder
 """
+
 import hashlib
 import os
+
 import yaml
 
 def main():
-    text_folder_path = './txt/'
+    text_folder_path = './txt'
     png_folder_path = '../png'
     yaml_file_path = './file.yaml'
 
@@ -19,7 +21,7 @@ def main():
 
     file_names_and_md5_value = []
     for file_name in text_file_names:
-        with open(text_folder_path + file_name, 'rb') as fp:
+        with open(os.path.join(text_folder_path, file_name), 'rb') as fp:
             data = fp.read()
         md5_value = hashlib.md5(data).hexdigest()
         file_names_and_md5_value.append({file_name: md5_value})
@@ -41,12 +43,13 @@ def main():
                 nl1 = {k1: nv1}
             new_yaml_file_data.append(nl1)
     
-    with open('./file.yaml', 'w') as f:
+    with open(yaml_file_path, 'w') as f:
         yaml.dump(new_yaml_file_data, f)
             
     # java -jar ./plantuml.jar filename.txt -o imagename.png
     for npfd in new_png_file_data:
-        os.system('java -jar ./plantuml.jar ' + text_folder_path + npfd + ' -o ' + png_folder_path)
+        npfd = os.path.join(text_folder_path, npfd)
+        os.system('java -jar ./plantuml.jar ' + npfd + ' -o ' + png_folder_path)
         print(npfd)
 
 

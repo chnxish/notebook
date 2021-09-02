@@ -1,5 +1,7 @@
-import requests
+import os
 import time
+
+import requests
 
 def download_image(image_url, folder_name = './image'):
     try:
@@ -9,7 +11,7 @@ def download_image(image_url, folder_name = './image'):
 
     tm = time.localtime(time.time())
     file_name = 'url' + str(tm.tm_hour) + str(tm.tm_min) + str(tm.tm_sec) + '.png'
-    file_path = '{}{}{}'.format(folder_name, '/', file_name)
+    file_path = os.path.join(folder_name, file_name)
     with open(file_path, 'wb') as f:
         f.write(response.content)
 

@@ -3,7 +3,6 @@
   + [Linux下的库](#linux下的库)
 
   + [GCC、gcc和g++](#gccgcc和g)
-  
 
 ## Linux下的库
 

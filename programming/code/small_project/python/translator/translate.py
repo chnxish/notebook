@@ -1,6 +1,7 @@
 import json
-import requests
 import sys
+
+import requests
 
 def translate(word):
     # youdao translate api

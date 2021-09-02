@@ -1,7 +1,9 @@
-from PIL import ImageGrab
-import pyautogui
+import os
 import sys
 import time
+
+from PIL import ImageGrab
+import pyautogui
 
 def screenshot(bbox, folder_name = './image'):
     if bbox:
@@ -11,7 +13,7 @@ def screenshot(bbox, folder_name = './image'):
     else:
         im = ImageGrab.grab() # full screen
 
-    file_path = '{}{}{}'.format(folder_name, '/', file_name)
+    file_path = os.path.join(folder_name, file_name)
     im.save(file_path)
 
     return file_path

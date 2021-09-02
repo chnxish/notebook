@@ -8,10 +8,10 @@ int main(int argc, char *argv[]) {
                        "opqrstuvwxyz";
 
     std::cout << "Hello, Xish. I'm name is "
-          << USERNAME1 << std::endl;
+        << USERNAME1 << std::endl;
 
     char USERNAME2[] = "abcdefghijklmn\
-                       opqrstuvwxyz";
+                        opqrstuvwxyz";
 
     PRINT_NAME(USERNAME1);
     PRINT_NAME(USERNAME2);

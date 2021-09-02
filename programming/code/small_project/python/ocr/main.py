@@ -1,7 +1,8 @@
+import sys
+
 import download
 from ocr import Ocr
 import screenshot
-import sys
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
