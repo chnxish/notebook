@@ -18,3 +18,7 @@ python3 main.py url_path episode_num
     - url_path: like https://www.bilibili.com/video/BV1Dk4y1q781?p=1
 
     - episode_num = n
+
+## Folder
+
+  + You need to execute `mkdir video/ video/flv/ video/mp4/` command

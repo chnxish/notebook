@@ -3,12 +3,11 @@ import subprocess
 import sys
 
 def runcmd(command):
-    ret = subprocess.run(command, shell=True, stdout=subprocess.PIPE, 
-        stderr=subprocess.PIPE, encoding='utf-8')
-    if ret.returncode == 0:
-        print('Success: ', ret)
+    ret = os.system(command)
+    if ret == 0:
+        print('Success')
     else:
-        print('Error: ', ret)
+        print('Error: ' + ret)
 
 def download(url_path, episode_num = 1, output_directory = './video/flv/'):
     bilibili_video_path = 'www.bilibili.com/video/'
@@ -28,12 +27,13 @@ def download(url_path, episode_num = 1, output_directory = './video/flv/'):
             exit(1)
 
         num = 1
-        url_path = url_path[:index + 1]
+        url_path = url_path[:index + 2]
         while num <= episode_num:
             num_str = str(num)
             print('Start: ' + num_str)
             command = 'you-get ' + url_path + num_str + ' -o ' + output_directory + ' --format=flv720'
             runcmd(command)
+            num += 1
     else:
         print('Error: incorrect number of video episodes')
         exit(1)
@@ -56,18 +56,17 @@ def flv_to_mp4(input_directory = './video/flv/', output_directory = './video/mp4
     input_files = []
     output_files = []
 
-    for _, _, input_files in os.walk(input_directory):
-        for input_file in input_files:
-            if input_file.rfind('.flv') != -1:
-                input_files.append(input_file)
-                output_file = input_file[:input_file.rfind('.flv')]
-                output_files.append(output_file + '.mp4')
+    for _, _, ifiles in os.walk(input_directory):
+        for ifile in ifiles:
+            if ifile.rfind('.flv') != -1:
+                input_files.append(ifile)
+                ofile = ifile[:ifile.rfind('.flv')]
+                output_files.append(ofile + '.mp4')
 
     step = len(input_files)
     for i in range(step):
-        num_str = str(num)
-        print('Start: ' + input_files[i] + ' ' + output_files[i])
-        command = 'ffmpeg -i ' + input_directory + input_files[i] + ' ' + output_directory + output_files[i]
+        print('Start: ' + input_files[i] + ' to ' + output_files[i])
+        command = 'ffmpeg -i "' + os.path.join(input_directory, input_files[i]) + '" "' + os.path.join(output_directory, output_files[i]) + '"'
         runcmd(command)
 
 if __name__ == '__main__':
