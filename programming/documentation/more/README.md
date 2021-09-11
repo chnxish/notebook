@@ -5,6 +5,7 @@
 | encryption method in python | python中加密的方法 |
 | google style guide | google开源项目风格指南 |
 | learn python from runoob | 从runoob上学习python |
+| linux command line keyboard shortcut | linux命令行快捷键 |
 | linux getting started | linux快速入门 |
 | open source license agreement and open source community| 开源许可协议和开源社区 |
 | qt5 class inheritance diagram | qt5类继承图 |
