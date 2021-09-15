@@ -1,6 +1,7 @@
 #ifndef DATA_STRUCTURE_LINK_LIST_
 #define DATA_STRUCTURE_LINK_LIST_
 
+#include "falat_error.h"
 #include "node.h"
 
 template <typename ElemType>
@@ -12,11 +13,11 @@ class LinkList {
 	    LinkList(const LinkList &other);
 	    LinkList& operator=(const LinkList &other);
 	    void Clear();
-	    int InsertElem(const ElemType &e);
-	    int InsertElem(int i, const ElemType &e);
-	    int DeleteElem(int i, ElemType &e);
-	    int SetElem(int i, const ElemType &e);
-        int GetElem(int i, ElemType &e) const;
+	    bool InsertElem(const ElemType &e);
+	    bool InsertElem(int i, const ElemType &e);
+	    bool DeleteElem(int i, ElemType &e);
+	    bool SetElem(int i, const ElemType &e);
+        bool GetElem(int i, ElemType &e) const;
         int LocateElem(const ElemType &e) const; 
         int GetLength() const;
         void Traverse(void (*visit)(const ElemType &e)) const;
@@ -29,15 +30,21 @@ class LinkList {
 template <typename ElemType>
 LinkList<ElemType>::LinkList() {
     head_ = new Node<ElemType>;
+    if (head_ == nullptr)
+        FalatError("Out of space");
     length_ = 0;
 }
 
 template <typename ElemType>
 LinkList<ElemType>::LinkList(const ElemType *elems, int n) {
     head_ = new Node<ElemType>;
+    if (head_ == nullptr)
+        FalatError("Out of space");
     Node<ElemType> *p = head_;
     for (int i = 0; i < n; i++) {
         p->next = new Node<ElemType>(elems[i]);
+        if (p->next == nullptr)
+            FalatError("Out of space");
         p = p->next;
     }
     length_ = n;
@@ -53,9 +60,13 @@ template <typename ElemType>
 LinkList<ElemType>::LinkList(const LinkList &other) {
     length_ = other.length_;
     head_ = new Node<ElemType>;
+    if (head_ == nullptr)
+        FalatError("Out of space");
     Node<ElemType> *q = other.head_->next, *p = head_;
     while(q) {
         p->next = new Node<ElemType>(q->data);
+        if (p->next == nullptr)
+            FalatError("Out of space");
         q = q->next;
         p = p->next;
     }
@@ -68,6 +79,8 @@ LinkList<ElemType>& LinkList<ElemType>::operator=(const LinkList<ElemType> &othe
     Node<ElemType> *q = other.head_->next, *p = head_;
     while(q) {
         p->next = new Node<ElemType>(q->data);
+        if (p->next == nullptr)
+            FalatError("Out of space");
         q = q->next;
         p = p->next;
     }
@@ -86,34 +99,38 @@ void LinkList<ElemType>::Clear() {
 }
 
 template <typename ElemType>
-int LinkList<ElemType>::InsertElem(const ElemType &e) {
+bool LinkList<ElemType>::InsertElem(const ElemType &e) {
     Node<ElemType> *p = head_;
     while(p->next) {
         p = p->next;
     }
     p->next = new Node<ElemType>(e);
+    if (p->next == nullptr)
+        FalatError("Out of space");
     length_++;
-    return 1;
+    return true;
 }
 
 template <typename ElemType>
-int LinkList<ElemType>::InsertElem(int i, const ElemType &e) {
+bool LinkList<ElemType>::InsertElem(int i, const ElemType &e) {
     if (i < 1 || i > length_ + 1)
-        return 0;
+        return false;
 
     Node<ElemType> *p = head_, *q;
     for (int j = 1; j < i; j++)
         p = p->next;
     q = new Node<ElemType>(e, p->next);
+    if (q == nullptr)
+        FalatError("Out of space");
     p->next = q;
     length_++;
-    return 1;
+    return true;
 }
 
 template <typename ElemType>
-int LinkList<ElemType>::DeleteElem(int i, ElemType &e) {
+bool LinkList<ElemType>::DeleteElem(int i, ElemType &e) {
     if (i < 1 || i > length_)
-        return 0;
+        return false;
 
     Node<ElemType> *p = head_, *q;
     for (int j = 1; j < i; j++)
@@ -123,31 +140,31 @@ int LinkList<ElemType>::DeleteElem(int i, ElemType &e) {
     p->next = q->next;
     delete q;
     length_--;
-    return 1;
+    return true;
 }
 
 template <typename ElemType>
-int LinkList<ElemType>::SetElem(int i, const ElemType &e) {
+bool LinkList<ElemType>::SetElem(int i, const ElemType &e) {
     if (i < 1 || i > length_)
-        return 0;
+        return false;
 
     Node<ElemType> *p = head_->next;
     for (int j = 1; j < i; j++)
         p = p->next;
     p->data = e;
-    return 1;
+    return true;
 }
 
 template <typename ElemType>
-int LinkList<ElemType>::GetElem(int i, ElemType &e) const {
+bool LinkList<ElemType>::GetElem(int i, ElemType &e) const {
     if (i < 1 || i > length_) 
-        return 0;
+        return false;
 
     Node<ElemType> *p = head_->next;
     for (int j = 1; j < i; j++) 
         p = p->next;
     e = p->data;
-    return 1;
+    return true;
 }
 
 template <typename ElemType>

@@ -16,11 +16,12 @@
   /c
   /cc
   /javascript
-    /react_chnxish
   /python
-    /chnxish
+/site
+  /frontend
+  /backend
     /api
-    /chnxish
+    /backend
     /innovation_studio
     /testtest
     /media
