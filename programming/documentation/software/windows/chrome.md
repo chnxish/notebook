@@ -24,6 +24,8 @@
 
       - QingCloud
 
+      - GoDaddy
+
     - AI
 
       - TensorFlow
