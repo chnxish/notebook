@@ -38,6 +38,10 @@ for mysql-server_8.0.21-1debian10_amd64.deb
     for psmisc(apt install)
 ```
 
+  + Use:
+
+    - src/mysql_command.txt
+
 ## Configuration
 
 ***

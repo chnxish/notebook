@@ -98,6 +98,22 @@
 
     - django
 
+    - django-cors-headers
+
+    - django-grappelli
+
+    - djangorestframework
+
+    - pymysql
+
   + javascript
 
+    - axios
+
+    - bootstrap
+
+    - create-react-app
+
     - react
+
+    - react-router-dom

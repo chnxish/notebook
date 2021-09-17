@@ -20,6 +20,10 @@
 
   + Update: conda update conda
 
+  + Activate: conda activate website
+
+  + Deactivate: conda deactivate
+
   + Remove: 
 
     - rm -rf ~/anaconda3
