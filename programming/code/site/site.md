@@ -16,7 +16,21 @@
 
   + home_page: src/index/index.html
 
+  + [Django](#django)
+
+  + [Apache](#apache)
+
+  + [Backend Testing](#backend-testing)
+
+  + [React](#react)
+
+  + [Nginx](#nginx)
+
+  + [Frontend Testing](#frontend-testing)
+
 ## Django
+
+***
 
   + `/site/backend/backend/settings.py`
 
@@ -128,6 +142,8 @@ application = get_wsgi_application()
 
 ## Apache
 
+***
+
   + `/etc/apache2/apache2.conf`
 
   + `/etc/apache2/mods-available/mod_wsgi.load`
@@ -212,13 +228,36 @@ Listen 8000
 
 ## Backend Testing
 
+***
+
   + source code: src/django/
 
   + postman ip:8000/api/hello
 
 ## React
 
+***
+
 ## Nginx
 
+***
+
+  + `/etc/nginx/sites-enabled/default`
+
+```
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+
+  root /site/frontend/build
+}
+```
+
 ## Frontend Testing
+
+***
+
+  + source code: src/react/
+
+  + chrome ip
 
