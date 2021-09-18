@@ -14,6 +14,8 @@
 
   + Install the required frameworks and libraries
 
+  + home_page: src/index/index.html
+
 ## Django
 
   + `/site/backend/backend/settings.py`
@@ -130,6 +132,8 @@ application = get_wsgi_application()
 
   + `/etc/apache2/mods-available/mod_wsgi.load`
 
+  + `/etc/apache2/ports.conf`
+
   + `/etc/apache2/sites-available/000-default.conf`
 
 ```
@@ -162,6 +166,10 @@ ServerName localhost:8000
 
 ```
 LoadModule wsgi_module /usr/lib/apache2/modules/mod_wsgi.so
+```
+
+```
+Listen 8000
 ```
 
 ```
@@ -204,8 +212,13 @@ LoadModule wsgi_module /usr/lib/apache2/modules/mod_wsgi.so
 
 ## Backend Testing
 
+  + source code: src/django/
+
+  + postman ip:8000/api/hello
+
 ## React
 
 ## Nginx
 
 ## Frontend Testing
+
