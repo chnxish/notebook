@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 
-// Out of space, Full List, Empty List
+// Out of space, Full Stack, Empty Stack
 inline void FalatError(char *s) {
     std::cout << *s << std::endl;
     exit(1);
