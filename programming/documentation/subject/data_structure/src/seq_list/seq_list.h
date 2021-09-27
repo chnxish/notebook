@@ -1,6 +1,8 @@
 #ifndef DATA_STRUCTURE_SEQ_LIST_
 #define DATA_STRUCTURE_SEQ_LIST_
 
+#include "falat_error.h"
+
 #define DEFAULT_SIZE 100
 
 template <typename ElemType>
@@ -31,6 +33,8 @@ class SeqList {
 template <typename ElemType>
 SeqList<ElemType>::SeqList(int size) {
     elems_ = new ElemType[size];
+    if (elems_ == nullptr)
+        FalatError("Out of space");
     length_ = 0;
     max_length_ = size;
 }
@@ -39,6 +43,8 @@ template <typename ElemType>
 SeqList<ElemType>::SeqList(ElemType *data, int n, int size) {
     // `size` must be greater than `n`
     elems_ = new ElemType[size];
+    if (elems_ == nullptr)
+        FalatError("Out of space");
     length_ = n;
     max_length_ = size;
     for (int i = 0; i < n; i++)
@@ -64,6 +70,8 @@ SeqList<ElemType>& SeqList<ElemType>::operator=(const SeqList<ElemType> &other) 
     if (elems_ != nullptr)
         delete[] elems_;
     elems_ = new ElemType[max_length_];
+    if (elems_ == nullptr)
+        FalatError("Out of space");
     for (int i = 0; i < length_; i++)
         elems_[i] = other.elems_[i];
     return *this;

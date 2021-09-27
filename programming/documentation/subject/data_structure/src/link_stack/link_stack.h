@@ -1,6 +1,7 @@
 #ifndef DATA_STRUCTURE_LINK_STACK_
 #define DATA_STRUCTURE_LINK_STACK_
 
+#include "falat_error.h"
 #include "node.h"
 
 template <typename ElemType>
@@ -14,8 +15,8 @@ class LinkStack {
         bool Empty() const;
         void Clear();
         void Push(const ElemType &e);
-        bool Pop(ElemType &e);
-        bool GetTop(ElemType &e);
+        void Pop(ElemType &e);
+        void GetTop(ElemType &e);
         int GetLength() const;
         void Traverse(void (*visit)(const ElemType &e)) const;
 
@@ -27,14 +28,20 @@ class LinkStack {
 template <typename ElemType>
 LinkStack<ElemType>::LinkStack() {
     head_ = new Node<ElemType>;
+    if (head_ == nullptr)
+        FalatError("Out of space");
     length_ = 0;
 }
 
 template <typename ElemType>
 LinkStack<ElemType>::LinkStack(const ElemType *elems, int n) {
     head_ = new Node<ElemType>;
+    if (head_ == nullptr)
+        FalatError("Out of space");
     for (int i = 0; i < n; i++) {
         Node<ElemType> *p = new Node<ElemType>(elems[i]);
+        if (p == nullptr)
+            FalatError("Out of space");
         p->next = head_->next;
         head_->next = p;
     }
@@ -51,9 +58,13 @@ template <typename ElemType>
 LinkStack<ElemType>::LinkStack(const LinkStack &other) {
     length_ = other.length_;
     head_ = new Node<ElemType>;
+    if (head_ == nullptr)
+        FalatError("Out of space");
     Node<ElemType> *q = other.head_->next, *p = head_;
     while(q) {
         p->next = new Node<ElemType>(q->data);
+        if (p->next == nullptr)
+            FalatError("Out of space");
         q = q->next;
         p = p->next;
     }
@@ -66,6 +77,8 @@ LinkStack<ElemType>& LinkStack<ElemType>::operator=(const LinkStack<ElemType> &o
     Node<ElemType> *q = other.head_->next, *p = head_;
     while(q) {
         p->next = new Node<ElemType>(q->data);
+        if (p->next == nullptr)
+            FalatError("Out of space");
         q = q->next;
         p = p->next;
     }
@@ -94,13 +107,18 @@ void LinkStack<ElemType>::Clear() {
 template <typename ElemType>
 void LinkStack<ElemType>::Push(const ElemType &e) {
     Node<ElemType> *p = new Node<ElemType>(e);
+    if (p == nullptr)
+        FalatError("Out of space");
     p->next = head_->next;
     head_->next = p;
     length_++;
 }
 
 template <typename ElemType>
-bool LinkStack<ElemType>::Pop(ElemType &e) {
+void LinkStack<ElemType>::Pop(ElemType &e) {
+    if (Empty() == true)
+        FalatError("Empty Stack");
+
     Node<ElemType> *p = head_->next;
     head_->next = p->next;
     e = p->data;
@@ -109,7 +127,10 @@ bool LinkStack<ElemType>::Pop(ElemType &e) {
 }
 
 template <typename ElemType>
-bool LinkStack<ElemType>::GetTop(ElemType &e) {
+void LinkStack<ElemType>::GetTop(ElemType &e) {
+    if (Empty() == true)
+        FalatError("Empty Stack");
+
     Node<ElemType> *p = head_->next;
     e = p->data;
 }

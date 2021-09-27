@@ -1,6 +1,18 @@
 # 栈和队列
 
+  + [栈和队列的基本概念](#栈和队列的基本概念)
+
+  + [栈和队列的顺序存储结构](#栈和队列的顺序存储结构)
+
+  + [栈和队列的链式存储结构](#栈和队列的链式存储结构)
+
+  + [栈和队列的应用](#栈和队列的应用)
+
+  + [特殊矩阵的压缩存储](#特殊矩阵的压缩存储)
+
 ## 栈和队列的基本概念
+
+***
 
   + 栈
 
@@ -34,6 +46,8 @@
 
 ## 栈和队列的顺序存储结构
 
+***
+
 ```c
 typedef struct {
   ElemType data[MaxSize];
@@ -50,6 +64,8 @@ typedef struct {
 ```
 
 ## 栈和队列的链式存储结构
+
+***
 
   + 链式栈和顺序栈之间的对比
 
@@ -84,4 +100,57 @@ typedef struct QueueNode {
 typedef struct {
   LinkQueuePtr front, rear;
 } LinkQueue;
+```
+
+## 栈和队列的应用
+
+***
+
+  + 前缀，中缀，后缀
+
+    - 中缀表达式转化为前缀或后缀表达式
+
+      - 按照运算符的优先级对所有的运算单位加括号。
+
+      - 将运算符移动到对应括号的前面（前缀表达式）或后面（后缀表达式）。
+
+      - 去掉括号，得到前缀或后缀表达式。
+
+  + 二叉树的层次遍历
+
+## 特殊矩阵的压缩存储
+
+***
+
+  + 特殊矩阵：
+
+    - 含有大量相同数据元素的矩阵，比如对称矩阵。
+
+    - 含有大量0元素的矩阵，比如稀疏矩阵、上（下）三角矩阵，对角矩阵。
+
+  + 三元组和十字链表
+
+```c
+// 三元组
+typedef struct {
+  int row, col;
+  ElemType e;
+} Tripe;
+typedef struct {
+  Tripe data[MAX_SIZE];
+  int m, n, len; // 矩阵的行、列和非零元素个数
+} TSMatrix;
+```
+
+```c
+// 十字链表
+typedef struct OLNode {
+  int row, col;
+  ElemType e;
+  struct OLNode *right, *down; // 同一行、同一列中的下一个非零元素
+} *OLink;
+typedef struct {
+  OLink *row_head, *col_head;
+  int m, n, len;
+}
 ```

@@ -7,7 +7,7 @@ def runcmd(command):
     if ret == 0:
         print('Success')
     else:
-        print('Error: ' + ret)
+        print('Error: ' + str(ret))
 
 def download(url_path, episode_num = 1, output_directory = './video/flv/'):
     bilibili_video_path = 'www.bilibili.com/video/'
@@ -18,7 +18,7 @@ def download(url_path, episode_num = 1, output_directory = './video/flv/'):
 
     if episode_num == 1:
         print('Start:')
-        command = 'you-get ' + url_path + ' -o ' + output_directory + ' --format=flv720'
+        command = 'you-get ' + url_path + ' -o ' + output_directory
         runcmd(command)
     elif episode_num > 1:
         index = url_path.rfind('p=')
@@ -26,14 +26,9 @@ def download(url_path, episode_num = 1, output_directory = './video/flv/'):
             print('Error: this url path cannot access multiple video resources')
             exit(1)
 
-        num = 1
-        url_path = url_path[:index + 2]
-        while num <= episode_num:
-            num_str = str(num)
-            print('Start: ' + num_str)
-            command = 'you-get ' + url_path + num_str + ' -o ' + output_directory + ' --format=flv720'
-            runcmd(command)
-            num += 1
+        print('Start:')
+        command = 'you-get ' + url_path + ' -o ' + output_directory + ' --playlist'
+        runcmd(command)
     else:
         print('Error: incorrect number of video episodes')
         exit(1)
