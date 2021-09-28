@@ -24,6 +24,8 @@
 
   + Extensions:
 
+    - Auto Rename Tag
+
     - Chinese (Simplified) Language Pack for Visual Studio Code
 
       - ctrl + shift + p
@@ -51,6 +53,8 @@
     - Flutter
 
     - HTML CSS Support
+
+    - HTML Snippets
 
     - Javascript (ES6) code snippets
 
@@ -81,3 +85,9 @@
 ## Question
 
 ***
+
+  + Unrecognized file type
+
+    - ctrl + shift + p
+
+    - change the language mode

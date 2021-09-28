@@ -4,3 +4,5 @@
 /programming/code/small_project/python/ocr/ocr.md
 
 *.pyc
+
+.vscode
