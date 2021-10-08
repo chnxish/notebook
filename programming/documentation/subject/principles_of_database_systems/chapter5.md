@@ -42,7 +42,7 @@ end $$
 begin
   declare a int [default 0];
   [set a = 10;]
-  [select field_name into a from tbl_name where field_name='001';]
+  [select field_name into a from table_name where field_name='001';]
   /*
   statements
   */
@@ -169,7 +169,7 @@ create function function_name(param_name type, ...)
 returns type
 deterministic
 begin
-  insert into tbl_name(field_name) values (name);
+  insert into table_name(field_name) values (name);
   return(name);
 end $$
 ```
