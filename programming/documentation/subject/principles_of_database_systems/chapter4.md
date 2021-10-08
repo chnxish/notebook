@@ -1,10 +1,26 @@
 # SQL与关系数据库基本操作
 
+  + [SQL概述](#sql概述)
+
+  + [MySQL预备知识](#mysql预备知识)
+
+  + [数据定义](#数据定义)
+
+  + [数据更新](#数据更新)
+
+  + [数据查询](#数据查询)
+
+  + [视图](#视图)
+
 ## SQL概述
+
+***
 
   + 结构化查询语言（Structured Query Language）
 
 ## MySQL预备知识
+
+***
 
   + LAMP和WAMP
 
@@ -51,6 +67,8 @@
     - 内置聚合函数：count，max，min，sum，avg
 
 ## 数据定义
+
+***
 
   + 数据库
 
@@ -128,6 +146,8 @@ create table course
 
 ## 数据更新
 
+***
+
   + 插入数据：insert into tbl_name(field_name1, field_name2 ...) values (value1, value2 ...)
 
   + 删除数据：delete from tbl_name where field_name=value;
@@ -135,6 +155,8 @@ create table course
   + 修改数据：update tbl_name set field_name2=value2 where field_name1=value1
 
 ## 数据查询
+
+***
 
   + 查询部分列：select field_name1 as name1, field_name2 as name2, ... from tbl_name;
 
@@ -197,6 +219,8 @@ select * from tbl_name limit 3, 8; --以0下标开始计数，从3下标开始�
 ```
 
 ## 视图
+
+***
 
   + 视图是从一个或多个表导出的表。视图一经定义以后，就可以像表一样被查询，修改，删除和更新。表占用物理存储空间而视图不占用物理存储空间，视图只是逻辑概念的存在，表可以及时对它进行修改，但视图只能用创建的方法来进行修改。
 

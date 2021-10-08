@@ -60,6 +60,10 @@
 
     - Markdown All in one
 
+    - MySQL(cweijan)
+
+    - MySQL Syntax
+
     - open in browser
 
     - PlantUML
