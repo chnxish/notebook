@@ -33,4 +33,8 @@ This project contains all study notes, including code files and document files.
 
     - [Ask Question](#ask-question)
 
+    - [PETS3](#pets3)
+
   + [Math](#math)
+
+    - [Probability and Mathematical Statistics](#probability-and-mathematical-statistics)
