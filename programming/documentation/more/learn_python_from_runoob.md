@@ -1,4 +1,4 @@
-# 从Runoob上学习Python
+# 从Runoob上学习Python（完结）
 
   + [标准数据类型](#标准数据类型)
 
