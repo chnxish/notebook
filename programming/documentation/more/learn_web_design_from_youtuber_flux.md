@@ -62,4 +62,18 @@
 
     - 3D粒子动画（WebGL）
 
-## 
+## 排版入门
+
+  + 字体的作用：传递信息，传达价值观。
+
+  + 衬线字体（serif）和无衬线字体（sans-serif）
+
+  + 排版：整体层次，颜色，对齐等。
+
+  + 词汇的排版：字号，字间距，行距，是否多行等。
+
+  + 语句的排版：字号，行间距，Orphans and Widows等。
+
+  + 字体推荐：Garamond，Bodoni，Century Expanded，Futura，Times Roman，Helvetica。
+
+  + [type-scale](https://type-scale.com/)
