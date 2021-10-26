@@ -6,7 +6,7 @@
 
   + 网络技能：UX/UI，流程图，交互，开发。
 
-  + 软件：使用和掌握PS，AI，XD。
+  + 软件：使用和掌握PS，Ai，XD。
 
 ## 基本网页设计软件
 
@@ -90,6 +90,8 @@
 
   + [Pexels](https://pexels.com)
 
+  + [Unsplash](https://unsplash.com)
+
 ## 布局入门
 
   + 设计非常好的网站：[Apple](https://apple.com)
@@ -143,3 +145,25 @@
   + 层次结构的建立：大小，颜色，摆放。
 
     - ![hierarchy example](./resources/hierarchy_example.jpg)
+
+## 线框图
+
+  + 线框（Wireframes），也称为骨架（Skeleton），是构成产品的不同屏幕和页面的静态、低保真表示。
+
+    - 线框使用简单的形状来创建页面布局的可视化表示。它们用于传达单个页面的结构（页面的各个部分如何协同工作以及内容将在哪里）以及这些页面如何连接（从用户角度看界面将如何工作）。
+
+    - 从本质上讲，线框图是关于未来的故事。它们的目的类似于逐渐蓝图（未来建筑的详细计划）。
+
+    - ![Wireframes Example 1](./resources/wireframes_example_1.png)
+
+    - ![Wireframes Example 2](./resources/wireframes_example_2.png)
+
+  + 如果是构思阶段，先用笔和纸去画草图，它会让你的思维和实现最低成本的快速展现。有了眉目后，使用软件绘制，为了更高的效率和方便沟通、修改。
+
+  + 软件推荐：Sketch
+
+  + Sketch设计资源站：[sketchapsources](https://sketchappsources.com)
+
+## Creating a good hero
+
+  + ![hero example](./resources/hero_example.jpg)
