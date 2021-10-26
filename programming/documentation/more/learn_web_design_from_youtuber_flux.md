@@ -77,3 +77,69 @@
   + 字体推荐：Garamond，Bodoni，Century Expanded，Futura，Times Roman，Helvetica。
 
   + [type-scale](https://type-scale.com/)
+
+## 为您的网页设计使用正确的图像
+
+  + 图像的使用：选择一个风格，在该风格中选出一张照片，然后在网页中将文本和图像合理的布局在一起。
+
+  + 无论使用插图还是3D，你需要通过图像表达出你的想法，很好的比喻出你所希望描述出的故事。
+
+  + 图片的获取：自己创建，雇佣别人创建，购买别人出售的创意。
+
+  + [Shutterstock](https://shutterstock.com)
+
+  + [Pexels](https://pexels.com)
+
+## 布局入门
+
+  + 设计非常好的网站：[Apple](https://apple.com)
+
+  + 布局注意：清晰，不混乱；有趣，不无聊；帮助用户理解内容。
+
+  + 设计方法：对内容（文本或图像）有比较清晰的认识，知道什么内容是应该是大的、中等的或小的，从而表达出内容的重要性，以体现出布局的层次结构。
+
+  + 经典书籍：Grid systems - Raster systeme
+
+    - ![Grid systems - Raster systeme](./resources/grid_systems_raster_systeme.jpg)
+
+  + 栅栏系统（也称网格系统，Grid Systems）
+
+    - 栏（column）、水槽（gutter）和边距（margin）
+
+      - ![Column Gutter Margin](./resources/column_gutter_margin.png)
+
+    - 在设计中通常使用12栏的原因是：因为12可以除以1、2、3、4、6都没有余数。
+
+## 网络设计中的颜色使用
+
+  + 了解颜色与其潜在的含义
+
+    - 色彩心理学：在自然欣赏，社会活动方面，色彩在客观上是对人们的一种刺激和象征；在主观上又是一种反应与行为。色彩心理透过视觉开始，从知觉、感情而到记忆、思想、意志、象征等，其反应与变化是极为复杂的。色彩的应用，很重视这种因果关系，即对色彩的经验积累而变成对色彩的心理规范，当受到什么刺激后能产生什么反应，都是色彩心理学所要探讨的内容。
+
+    - [Empower yourself with Color Psychology](https://empower-yourself-with-color-psychology.com)
+
+  + 选择合适的颜色
+
+    - [调色板](https://color.adobe.com)
+
+  + 色彩搭配的黄金法则60：30：10
+
+    - 主色彩是60%的比例，次要色彩是30%的比例，辅助色彩是10%的比例。比如一个男士的上装，外套可以用60%，衬衫是30%，领带是10%；比如室内设计，墙壁用60%的比例，家具床品、窗帘之内是30%，饰品和艺术品是10%。
+
+  + 对比色搭配和同类色搭配
+
+    - 在色盘上面，两个颜色相对的就是对比色搭配，类似的颜色就是同类色搭配。
+
+    - 对比色搭配：红与绿，蓝与绿。同类色搭配：黄与绿，蓝与紫。
+
+    - ![color wheel](./resources/color_wheel.jpg)
+
+## 层次结构
+
+  + 平面设计（graphic design），也称为视觉传达设计，是以“视觉”作为沟通和表现的方式，透过多种方式来创造和结合符号、图片和文字，借此作出用来传达想法或讯息的视觉表现。
+
+  + 层次结构（hierarchy）：视觉层次结构是构成内容的布局，以便有效地传达信息并传达含义。视觉层次结构首先将观众引导至最重要的信息，然后引导至次要内容。通过适当地使用尺寸、颜色、形状、距离、比例和方向来建立构图的意义、概念和氛围，这是通过创造性地使用确定视觉层次的图形元素来传达的。
+
+  + 层次结构的建立：大小，颜色，摆放。
+
+    - ![hierarchy example](./resources/hierachy_example.jpg)
