@@ -142,4 +142,4 @@
 
   + 层次结构的建立：大小，颜色，摆放。
 
-    - ![hierarchy example](./resources/hierachy_example.jpg)
+    - ![hierarchy example](./resources/hierarchy_example.jpg)
