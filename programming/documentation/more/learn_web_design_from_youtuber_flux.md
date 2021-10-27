@@ -78,6 +78,8 @@
 
   + [type-scale](https://type-scale.com/)
 
+  + [google fonts](https://fonts.google.com)
+
 ## 为您的网页设计使用正确的图像
 
   + 图像的使用：选择一个风格，在该风格中选出一张照片，然后在网页中将文本和图像合理的布局在一起。
@@ -91,6 +93,24 @@
   + [Pexels](https://pexels.com)
 
   + [Unsplash](https://unsplash.com)
+
+  + [iconfinder](https://iconfinder.com)
+
+  + [iconfont](https://iconfont.cn)
+
+  + [tinypng](https://tinypng.com)
+
+  + 图片格式
+
+    - jpeg：可以显示约1680万种颜色；有损压缩；无法动画；非常适合静止图像和照片。
+
+    - gif：可以显示256种颜色；无损压缩；支持透明度；非常适合简单的动画；适用于平面颜色和没有渐变的图形。
+
+    - png：PNG-8支持256种颜色；PNG-24支持数百万种颜色；无损压缩；比GIF更好的透明度；无法动画；适用于图标，可在SVG格式不可用时使用。
+
+    - svg：非常可扩展，非常适合响应式设计；可以使用CSS和JavaScript进行修改；文件较小（取决于图像的复杂程序）；可以动画；非常适合徽标，图标，地图，旗帜，图表等；照片不太好用。
+
+    - webp：一种现代图像格式，可为Web上的图像提供出色的无损和有损压缩。使用WEBP，网站管理员和Web开发人员可以创建更小，更丰富的图像，使网络更快。
 
 ## 布局入门
 
@@ -167,3 +187,16 @@
 ## Creating a good hero
 
   + ![hero example](./resources/hero_example.jpg)
+
+## 网站内容结构
+
+  + ![website structure](./resources/website_structure.png)
+
+## UX/UI最佳实践
+
+  + 导航可以提供给访问者足够的信息，明白网站的功能。
+
+  + 按钮（链接），让访问者知道哪些是可以点击的，有什么样的功能，与其他文本区别。
+
+  + 让网站内元素有对比。例如文本和北京图片应该颜色有对比，图片不能太繁忙，一些按钮或文本颜色太浅。
+

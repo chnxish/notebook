@@ -79,6 +79,18 @@
 | 链接 | a |
 | 图像 | img |
 | 换行 | br |
+| table ||
+| 定义表格 | table |
+| 表格的表头 | th |
+| 表格的行 | tr |
+| 表格单元 | td |
+| list ||
+| 定义无序列表 | ul |
+| 定义有序列表 | ol |
+| 列表的行 | li |
+| 定义自定义列表 | dl |
+| 自定义列表项 | dt |
+| 自定义列表项的定义 | dd |
 | style ||
 | 粗体 | b |
 | 着重 | em |
@@ -156,6 +168,45 @@ document.write("Hello World!")
 <p>这个文本包含 <sub>下标</sub>文本。</p>
 <p>这个文本包含 <sup>上标</sup> 文本。</p>
 <p>My favorite color is <del>blue</del> <ins>red</ins>!</p>
+
+<!-- 带有边框的表格 -->
+<table border="1">
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+  </tr>
+  <tr>
+    <td>row 1, cell 1</td>
+    <td>row 2, cell 2</td>
+  </tr>
+  <tr>
+    <td>row 2, cell 1</td>
+    <td>row 2, cell 2</td>
+  </tr>
+</table>
+
+<!-- 无序列表 -->
+<h4>无序列表:</h4>
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+<!-- 有序列表，并规定起始值 -->
+<ol start="50">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+<!-- 自定义列表，更像名词与其注释 -->
+<dl>
+<dt>Coffee</dt>
+<dd>- black hot drink</dd>
+<dt>Milk</dt>
+<dd>- white cold drink</dd>
+</dl>
 
 <!-- 这是一个注释 -->
 
