@@ -7,11 +7,14 @@
 | google style guide | google开源项目风格指南 |
 | learn css from runoob | 从runoob上学习css |
 | learn html from runoob | 从runoob上学习html |
+| learn illustrator | 学习illustrator |
 | learn javascript from runoob | 从runoob上学习javascript |
 | learn markdown from runoob | 从runoob上学习markdown |
+| learn photoshop | 学习photoshop |
 | learn python from runoob | 从runoob上学习python |
 | learn uml from plantuml | 从plantuml上学习uml |
-| learn web design from youtuber flux | 从youtuber flux学习web design |
+| learn web design | 学习web design |
+| learn xd | 学习xd |
 | learn yaml from runoob | 从runoob上学习yaml |
 | linux command line keyboard shortcut | linux命令行快捷键 |
 | linux getting started | linux快速入门 |
