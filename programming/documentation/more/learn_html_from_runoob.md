@@ -26,6 +26,28 @@
 
   + HTML元素：开始标签 + 内容 + 结束标签
 
+  + 块级元素和内联元素
+
+    - 块级元素
+
+      - 每个块级元素都从新的一行开始，并且其后的元素也另起一行。
+
+      - 元素的高度、宽高、行高以及顶和底边距都可设置。
+
+      - 元素宽度在不设置的情况下，和父元素的宽度一致。
+
+      - 常见块级元素：div, p, h1...h6, ol, ul, dl, table, form
+
+    - 内联元素
+
+      - 和其他元素都在一行上。
+
+      - 元素的高度、宽度以及顶或底边距不可设置。
+
+      - 元素的宽度就是它包含的文字或图片的宽度，不可改变。
+
+      - 常见内联元素：span, a, br, label, q
+
   + HTML属性
 
     - HTML元素可以设置属性。
@@ -79,6 +101,8 @@
 | 链接 | a |
 | 图像 | img |
 | 换行 | br |
+| 定义文档区域 | div |
+| 组合文档行内元素 | span |
 | table ||
 | 定义表格 | table |
 | 表格的表头 | th |
@@ -91,6 +115,11 @@
 | 定义自定义列表 | dl |
 | 自定义列表项 | dt |
 | 自定义列表项的定义 | dd |
+| form ||
+| 定义表单 | form |
+| 输入标签 | input |
+| frame ||
+| 定义框架 | iframe |
 | style ||
 | 粗体 | b |
 | 着重 | em |
@@ -169,6 +198,13 @@ document.write("Hello World!")
 <p>这个文本包含 <sup>上标</sup> 文本。</p>
 <p>My favorite color is <del>blue</del> <ins>red</ins>!</p>
 
+<div style="color:#0000FF">
+  <h3>这是一个在 div 元素中的标题。</h3>
+  <p>这是一个在 div 元素中的文本。</p>
+</div>
+
+<p>我的母亲有 <span style="color:blue;font-weight:bold">蓝色</span> 的眼睛，我的父亲有 <span style="color:darkolivegreen;font-weight:bold">碧绿色</span> 的眼睛。</p>
+
 <!-- 带有边框的表格 -->
 <table border="1">
   <tr>
@@ -208,6 +244,15 @@ document.write("Hello World!")
 <dd>- white cold drink</dd>
 </dl>
 
+<!-- 表单 -->
+<form>
+  First name: <input type="text" name="firstname"><br>
+  Last name: <input type="text" name="lastname">
+</form>
+
+<!-- 框架 -->
+<iframe loading="lazy" src="demo_iframe.html" width="200" height="200"></iframe>
+
 <!-- 这是一个注释 -->
 
 <hr>
@@ -220,3 +265,17 @@ document.write("Hello World!")
 <p style="font-family:arial;color:red;font-size:20px;">一个段落。</p>
 <p style="background-color:green;">这是一个段落。</p>
 ```
+
+## 示例
+
+  + 布局（Layout）
+
+    - src: layout_div.html layout_table.html
+
+  + 表单（Form）
+
+    - src: form_input.html
+
+  + 框架（Frame）
+
+    - src: frame.html
