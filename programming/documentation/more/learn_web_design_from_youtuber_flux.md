@@ -200,3 +200,44 @@
 
   + 让网站内元素有对比。例如文本和北京图片应该颜色有对比，图片不能太繁忙，一些按钮或文本颜色太浅。
 
+## 网站类型
+
+  + 电子商务网站（E-Commerce Website）
+
+  + 营销网站/商业网站（Marketing Website/Business Website）
+
+  + 博客/媒体渠道（Blog/Media Outlet）
+
+  + 教育网站（Educational Website）
+
+  + Portfolio Website
+
+## 设计灵感
+
+  + [awwwards](https://awwwards.com)
+
+  + [lapa](https://lapa.ninja)
+
+  + [gaetanpaulter](http://blog.gaetanpautler.com)
+
+  + [invisionapp](https://invisionapp.com)
+
+  + 在网页设计中，您应该有很多不同的想法，以确保你的想法得以实现。保持原创而不仅仅是照搬别人在他们的网站上做的东西。
+
+## 心理学原理
+
+  + 每个网页设计师必须知道的3个心理学原理
+
+    - 镜像（Mirroring）：网页中使用的内容（文字或图片）可以传递出感情，影响访问者。
+
+    - 社会验证（Social Validation）：具有公信力的内容更容易被大众接受。比如名人名言，实验数据，社会共识等。
+
+    -  色彩心理学（Psychology Of Color）
+
+  + 认知偏差法典（Cognitive Biases Codex）
+
+    - [Cognitive Biases Codex](https://upload.wikimedia.org/wikipedia/commons/6/65/Cognitive_bias_codex_en.svg)
+
+    - [认知偏差列表（List of cognitive biases）](https://zh.wikipedia.org/wiki/%E8%AA%8D%E7%9F%A5%E5%81%8F%E8%AA%A4%E5%88%97%E8%A1%A8)
+
+    - 经典书籍：Thinking, Fast and Slow
