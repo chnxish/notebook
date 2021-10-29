@@ -117,6 +117,14 @@ body { background-image: url("images/back.gif"); }
 
     - 多重样式优先级：内联样式 > 内部样式 > 外部样式 > 浏览器默认样式。
 
+  + CSS中颜色定义
+
+    - 十六进制：#ff00ff
+
+    - RGB：rgb(255, 0, 255)
+
+    - 颜色名称：red
+
 ## CSS中的各种属性
 
   + 背景（background）
@@ -124,4 +132,17 @@ body { background-image: url("images/back.gif"); }
 | Property | Name |
 | -------- | ---- |
 | background ||
+| 背景颜色 | background-color |
+| 背景图像 | background-image |
+|  ||
 |||
+|||
+|||
+|||
+|||
+
+```css
+/* background */
+background-color: #b0c4de;
+background-image: url("paper.gif");
+```
