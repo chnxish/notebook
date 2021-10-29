@@ -127,22 +127,116 @@ body { background-image: url("images/back.gif"); }
 
 ## CSS中的各种属性
 
-  + 背景（background）
+  + 背景（background），文本（Text），字体（Font），链接（Link），表格（Table）
+
+  + ![Web Safe Fonts](./resources/web_safe_fonts.jpg)
 
 | Property | Name |
 | -------- | ---- |
 | background ||
 | 背景颜色 | background-color |
 | 背景图像 | background-image |
-|  ||
-|||
-|||
-|||
-|||
+| 背景重复属性 | background-repeat |
+| 背景位置属性 | background-position |
+| text ||
+| 文本颜色 | color |
+| 文本对齐 | text-align |
+| 文本修饰 | text-decoration |
+| 文本转换 | text-transform |
+| 文本缩进 | text-indent |
+| font ||
+| 设置字体类型 | font-family |
+| 字体样式 | font-style |
+| 字体大小 | font-size |
+| 字体宽度 | font-weight |
+| link ||
+| 链接文本颜色 ||
+| 链接文本修饰 ||
+| 链接背景颜色 ||
+| list ||
+| 列表项标记类型 | list-style-type |
+| 列表项标记图像 | list-style-image |
+| table ||
+| 表格边框 | border |
+| 表格边框折叠 | border-collapse |
+| 表格宽度和高度 | width height |
+| 表格文字水平对齐 | text-align |
+| 表格文字垂直对齐 | vertical-align |
+| 表格填充 | padding |
+| 表格颜色 | background-color |
 |||
 
 ```css
 /* background */
-background-color: #b0c4de;
-background-image: url("paper.gif");
+body {
+  background-color: #b0c4de;
+  background-image: url("paper.jpg");
+  background-repeat: repeat;
+  background-position: right top;
+}
+body { background: #ffffff url('img_tree.png') no-repeat right top; }
+/* text */
+p {
+  color: red;
+  text-align: justify;
+  text-decoration: underline;
+  text-transform: uppercase;
+  text-indent: 50px;
+}
+/* font */
+p {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 14px;    /* 1em=16px */
+  font-weight: normal;
+}
+/* link */
+a:link { /* 未访问链接 */
+  color: #000000;
+  text-decoration: none;
+  background-color: #b2ff99;
+}
+a:visited { /* 已访问链接 */
+  color: #00ff00;
+  text-decoration: none;
+  background-color: #ffff85;
+}
+a:hover { /* 鼠标移动到链接上 */
+  color: #ff00ff;
+  text-decoration: underline;
+  background-color: #ff704d;
+}
+a:active { /* 鼠标点击时 */
+  color: #0000ff;
+  text-decoration: underline;
+  background-color: #ff704d;
+}
+/* list */
+ol.a {
+  list-style-type: upper-roman;
+}
+ol.b {
+  list-style-type: lower-alpha;
+}
+ul {
+  list-style-image: url("sqpurple.gif");
+}
+/* table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th {
+  height: 50px;
+  color: white;
+  background-color: green;
+}
+td {
+  text-align: right;
+  vertical-align: bottom;
+  padding: 15px;
+}
 ```
