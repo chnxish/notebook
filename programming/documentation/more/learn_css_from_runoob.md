@@ -127,9 +127,19 @@ body { background-image: url("images/back.gif"); }
 
   + 盒子模型（Box Model）
 
+    - ![Box Model](./resources/css_box_model.png)
+
+    - Margin（外边距或边距）：清除边框外的区域，外边框是透明的。
+
+    - Border（边框）：围绕在内边距和内容外的边框。
+
+    - Padding（内边距或填充）：清除内容周围的区域，内边距是透明的。
+
+    - Content（内容）：盒子的内容，显示文本和图像。
+
 ## CSS中的各种属性
 
-  + 背景（background），文本（Text），字体（Font），链接（Link），表格（Table）
+  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position）
 
   + ![Web Safe Fonts](./resources/web_safe_fonts.jpg)
 
@@ -166,7 +176,31 @@ body { background-image: url("images/back.gif"); }
 | 表格文字垂直对齐 | vertical-align |
 | 表格填充 | padding |
 | 表格颜色 | background-color |
-|||
+| box model ||
+| 边距 | margin |
+| 边框 | border |
+| 填充 | padding |
+| border ||
+| 边框样式 | border-style |
+| 边框宽度 | border-width |
+| 边框颜色 | border-color |
+| 单边框设置 ||
+| outline ||
+| 轮廓样式 | outline-style |
+| 轮廓颜色 | outline-color |
+| 轮廓宽度 | outline-width |
+| dimension ||
+| 元素高度 | height |
+| 元素宽度 | width |
+| 元素最大高度 | max-height |
+| 元素最大宽度 | max-width |
+| 元素最小高度 | min-height |
+| 元素最小宽度 | min-width |
+| display ||
+| 显示 | display |
+| 可见性 | visibility |
+| position |
+| 定位 | position |
 
 ```css
 /* background */
@@ -240,5 +274,85 @@ td {
   text-align: right;
   vertical-align: bottom;
   padding: 15px;
+}
+/* box model */
+div {
+  width: 220px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+/* border */
+p {
+  border-style: solid;
+  border-width: 3px;
+  border-color: red;
+}
+p {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+p {
+  border: 5px solid red;
+}
+/* outline */
+p {
+	border: 1px solid blue;
+	outline-style: solid;
+	outline-color: #ff00ff;
+	outline-width: thin;
+}
+p {
+  border: 1px solid red;
+  outline: green dotted thick;
+}
+/* dimension */
+p {
+  height: 100px;
+  width: 100px;
+}
+/* display */
+div {
+  display: block;   /* 表现为一个块级元素（一般情况下独占一行） */
+  display: inline;  /* 表现为一个内联元素（一般情况下不独占一行） */
+  display: none;    /* 元素不可见，并且不为其保留相应的位置 */
+}
+div {
+  visibility: visible; /* 元素可见，默认值 */
+  visibility: hidden;  /* 元素不可见，但仍然为其保留相应的空间 */
+  visibility: inherit; /* 继承上级元素的visibility的值 */
+}
+/* position */
+p {
+  position: static;    /* 元素默认值，即没有定位，遵循正常的文档流对象 */
+}
+p {
+  position: fixed;     /* 元素的位置相对于浏览器窗口是固定位置 */
+  top: 30px;
+  right: 5px;
+}
+p {
+  position: relative;  /* 相对定位，相对于其正常位置 */
+  left: 20px;
+}
+p {
+  position: absolute;  /* 绝对定位，相对于父元素的定位 */
+  left: 100px;
+  top: 150px;
+}
+p {
+  position: sticky;    /* 粘性定位，依赖用户的滚动，在relative和fixed之间切换 */
+  position: -webkit-sticky;
+  top: 0;
+  background-color: green;
+  border: 2px solid #4caf50;
+}
+img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;  /* z轴 */
 }
 ```

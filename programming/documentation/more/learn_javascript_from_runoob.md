@@ -23,3 +23,22 @@ function hello() {
 
 <script src='my_script.js'></script>
 ```
+
+## JavaScript语法和函数
+
+  + 输出
+
+```js
+console.log('new content');
+window.alert('new content');
+document.write('new content');
+document.getElementById('demo').innerHTML = 'new content';
+```
+
+  + 变量
+
+    - 声明却不赋初值的变量，其值为undefined。
+
+    - 在ES6之前，JavaScript只有两种作用域：全局变量和函数内的局部变量。var关键字声明的变量不具备块级作用域，let关键字声明的变量具备块级作用域。
+
+    - const定义的变量并非常量，并非不可变，它定义了一个常量引用一个值。使用const定义的对象或者数组，可以修改对象内的值，但是不能重新赋值新对象。

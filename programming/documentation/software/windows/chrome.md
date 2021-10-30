@@ -52,7 +52,7 @@
 
     - Tampermonkey
 
-    - 高效网页截图编辑插件
+    - Awesome Screenshot
 
 ## Question
 
