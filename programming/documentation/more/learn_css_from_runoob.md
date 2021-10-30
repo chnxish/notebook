@@ -125,6 +125,8 @@ body { background-image: url("images/back.gif"); }
 
     - 颜色名称：red
 
+  + 盒子模型（Box Model）
+
 ## CSS中的各种属性
 
   + 背景（background），文本（Text），字体（Font），链接（Link），表格（Table）
