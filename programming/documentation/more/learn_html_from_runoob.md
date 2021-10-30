@@ -67,6 +67,48 @@
 | style | 规定元素的行内样式（inline style） |
 | title | 描述了元素的额外信息（作为工具条使用） |
 
+  + HTML颜色
+
+    - resources/html_css_color_value.png
+
+  + HTML字符实体：HTML中的预留字符必须被替换为字符实体。
+
+    - resources/character_entity.png
+
+  + 统一资源定位器（Uniform Resource Locators）
+
+    - URL由字母组成，或互联网协议地址。
+
+    - scheme://host.domain:port/path/filename
+
+      - scheme - 定义互联网服务的类型，最常见的类型是http
+
+      - host - 定义域主机（http的默认主机是www）
+
+      - domain - 定义互联网域名，比如runoob.com
+
+      - port - 定义主机上的端口号（http的默认端口号是80）
+
+      - path - 定义服务器上的路径
+
+      - filename - 定义文档/资源的名称
+
+    - 常见URL Scheme
+
+      - http，超文本传输协议，不加密。
+
+      - https，安全超文本传输协议，加密。
+
+      - ftp，文件传输协议。
+  
+      - file，您计算机上的文件。
+
+    - URL只能使用ASCII字符集。由于URL常常包含ASCII外的字符集，需要使用“%”其后跟随两位的十六进制数来替换非ASCII字符。
+
+  + HTML标签简写及全称
+
+    - resources/tag.png
+
 ## HTML中的各种标签
 
   + 在head元素中你可以插入脚本（scripts）, 样式文件（CSS），及各种meta信息。可以添加在头部区域的元素标签为title，style，meta，link，script，noscript，base。
@@ -120,6 +162,9 @@
 | 输入标签 | input |
 | frame ||
 | 定义框架 | iframe |
+| script ||
+| 定义脚本 | script |
+| 缺失脚本 | noscript |
 | style ||
 | 粗体 | b |
 | 着重 | em |
