@@ -26,15 +26,6 @@ function hello() {
 
 ## JavaScript语法和函数
 
-  + 输出
-
-```javascript
-console.log('new content');
-window.alert('new content');
-document.write('new content');
-document.getElementById('demo').innerHTML = 'new content';
-```
-
   + 变量
 
     - 声明却不赋初值的变量，其值为undefined。
@@ -45,9 +36,26 @@ document.getElementById('demo').innerHTML = 'new content';
 
   + 数据类型
 
-    - 基本类型：字符串，数字，布尔，空，未定义。
+    - 基本类型：字符串（String），数字（Number），布尔（Boolean），空（Null），未定义（Undefined），Symbol。
 
-    - 引用数据类型：对象，数组，函数。
+    - 引用数据类型：对象（Object），数组（Array），函数（Function）。
+
+    - constructor
+
+```javascript
+function isArray(myArray) {
+  return myArray.constructor.toString().indexOf('Array') > -1;
+}
+```
+
+  + 输出
+
+```javascript
+console.log('new content');
+window.alert('new content');
+document.write('new content');
+document.getElementById('demo').innerHTML = 'new content';
+```
 
   + 数组
 
@@ -184,4 +192,47 @@ typeof 3.14;                  // 返回 number
 typeof false;                 // 返回 boolean
 typeof [1,2,3,4];             // 返回 object
 typeof {name:'John', age:34}; // 返回 object
+```
+
+  + 类型转换
+
+```javascript
+/* Number to String */
+String(100 + 23);
+(123).toString();
+/* Boolean to String */
+String(false);
+true.toString();
+/* Date to String */
+Date();
+/* String to Number */
+Number('3.14');
+Number('');      // 0
+Number('99 88'); // NaN
+/* Boolean to Number*/
+Number(false);   // 0
+```
+
+  + 错误
+
+```javascript
+function myFunction() {
+  var messgae, x;
+  message = document.getElementById('tips');
+  message.innerHTML = '';
+  x = document.getElementById('input_demo').value;
+  try {
+    if (x == '') throw '值是空的';
+    if (isNaN(x)) throw '值不是一个数字';
+    x = Number(x);
+    if (x > 10) throw '太大';
+    if (x < 5) throw '大小';
+  }
+  catch (err) {
+    message.innerHTML = '错误：' + err;
+  }
+  finally {
+    document.getElementById('input_demo').value = '';
+  }
+}
 ```
