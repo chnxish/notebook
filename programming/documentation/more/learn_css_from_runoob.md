@@ -139,7 +139,7 @@ body { background-image: url("images/back.gif"); }
 
 ## CSS中的各种属性
 
-  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position）
+  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float）
 
   + ![Web Safe Fonts](./resources/web_safe_fonts.jpg)
 
@@ -199,8 +199,13 @@ body { background-image: url("images/back.gif"); }
 | display ||
 | 显示 | display |
 | 可见性 | visibility |
-| position |
+| position ||
 | 定位 | position |
+| overflow ||
+| 溢出 | overflow |
+| float ||
+| 浮动 | float |
+| 清除浮动 | clear |
 
 ```css
 /* background */
@@ -354,5 +359,28 @@ img {
   left: 0px;
   top: 0px;
   z-index: -1;  /* z轴 */
+}
+/* overflow */
+div {
+    background-color: #eee;
+    width: 200px;
+    height: 50px;
+    border: 1px dotted black;
+    overflow: visible; /**/
+    overflow: hidden;  /**/
+    overflow: scroll;  /**/
+    overflow: auto;    /**/
+    overflow: inherit; /**/
+}
+/* float */
+.thumbnail {
+  float:left;
+  width:110px;
+  height:90px;
+  margin:5px;
+}
+{
+	clear: both;
+	margin-bottom:2px;
 }
 ```

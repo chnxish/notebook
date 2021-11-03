@@ -45,9 +45,12 @@
 | ctrl + j | 复制图层 |
 | delete | 删除图层 |
 |||
+| space + LMB + move | 图片平移 |
 | ctrl + MW | 图片水平移动 |
 | shift + MW | 图片垂直移动 |
 | alt + MW | 图片缩放 |
+| space + alt + LMB | 缩小图片 |
+| space + ctrl + LMB | 放大图片 |
 |||
 | d | 恢复默认前景色和背景色 |
 | x | 切换前景色和背景色 |
