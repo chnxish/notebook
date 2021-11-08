@@ -20,3 +20,4 @@
 | linux getting started | linux快速入门 |
 | open source license agreement and open source community| 开源许可协议和开源社区 |
 | qt5 class inheritance diagram | qt5类继承图 |
+| steps of programming | 程序设计的步骤 |
