@@ -1,47 +1,42 @@
-- life
-  - 运动
-    - 跑步
-  - 情绪
-    - 开拓视野，多说话，结交朋友
-- work
-  - present
-    - 找个新工作
-  
-  - future
-    - (15-16-PCPP-LW, knowledge) to notebook
+- (15-16-PCPP-LW, knowledge) to notebook
 
-    - english
-      - pets3
-    - math
-      - probability_and_mathematical_statistics
+- english
+  - pets3
+- math
+  - probability_and_mathematical_statistics
 
-    - documentation
-      - book
-        - subject
-          - software_engineering
-            - chapter3
-          - ncre
-        - cplusplus_primer
-          - chapter2
-        - python_cookbook
-          - chapter2
-        - python_for_data_analysis
-          - chapter1
-        - beginning_linux_programming
-          - chapter1
-      - more
-        - learn_html_from_runoob
-          - HTML5
-        - learn_css_from_runoob
-          - CSS 对齐
-        - learn_javascript_from_runoob
-          - JavaScript 函数
-        - learn photoshop
-          - P11
-        - learn illustrator
-        - learn xd
-        - learn_ai_from_andrew_ng
-        - learn_ai_from_hungyi_lee
+- documentation
+  - book
+    - subject
+      - software_engineering
+        - chapter3
+      - ncre
+    - cplusplus_primer
+      - chapter2
+    - python_cookbook
+      - chapter2
+    - python_for_data_analysis
+      - chapter1
+    - beginning_linux_programming
+      - chapter1
+  - more
+    - learn_html_from_runoob
+      - HTML5
+    - learn_css_from_runoob
+      - CSS 对齐
+    - learn_javascript_from_runoob
+      - JavaScript 函数
+    - learn photoshop
+      - P11
+    - learn illustrator
+    - learn xd
+    - learn_ai_from_andrew_ng
+    - learn_ai_from_hungyi_lee
 
 - google_style_guide
   - c++
+- bp
+- bootstrap_example
+- django_example
+- flutter_example
+- react_example
