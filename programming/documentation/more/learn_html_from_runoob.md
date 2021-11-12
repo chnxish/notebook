@@ -16,6 +16,18 @@
 
     - HTML文档也叫做web页面。
 
+  + HTML5是HTML最新的修订版本，具有以下有趣的新特性：
+
+    - 用于绘画的canvas元素。
+
+    - 用于媒介回放的video和audio元素。
+
+    - 对本地离线存储的更好的支持。
+
+    - 新的特殊内容元素，比如article，footer，header，nav，section。
+
+    - 新的表单控件，比如calendar，date，time，email，url，search。
+
   + HTMl标签
 
     - HTML标签是由尖括号包围的关键字。
@@ -145,6 +157,9 @@
 | 换行 | br |
 | 定义文档区域 | div |
 | 组合文档行内元素 | span |
+| 画布 | canvas |
+| 可伸缩矢量图形 | svg |
+| 数学公式 | math |
 | table ||
 | 定义表格 | table |
 | 表格的表头 | th |
@@ -298,6 +313,91 @@ document.write("Hello World!")
 <!-- 框架 -->
 <iframe loading="lazy" src="demo_iframe.html" width="200" height="200"></iframe>
 
+<!-- 画布 -->
+<p>Image to use:</p>
+<img id="scream" src="./resources/canvas_example.jpg" alt="The Scream" width="220" height="277">
+<p>Canvas:</p>
+<canvas id="myCanvas" width="250" height="500" style="border: 1px solid #c3c3c3;">
+  您的浏览器不支持 HTML5 canvas 标签
+</canvas>
+<script>
+  var c = document.getElementById('myCanvas');
+  var ctx = c.getContext('2d');
+
+  // rectangle
+  ctx.fillStyle = '#ff0000';
+  ctx.fillRect(0, 0, 150, 75);
+
+  // line
+  ctx.moveTo(0, 0);
+  ctx.lineTo(200, 100);
+  ctx.stroke();
+  
+  // circular
+  ctx.beginPath();
+  ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+  ctx.stroke();
+
+  // text
+  ctx.font = '10px Arial';
+  ctx.fillText('Hello World', 10, 85);
+
+  // text
+  ctx.font = '20px Arial';
+  ctx.strokeText('Hi', 160, 20);
+
+  // linear gradient
+  var grd1 = ctx.createLinearGradient(0, 0, 200, 0);
+  grd1.addColorStop(0, 'red');
+  grd1.addColorStop(1, 'white');
+  ctx.fillStyle = grd1;
+  ctx.fillRect(10, 150, 150, 40);
+
+  // radial gradient
+  var grd2 = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+  grd2.addColorStop(0, 'red');
+  grd2.addColorStop(1, 'white');
+  ctx.fillStyle = grd2;
+  ctx.fillRect(10, 100, 150, 40);
+
+  // image
+  var img = document.getElementById('scream');
+  img.onload = function() {
+    ctx.drawImage(img, 10, 200);
+  }
+</script>
+
+<!-- 可伸缩矢量图形 -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+  <polygon points="100, 10 40, 180 190, 60 10, 60 160, 180"
+  style="fill: lime; stroke: purple; stroke-width: 5; fill-rule: evenodd;"/>
+</svg>
+
+<!-- 数学公式 -->
+<!-- Chrome不支持数学公式编辑与显示 -->
+<math xmlns="http://www.w3.org/TR/MathML">
+  <mrow>
+    <mi>A</mi>
+    <mo>=</mo>
+                
+    <mfenced open="[" close="]">
+                
+        <mtable>
+          <mtr>
+              <mtd><mi>x</mi></mtd>
+              <mtd><mi>y</mi></mtd>
+          </mtr>
+                                
+          <mtr>
+              <mtd><mi>z</mi></mtd>
+              <mtd><mi>w</mi></mtd>
+          </mtr>
+        </mtable>
+      
+    </mfenced>
+  </mrow>           
+</math>
+
 <!-- 这是一个注释 -->
 
 <hr>
@@ -324,3 +424,15 @@ document.write("Hello World!")
   + 框架（Frame）
 
     - src: frame.html
+
+## 其他
+
+  + 浏览器支持
+
+    - 为HTML添加新元素
+
+      - src: add_new_element.html
+
+    - 解决IE8及更早IE版本的浏览器不支持HTML5的问题
+
+      - src:  shiv.html
