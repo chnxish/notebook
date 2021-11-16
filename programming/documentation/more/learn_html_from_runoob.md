@@ -160,6 +160,9 @@
 | 画布 | canvas |
 | 可伸缩矢量图形 | svg |
 | 数学公式 | math |
+| 视频 | video |
+| 音频 | audio |
+| 多媒体文件源 | source |
 | table ||
 | 定义表格 | table |
 | 表格的表头 | th |
@@ -174,9 +177,22 @@
 | 自定义列表项的定义 | dd |
 | form ||
 | 定义表单 | form |
-| 输入标签 | input |
+| 输入 | input |
+| 数据列表 | datalist |
+| 选项 | option |
+| 注册（加密） | keygen |
+| 输出 | output |
 | frame ||
 | 定义框架 | iframe |
+| semantic elements ||
+| 区段 | section |
+| 章节 | article |
+| 导航 | nav |
+| 侧边 | aside |
+| 页头 | header |
+| 页尾 | footer |
+| 独立流内容 | figure |
+| 独立流内容描述 | figcaption |
 | script ||
 | 定义脚本 | script |
 | 缺失脚本 | noscript |
@@ -216,15 +232,17 @@ p {
 </style>
 
 <!-- 字符集 -->
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <!-- 每30秒刷新当前页面 -->
-<meta http-equiv="refresh" content="30">
+<meta http-equiv="refresh" content="30" />
 <!-- 网页作者 -->
-<meta name="author" content="Runoob">
+<meta name="author" content="Runoob" />
 <!-- 描述内容 -->
-<meta name="description" content="免费 Web & 编程 教程">
+<meta name="description" content="免费 Web & 编程 教程" />
 <!-- 为搜索引擎定义关键词 -->
-<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript" />
+<!-- 响应式 -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <script>
 document.write("Hello World!")
@@ -419,11 +437,55 @@ document.write("Hello World!")
 
   + 表单（Form）
 
-    - src: form_input.html
+    - src: form_input.html 
+
+    - src: form_input_h5_new_type.html 
+
+    - src: form_input_h5_new_tag.html 
+
+    - src:form_input_h5_new_attribute.html
 
   + 框架（Frame）
 
     - src: frame.html
+
+  + 拖放（Drag and Drop）
+
+    - src: drag_and_drop.html
+
+  + 地理定位（Geolocation）
+
+    - 定位设备需要拥有GPS。网络服务器需要使用HTTPS协议。
+
+    - src: geolocation.html
+
+  + 视频（Video）
+
+    - src: video.html
+
+  + 音频（Audio）
+
+    - src: audio.html
+
+  + 语义元素（Semantic Elements）
+
+    - ![Semantic Elements](./resources/semantic_elements.png)
+
+    - src: semantic_elements.html
+
+  + HTML5存储
+
+    - 一个比cookie更好的本地存储方式。
+
+    - 数据以键/值对存在，web网页的数据只允许该网页访问使用。
+
+    - localStorage：用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去除。
+
+    - sessionStorage：用于临时保存同一窗口（或标签页）的数据，再关闭窗口或标签页之后将会删除这些数据。
+
+    - src: local_storage.html
+
+    - src: session_storage.html
 
 ## 其他
 
