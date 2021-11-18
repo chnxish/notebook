@@ -28,6 +28,8 @@
 
     - Run: python3 manage.py runserver 0.0.0.0:8000
 
+    - Run devserver in insecure mode: python3 manage.py runserver --insecure
+
   + django-cors-headers
 
     - Install: pip3 install django-cors-headers
