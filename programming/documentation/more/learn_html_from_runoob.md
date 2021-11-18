@@ -177,6 +177,7 @@
 | 自定义列表项的定义 | dd |
 | form ||
 | 定义表单 | form |
+| 标签 | label |
 | 输入 | input |
 | 数据列表 | datalist |
 | 选项 | option |
@@ -282,6 +283,8 @@ document.write("Hello World!")
 </div>
 
 <p>我的母亲有 <span style="color:blue;font-weight:bold">蓝色</span> 的眼睛，我的父亲有 <span style="color:darkolivegreen;font-weight:bold">碧绿色</span> 的眼睛。</p>
+
+<label for="sitename">Website Name: </label>
 
 <!-- 带有边框的表格 -->
 <table border="1">
@@ -486,6 +489,38 @@ document.write("Hello World!")
     - src: local_storage.html
 
     - src: session_storage.html
+
+    - src: web_storage.html
+
+  + Web Sql Database
+
+    - src: web_sql_database.html
+
+  + Web Workers
+
+    - src: open programming/code/small_project/python/example project and run it, then visit localhost:8000/html_example/web_workers
+
+  + 服务器发送事件（Server-Sent Events）：网页自动获取来自服务器的更新。
+
+    - src: open programming/code/small_project/python/example project and run it, then visit localhost:8000/html_example/server_sent_events
+
+    - 在example项目中写入下面的chat代码后，server_sent_events不知道什么原因，导致无法正常运行，但是代码无误，可以新建项目并复制server_sent_events部分的代码后，可正常运行。
+
+  + WebSocket
+
+    - WebSocket是HTML5提供的一种可以在单个TCP连接上进行全双工通讯的协议。
+
+    - 在WebSocket API中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。
+
+    - 现在，许多网站为了实现推送技术，所用的技术都是Ajax轮询。轮询是在特定时间间隔内，由浏览器对服务器发出HTTP请求，然后由服务器返回最新的数据给客户端的浏览器。这种传统的模式带来很明显的缺点，即浏览器需要不断的向服务器发出请求，然而HTTP请求可能包含较长的头部，其中真正有效的数据可能只有很小的一部分，显然这样会浪费很多的带宽等资源。
+
+      - ![Ajax and WebSockets](./resources/ajax_and_websockets.png)
+
+    - 为Django框架安装channels和channels_redis库
+
+    - 安装redis并将其运行在6379端口
+
+    - src: open programming/code/small_project/python/example project and run it, then visit localhost:8000/html_example/chat
 
 ## 其他
 
