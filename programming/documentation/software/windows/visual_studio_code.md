@@ -44,6 +44,8 @@
 
     - Django
 
+    - Docker
+
     - EditorConfig for VS Code
 
       - copy src/.editorconfig to prj/.editorconfig
