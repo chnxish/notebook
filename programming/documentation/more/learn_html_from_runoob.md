@@ -1,6 +1,16 @@
 # 从Runoob上学习HTML
 
+  + [HTML简介](#html简介)
+
+  + [HTML中的各种标签](#html中的各种标签)
+
+  + [示例](#示例)
+
+  + [其他](#其他)
+
 ## HTML简介
+
+***
 
   + HTML是用来描述网页的一种语言：
 
@@ -122,6 +132,8 @@
     - resources/tag.png
 
 ## HTML中的各种标签
+
+***
 
   + 在head元素中你可以插入脚本（scripts）, 样式文件（CSS），及各种meta信息。可以添加在头部区域的元素标签为title，style，meta，link，script，noscript，base。
 
@@ -434,6 +446,8 @@ document.write("Hello World!")
 
 ## 示例
 
+***
+
   + 布局（Layout）
 
     - src: layout_div.html layout_table.html
@@ -523,6 +537,8 @@ document.write("Hello World!")
     - src: open programming/code/small_project/python/example project and run it, then visit localhost:8000/html_example/chat
 
 ## 其他
+
+***
 
   + 浏览器支持
 
