@@ -139,7 +139,7 @@ body { background-image: url("images/back.gif"); }
 
 ## CSS中的各种属性
 
-  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float）
+  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float），对齐（Alignment）。
 
   + ![Web Safe Fonts](./resources/web_safe_fonts.jpg)
 
@@ -216,6 +216,7 @@ body {
   background-position: right top;
 }
 body { background: #ffffff url('img_tree.png') no-repeat right top; }
+
 /* text */
 p {
   color: red;
@@ -224,6 +225,7 @@ p {
   text-transform: uppercase;
   text-indent: 50px;
 }
+
 /* font */
 p {
   font-family: "Times New Roman", Times, serif;
@@ -231,6 +233,7 @@ p {
   font-size: 14px;    /* 1em=16px */
   font-weight: normal;
 }
+
 /* link */
 a:link { /* 未访问链接 */
   color: #000000;
@@ -252,6 +255,7 @@ a:active { /* 鼠标点击时 */
   text-decoration: underline;
   background-color: #ff704d;
 }
+
 /* list */
 ol.a {
   list-style-type: upper-roman;
@@ -262,6 +266,7 @@ ol.b {
 ul {
   list-style-image: url("sqpurple.gif");
 }
+
 /* table */
 table {
   border-collapse: collapse;
@@ -280,6 +285,7 @@ td {
   vertical-align: bottom;
   padding: 15px;
 }
+
 /* box model */
 div {
   width: 220px;
@@ -287,6 +293,7 @@ div {
   border: 5px solid gray;
   margin: 0;
 }
+
 /* border */
 p {
   border-style: solid;
@@ -302,6 +309,7 @@ p {
 p {
   border: 5px solid red;
 }
+
 /* outline */
 p {
 	border: 1px solid blue;
@@ -313,11 +321,13 @@ p {
   border: 1px solid red;
   outline: green dotted thick;
 }
+
 /* dimension */
 p {
   height: 100px;
   width: 100px;
 }
+
 /* display */
 div {
   display: block;   /* 表现为一个块级元素（一般情况下独占一行） */
@@ -329,6 +339,7 @@ div {
   visibility: hidden;  /* 元素不可见，但仍然为其保留相应的空间 */
   visibility: inherit; /* 继承上级元素的visibility的值 */
 }
+
 /* position */
 p {
   position: static;    /* 元素默认值，即没有定位，遵循正常的文档流对象 */
@@ -360,27 +371,46 @@ img {
   top: 0px;
   z-index: -1;  /* z轴 */
 }
+
 /* overflow */
 div {
     background-color: #eee;
     width: 200px;
     height: 50px;
     border: 1px dotted black;
-    overflow: visible; /**/
-    overflow: hidden;  /**/
-    overflow: scroll;  /**/
-    overflow: auto;    /**/
-    overflow: inherit; /**/
+    overflow: visible; /* 默认值，内容不会被修剪，会呈现在元素框之外 */
+    overflow: hidden;  /* 内容会被修剪，并且其余内容是不可见的 */
+    overflow: scroll;  /* 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容 */
+    overflow: auto;    /* 如果内容被修剪，则浏览器会显示滚动条以便查询其余的内容 */
+    overflow: inherit; /* 规定应该从父元素继承overflow属性的值 */
 }
+
 /* float */
-.thumbnail {
+.object_need_float {
   float:left;
   width:110px;
   height:90px;
   margin:5px;
 }
-{
+.object_clear_float {
 	clear: both;
 	margin-bottom:2px;
+}
+
+/* alignment */
+.center { /* 元素居中对齐 */
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+.center { /* 文本居中对齐 */
+  text-align: center;
+  border: 3px solid green;
+}
+img {     /* 图片居中对齐 */
+  display: block;
+  margin: auto;
+  width: 40%;
 }
 ```
