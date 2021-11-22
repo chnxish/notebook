@@ -30,11 +30,11 @@
 
   + CSS选择器：元素选择器，选择器分组，类选择器，ID选择器，属性选择器，后代选择器，子元素选择器，相邻兄弟选择器。
 
-```html
-<style type="text/css">
+```css
 /* 元素选择器 */
 html { color: black; }
 h1 { font-family: sans-serif; }
+
 /* 选择器分组 */
 h1, h2, h3, h4, h5, h6 {
   color: gray;
@@ -43,49 +43,63 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid black;
   font-family: Verdana;
 }
-/*
-类选择器，class
-<p class="important"></p>
-<h1 class="important"></h1>
-*/
+
+/**
+ *  类选择器，class
+ *  <p class="important"></p>
+ *  <h1 class="important"></h1>
+**/
 .important { color: red; }
 h1.important { color: red; }
-/* 
-多类选择器 
-<p class="important warning"></p>
-*/
+
+/**
+ *  多类选择器 
+ *  <p class="important warning"></p>
+**/
 .important.warning { background: silver; }
-/* 
-ID选择器，id
-<p id="intro"></p>
-*/
+
+/** 
+ *  ID选择器，id
+ *  <p id="intro"></p>
+**/
 #intro { font-weight: bold; }
-/* 
-属性选择器
-<h2 title="Hello">Hello</h2>
-<a href="https://w3school.com.cn">W3School</a>
-<a href="https://baidu.com" title="baidu">Baidu</a>
-*/
+
+/** 
+ *  属性选择器
+ *  <h2 title="Hello">Hello</h2>
+ *  <a href="https://w3school.com.cn">W3School</a>
+ *  <a href="https://baidu.com" title="baidu">Baidu</a>
+**/
 [title] { color: red; }
 a[href] { color: blue; }
 a[href="https://baidu.com"][title="baidu"] { color: yellow; }
-/*
-后代选择器
-<p>This is a <em>important</em> paragraph.</p>
-*/
+
+/**
+ *  后代选择器
+ *  <p>This is a <em>important</em> paragraph.</p>
+**/
 p em { color: red; }
-/*
-子元素选择器
-<h1>This is <strong>very</strong> <strong>very</strong> important.</h1>
-*/
+
+/**
+ *  子元素选择器
+ *  <h1>This is <strong>very</strong> <strong>very</strong> important.</h1>
+**/
 h1 > strong { color: red; }
-/*
-相邻兄弟选择器：选择紧接在另一个元素后的元素
-<h1>This is a heading.</h1>
-<p>This is paragraph.</p>
-*/
+
+/**
+ *  相邻兄弟选择器：选择紧接在另一个元素后的元素，且二者有相同父元素
+ *  <h1>This is a heading.</h1>
+ *  <p>This is paragraph.</p>
+**/
 h1 + p { margin-top: 50px; }
-</style>
+
+/**
+ *  后续兄弟选择器：选取所有指定元素之后的相邻兄弟元素 
+ *  <h1>This is a heading.</h1>
+ *  <p>This is paragraph.</p>
+ *  <p>This is paragraph.</p>
+**/
+h1 ~ p { background-color: yellow; }
 ```
 
   + CSS创建
@@ -136,6 +150,80 @@ body { background-image: url("images/back.gif"); }
     - Padding（内边距或填充）：清除内容周围的区域，内边距是透明的。
 
     - Content（内容）：盒子的内容，显示文本和图像。
+
+  + 伪类：用于已有元素处于某种状态时为其添加对应的样式，这个状态是根据用户行为而动态变化的。
+
+    - 语法
+
+      - selector: pseudo-class { property: value; }
+
+      - selector.class: pseudo-class { property: value; }
+
+```css
+/* anchor伪类 */
+a:link { color: #FF0000; }
+a:visited { color: #00FF00; }
+a:hover { color: #FF00FF; }
+a:active { color: #0000FF; }
+
+/**
+ *  伪类和CSS类
+ *  <a class="red" href="css-syntax.html">CSS 语法</a>
+**/
+a.red:visited { color: #ff0000; }
+
+/* first-child */
+p:first-child { /* 匹配任何元素的第一个为<p>的子元素 */
+  color: blue;
+}
+p > i:first-child { /* 匹配所有<p>元素下的第一个<i>元素 */
+  color: blue;
+}
+p:first-child i { /* 匹配任何元素的第一个为<p>的子元素下的所有<i>元素 */
+  color: blue;
+}
+
+/* lang */
+q:lang(no) {
+  quotes: "~" "~";
+}
+```
+
+  + 伪元素：用于创建一些不在DOM树中的元素，并为其添加样式。
+
+    - 语法
+
+      - selector: pseudo-element { property: value; }
+
+      - selector.class: pseudo-element { property: value; }
+
+```css
+/* first-line */
+p:first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+
+/* first-letter */
+p:first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+/**
+ *  伪元素和CSS类
+ *  <p class="article">文章段落</p>
+**/
+p.article:first-letter {
+  color: #ff0000;
+}
+
+/* before */
+h1:before { content: url(smiley.gif); }
+
+/* after  */
+h1:after { content: url(smiley.gif); }
+```
 
 ## CSS中的各种属性
 
@@ -413,4 +501,30 @@ img {     /* 图片居中对齐 */
   margin: auto;
   width: 40%;
 }
+.right {  /* 左右对齐 - 使用定位方式 */
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73ad41;
+  padding: 10px;
+}
+.right {  /* 左右对齐 - 使用float方式 */
+  float: right;
+  width: 300px;
+  border: 3px solid #73ad41;
+  padding: 10px;
+}
+.center { /* 垂直居中对齐 - 使用padding */
+  padding: 70px 0;
+  border: 3px solid green;
+}
+.center { /* 水平垂直居中 */
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;
+}
 ```
+
+## 示例
+
+  + 导航栏
