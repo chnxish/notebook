@@ -420,6 +420,7 @@ p {
 div {
   display: block;   /* 表现为一个块级元素（一般情况下独占一行） */
   display: inline;  /* 表现为一个内联元素（一般情况下不独占一行） */
+  display: inline-block; /* 表现为一个内联块元素，既可以和其他行内元素并排，又可以设置长宽 */
   display: none;    /* 元素不可见，并且不为其保留相应的位置 */
 }
 div {
@@ -527,4 +528,12 @@ img {     /* 图片居中对齐 */
 
 ## 示例
 
-  + 导航栏
+  + 导航栏：本质上是一个链接列表
+
+    - src: vertical_navigation_bar.html
+
+    - src: horizontal_navigation_bar.html
+
+  + 下拉菜单
+
+    - src: dropdown_menu.html
