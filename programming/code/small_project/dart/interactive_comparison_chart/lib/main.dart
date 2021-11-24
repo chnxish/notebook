@@ -6,20 +6,20 @@ import 'package:window_size/window_size.dart' as window_size;
 
 void main() {
   // https://github.com/google/flutter-desktop-embedding
-  WidgetsFlutterBinding.ensureInitialized();
-  window_size.getWindowInfo().then((window) {
-    final screen = window.screen;
-    if (screen != null) {
-      final screenFrame = screen.visibleFrame;
-      final width = math.max((screenFrame.width / 2).roundToDouble(), 800.0);
-      final height = math.max((screenFrame.height / 2).roundToDouble(), 600.0);
-      final left = ((screenFrame.width - width) / 2).roundToDouble();
-      final top = ((screenFrame.height - height) / 3).roundToDouble();
-      final frame = Rect.fromLTWH(left, top, width, height);
-      window_size.setWindowFrame(frame);
-      window_size.setWindowMinSize(Size(0.8 * width, 0.8 * height));
-    }
-  });
+  // WidgetsFlutterBinding.ensureInitialized();
+  // window_size.getWindowInfo().then((window) {
+  //   final screen = window.screen;
+  //   if (screen != null) {
+  //     final screenFrame = screen.visibleFrame;
+  //     final width = math.max((screenFrame.width / 2).roundToDouble(), 800.0);
+  //     final height = math.max((screenFrame.height / 2).roundToDouble(), 600.0);
+  //     final left = ((screenFrame.width - width) / 2).roundToDouble();
+  //     final top = ((screenFrame.height - height) / 3).roundToDouble();
+  //     final frame = Rect.fromLTWH(left, top, width, height);
+  //     window_size.setWindowFrame(frame);
+  //     window_size.setWindowMinSize(Size(0.8 * width, 0.8 * height));
+  //   }
+  // });
 
   runApp(MyApp());
 }
