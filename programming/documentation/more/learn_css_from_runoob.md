@@ -537,3 +537,15 @@ img {     /* 图片居中对齐 */
   + 下拉菜单
 
     - src: dropdown_menu.html
+
+  + 提示工具栏
+
+    - src: tooltip.html
+
+  + 图片廊
+
+    - picture_gallery.html
+
+  + 透明
+
+    - opacity_example.html
