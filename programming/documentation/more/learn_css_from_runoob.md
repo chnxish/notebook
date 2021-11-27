@@ -69,10 +69,14 @@ h1.important { color: red; }
  *  <h2 title="Hello">Hello</h2>
  *  <a href="https://w3school.com.cn">W3School</a>
  *  <a href="https://baidu.com" title="baidu">Baidu</a>
+ *  <input type="text" name="fname" value="Peter" size="20" />
+ *  <input type="button" value="Example Button" />
 **/
 [title] { color: red; }
 a[href] { color: blue; }
 a[href="https://baidu.com"][title="baidu"] { color: yellow; }
+input[type="text"] { width: 150px; display: block; margin-bottom: 10px; background-color: yellow; }
+input[type="button"] { width: 120px; margin-left: 35px; display: block; }
 
 /**
  *  后代选择器
@@ -225,6 +229,43 @@ h1:before { content: url(smiley.gif); }
 h1:after { content: url(smiley.gif); }
 ```
 
+  + 媒体类型：允许你指定文件将如何在不同媒体呈现。该文件可以以不同的方式显示在屏幕上，在纸张上，或听觉浏览器等等。
+
+```css
+/**
+ *  all      所有媒体设备
+ *  handheld 手持设备
+ *  print    打印机
+ *  screen   电脑显示屏
+ *  tv       电视机类型的设备
+**/
+@media screen {
+  p {
+    font-family: verdana, sans-serif;
+    font-size: 14px;
+  }
+}
+
+@media print {
+  p {
+    font-family: times, serif;
+    font-size: 10px;
+  }
+}
+
+@media screen, print {
+  p {
+    font-weight: bold;
+  }
+}
+```
+
+  + !important
+
+    - CSS中的!important规则用来增加样式的权重。
+
+    - 使用!important是一个坏习惯，应该尽量避免，因为这破坏了样式表中固有的级联规则，使得调试找bug变得更加困难了。
+
 ## CSS中的各种属性
 
   + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float），对齐（Alignment）。
@@ -237,13 +278,17 @@ h1:after { content: url(smiley.gif); }
 | 背景颜色 | background-color |
 | 背景图像 | background-image |
 | 背景重复属性 | background-repeat |
+| 背景图片大小 | background-size |
 | 背景位置属性 | background-position |
+| 背景原点位置属性 | background-origin |
+| 背景裁剪属性 | background-clip |
 | text ||
 | 文本颜色 | color |
 | 文本对齐 | text-align |
 | 文本修饰 | text-decoration |
 | 文本转换 | text-transform |
 | 文本缩进 | text-indent |
+| 文本阴影 | text-shadow |
 | font ||
 | 设置字体类型 | font-family |
 | 字体样式 | font-style |
@@ -272,7 +317,9 @@ h1:after { content: url(smiley.gif); }
 | 边框样式 | border-style |
 | 边框宽度 | border-width |
 | 边框颜色 | border-color |
-| 单边框设置 ||
+| 边框圆角 | border-radius |
+| 盒阴影 | box-shadow |
+| 边界图片 | border-image |
 | outline ||
 | 轮廓样式 | outline-style |
 | 轮廓颜色 | outline-color |
@@ -304,6 +351,11 @@ body {
   background-position: right top;
 }
 body { background: #ffffff url('img_tree.png') no-repeat right top; }
+div {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+}
 
 /* text */
 p {
@@ -544,8 +596,24 @@ img {     /* 图片居中对齐 */
 
   + 图片廊
 
-    - picture_gallery.html
+    - src: picture_gallery.html
 
   + 透明
 
-    - opacity_example.html
+    - src: opacity_example.html
+
+  + 表单
+
+    - src: css_form.html
+
+  + 计数器：通过一个变量来设置，根据规则递增变量
+
+    - src: css_counter.html
+
+  + 网页布局
+
+    - src: website_layout.html
+
+  + 渐变（Gradients）：可以让你在两个或多个指定的颜色之间显示平稳的过渡。
+
+    - src: css_gradients.html
