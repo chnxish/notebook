@@ -579,3 +579,125 @@ add();
 add(); 
 add(); // return 3
 ```
+
+  + HTML DOM
+
+    - 当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）。
+
+    - ![HTML DOM](./resources/html_dom.gif)
+
+    - 通过可编程的对象模型，JavaScript获得了足够的能力来创建动态的HTML
+
+      - JavaScript能够改变页面中的所有HTML元素
+
+      - JavaScript能够改变页面中的所有HTML属性
+
+      - JavaScript能够改变页面中的所有CSS样式
+
+      - JavaScript能够对页面中的所有事件作出反应
+
+    - EventListener
+
+      - 你可以向一个元素添加多个事件句柄。
+
+      - 你可以向同个元素添加多个同类型的事件句柄，如两个click事件。
+
+      - 你可以向任何DOm对象添加事件监听，如window对象。
+
+      - 冒泡和捕获：在冒泡中，内部元素的事件会先被触发，然后再触发外部元素；在捕获中，外部元素的事件会先被触发，然后才会触发内部元素的事件。
+
+    - Collection：Collection看起来可能是一个数组，但其实不是。它无法使用数组的方法，如valueOf，push，pop等。
+
+    - NodeList：与Collection类似。
+
+```javascript
+/* 查找HTML元素 */
+var x = document.getElementById('intro');
+var y = document.getElementById('main').getElementsByTagName('p');
+var z = document.getElementsByClassName('intro');
+
+/* 改变HTML输出流 */
+document.write(Date());
+document.getElementById('p1').innerHTML = 'Hello, World';
+document.getElementById('image').src = 'landscape.jpg'; // document.getElementById(id).attribute = new_value
+
+/**
+ *  改变HTML样式
+ *  document.getElementById(id).style.property = new_value 
+**/
+document.getElementById('p2').style.color = 'blue';
+document.getElementById('p2').style.fontSize = 'larger';
+
+/* 对事件做出反应 */
+document.getElementById('myBtn').onclick = function(){ displayDate() };
+function displayDate {
+  document.getElementById('demo').innerHTML = Date();
+}
+```
+
+```javascript
+function myFunction() {
+  alert('Hello, World');
+}
+/* addEventListener */
+document.getElementById('myBtn').addEventListener('click', myFunction);
+
+/* removeEventListener */
+document.getElementById('myBtn').removeEventListener('click', myFunction);
+
+/** 
+ *  冒泡 useCapture = false
+ *  捕获 useCapture = true
+**/
+addEventListener(event, function, useCapture);
+
+/* 向同个元素中添加多个事件句柄 */
+element.addEventListener('click', myFunction);
+element.addEventListener('click', mySecondFunction);
+
+/* 向同个元素添加不同类型的事件 */
+element.addEventListener('mouseover', myFunction);
+element.addEventListener('click', mySecondFunction);
+element.addEventListener('mouseout', myThirdFunction);
+```
+
+```javascript
+/* 创建新的HTML元素 */
+var para = document.createElement('p');
+var node = document.createTextNode('This is a new paragraph.');
+para.appendChild(node);
+
+/* 添加到已存在元素中 */
+var element = document.getElementById('div1');
+element.appendChild(para);
+
+/* 添加到子元素前面 */
+var element = document.getElementById('div1');
+var child = document.getElementById('p1');
+element.insertBefore(para, child);
+
+/* 移除已存在的元素 */
+var parent = document.getElementById('div1');
+var child = document.getElementById('p1');
+element.removeChild(child);
+
+/* 替换已存在的元素 */
+var parent = document.getElementById('div1');
+var child = document.getElementById('p1');
+parent.replaceChild(para, child);
+```
+
+```javascript
+/* Collection */
+var myCollection = document.getElementsByTagName('p');
+for (var i = 0; i < myCollection.length; i++) {
+  myCollection[i].style.backgroundColor = 'red';
+}
+```
+
+```javascript
+var myNodeList = document.querySelectorAll('p');
+for (var i = 0; i < myNodelist.length; i++) {
+    myNodelist[i].style.backgroundColor = "red";
+}
+```

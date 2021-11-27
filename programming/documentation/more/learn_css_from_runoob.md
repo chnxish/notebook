@@ -268,7 +268,7 @@ h1:after { content: url(smiley.gif); }
 
 ## CSS中的各种属性
 
-  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float），对齐（Alignment）。
+  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float），对齐（Alignment），转换（Transform）。
 
   + ![Web Safe Fonts](./resources/web_safe_fonts.jpg)
 
@@ -289,6 +289,7 @@ h1:after { content: url(smiley.gif); }
 | 文本转换 | text-transform |
 | 文本缩进 | text-indent |
 | 文本阴影 | text-shadow |
+| 文本换行 | word-wrap |
 | font ||
 | 设置字体类型 | font-family |
 | 字体样式 | font-style |
@@ -341,6 +342,8 @@ h1:after { content: url(smiley.gif); }
 | float ||
 | 浮动 | float |
 | 清除浮动 | clear |
+| transform ||
+| 转换 | transform |
 
 ```css
 /* background */
@@ -575,6 +578,41 @@ img {     /* 图片居中对齐 */
   padding: 70px 0;
   border: 3px solid green;
   text-align: center;
+}
+
+/* transform */
+div {
+  transform: translate(50px, 100px);         /* 沿X轴和Y轴平移 */
+  -ms-transform: translate(50px, 100px);     /* IE 9 */
+  -webkit-transform: translate(50px, 100px); /* Safari and Chrome */
+}
+div {
+  transform: rotate(30deg);         /* 旋转 */
+  -ms-transform: rotate(30deg);     /* IE 9 */
+  -webkit-transform: rotate(30deg); /* Safari and Chrome */
+}
+div {
+  transform: scale(2, 3);         /* 比例缩放 scale(w, h) */
+  -ms-transform:scale(2, 3);      /* IE 9 */
+  -webkit-transform: scale(2, 3); /* Safari */
+}
+div {
+  transform: skew(30deg, 20deg);         /* 倾斜 */
+  -ms-transform: skew(30deg, 20deg);     /* IE 9 */
+  -webkit-transform: skew(30deg, 20deg); /* Safari and Chrome */
+}
+div {
+  transform:matrix(0.866, 0.5, -0.5, 0.866, 0, 0);         /* 没看懂 */
+  -ms-transform:matrix(0.866, 0.5, -0.5, 0.866, 0, 0);     /* IE 9 */
+  -webkit-transform:matrix(0.866, 0.5, -0.5, 0.866, 0, 0); /* Safari and Chrome */
+}
+div {
+  transform: rotateX(120deg);         /* 沿X轴旋转 */
+  -webkit-transform: rotateX(120deg); /* Safari 与 Chrome */
+}
+div {
+  transform: rotateY(130deg);         /* 沿Y轴旋转 */
+  -webkit-transform: rotateY(130deg); /* Safari 与 Chrome */
 }
 ```
 
