@@ -24,7 +24,7 @@ function hello() {
 <script src='my_script.js'></script>
 ```
 
-## JavaScript语法和函数
+## JavaScript基础
 
   + 变量
 
@@ -373,6 +373,14 @@ function myFunction() {
 
     - 在方法中，this表示该方法所属的对象。
 
+    - 在函数中，this表示全局对象。
+
+    - 单独使用时，this表示全局对象。
+
+    - 在事件中，this表示事件的元素。
+
+    - call, apple, bind
+
 ```javascript
 var person = {
   firstName: 'John',
@@ -384,19 +392,11 @@ var person = {
 };
 ```
 
-    - 在函数中，this表示全局对象。
-
-    - 单独使用时，this表示全局对象。
-
-    - 在事件中，this表示事件的元素。
-
 ```html
 <button onclick="this.style.display='none';">
 点我后我就消失了
 </button>
 ```
-
-    - call, apple, bind
 
 ```javascript
 var name = 'Alex', age = 17;
@@ -495,4 +495,87 @@ async function asyncFunc() {
   await print(3000, 'third');
 };
 asyncFunc();
+```
+
+## JavaScript高级教程
+
+  + 函数
+
+```javascript
+/* 函数声明 */
+function myFunction(a, b) {
+  return a * b;
+}
+
+/* 函数表达式 */
+var x = function(a, b) { return a * b; };
+var z = x(4, 3);
+
+/* Function()构造函数 */
+var myFunction = Function('a', 'b', 'return a * b');
+var x = myFunction(4, 3);
+
+/* 自调用函数 */
+(function() {
+  console.log('Hello');
+})();
+
+/* 函数是对象 */
+function myFunction(a, b) {
+  return arguments.length;  // 返回函数调用过程接收到的参数个数
+}
+console.log(myFunction.toString());  // 将函数声明打印出来
+
+/**
+ *  箭头函数 
+ *  使用const比使用var更安全，因为函数表达式始终是一个常量。
+ *  如果函数部分只是一个语句，则可以省略return关键字和大括号，这样做是一个比较好的习惯。
+**/
+const x1 = () => console.log('Hello');
+const x2 = a => console.log(a);
+const x3 = (a) => console.log(a);
+const x4 = (a, b, c) => { console.log(a * b * c); return true; }
+
+/**
+ *  显式参数与隐式参数
+ *  函数定义显式参数时没有指定数据类型。
+ *  函数对隐式参数没有进行类型检测。
+ *  函数对隐式参数的个数没有进行检测。
+**/
+function myFunction(x, y) {
+  y = y || 0;
+  return x * y;
+}
+console.log(myFunction(4)); // return 0
+
+function findMax() {
+  var i, max = arguments[0];
+  if (arguments.length < 2) return max;
+  for (i = 1; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+}
+console.log(findMax(1, 123, 500, 115, 44, 88));  // return 500
+
+/* 内嵌函数 */
+function add() {
+  var counter = 0;
+  function plus() { counter += 1; }
+  plus();
+  return counter;
+}
+add(); // return 1
+
+/* 闭包 */
+var add = (function () {
+  var counter = 0;
+  return function () {return counter += 1;}
+})();
+ 
+add();
+add(); 
+add(); // return 3
 ```
