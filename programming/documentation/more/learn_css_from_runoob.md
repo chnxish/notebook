@@ -1,6 +1,14 @@
 # 从Runoob上学习CSS
 
+  + [CSS简介](#css简介)
+
+  + [CSS中的各种属性](#css中的各种属性)
+
+  + [示例](#示例)
+
 ## CSS简介
+
+***
 
   + CSS是用来表现HTML或XML等文件样式的一种语言：
 
@@ -267,6 +275,8 @@ h1:after { content: url(smiley.gif); }
     - 使用!important是一个坏习惯，应该尽量避免，因为这破坏了样式表中固有的级联规则，使得调试找bug变得更加困难了。
 
 ## CSS中的各种属性
+
+***
 
   + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float），对齐（Alignment），转换（Transform），过渡（Transition），动画（Animation），多列（Column）。
 
@@ -658,6 +668,8 @@ div {
 ```
 
 ## 示例
+
+***
 
   + 导航栏：本质上是一个链接列表
 
