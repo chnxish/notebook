@@ -268,7 +268,7 @@ h1:after { content: url(smiley.gif); }
 
 ## CSS中的各种属性
 
-  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float），对齐（Alignment），转换（Transform）。
+  + 背景（Background），文本（Text），字体（Font），链接（Link），表格（Table），边框（Border），轮廓（Outline），尺寸（Dimension），显示（Display），定位（Position），Overflow，浮动（Float），对齐（Alignment），转换（Transform），过渡（Transition），动画（Animation），多列（Column）。
 
   + ![Web Safe Fonts](./resources/web_safe_fonts.jpg)
 
@@ -344,6 +344,18 @@ h1:after { content: url(smiley.gif); }
 | 清除浮动 | clear |
 | transform ||
 | 转换 | transform |
+| transition ||
+| 过渡 | transition |
+| animation ||
+| 动画 | animation |
+| column ||
+| 列数 | column-count |
+| 列间隙 | column-gap |
+| 列间分割风格 | column-rule-style |
+| 列间分割宽度 | column-rule-width |
+| 列间分割颜色 | column-rule-color |
+| 列宽 | column-width |
+| 跨越列 | column-span |
 
 ```css
 /* background */
@@ -614,6 +626,35 @@ div {
   transform: rotateY(130deg);         /* 沿Y轴旋转 */
   -webkit-transform: rotateY(130deg); /* Safari 与 Chrome */
 }
+
+/* transition */
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+  -webkit-transition: width 2s; /* Safari */
+}
+div:hover {
+  width: 300px;
+}
+
+/* animation */
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  animation: myfirst 5s;
+  -webkit-animation: myfirst 5s; /* Safari and Chrome */
+}
+@keyframes myfirst {
+	from {background:red;}
+	to {background:yellow;}
+}
+@-webkit-keyframes myfirst { /* Safari and Chrome */
+	from {background:red;}
+	to {background:yellow;}
+}
 ```
 
 ## 示例
@@ -655,3 +696,62 @@ div {
   + 渐变（Gradients）：可以让你在两个或多个指定的颜色之间显示平稳的过渡。
 
     - src: css_gradients.html
+
+  + 过渡
+
+    - src: css_transition.html
+
+  + 动画
+
+    - src: css_animation.html
+
+  + 多列
+
+    - src: css_column.html
+
+  + 用户界面：调整元素尺寸，框尺寸和外边框。
+
+    - src: css_user_interface.html
+
+  + 图片
+
+    - src: css_image.html
+
+  + 按钮
+
+    - src: css_button.html
+
+  + 分页
+
+    - src: css_pagination.html
+
+  + 弹性盒子（Flex Box）：是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。
+
+    - src: css_flex_box.html
+
+  + 多媒体查询
+
+    - src: css_multimedia_query.html
+
+```css
+/**
+ *  @media not|only mediatype and (expressions) {
+ *    CSS 代码;
+ *  }
+ *  mediatype: all print screen speech
+**/
+@media screen and (max-width: 480px) {
+    body {
+        background-color: lightgreen;
+    }
+}
+@media screen and (min-width: 600px) {
+  div.example {
+    display: none;
+  }
+}
+```
+
+  + 网格布局：CSS提供了基于网格的布局系统，可以让我们更轻松地设计网页，而无需使用浮动和定位。
+
+    - src: css_grid_layout.html
