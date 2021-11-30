@@ -1,6 +1,14 @@
 # 从Runoob上学习JavaScript
 
+  + [JavaScript简介](#javascript简介)
+
+  + [JavaScript基础](#javascript基础)
+
+  + [JavaScript高级教程](#javascript高级教程)
+
 ## JavaScript简介
+
+***
 
   + JavaScript是脚本语言
 
@@ -25,6 +33,8 @@ function hello() {
 ```
 
 ## JavaScript基础
+
+***
 
   + 变量
 
@@ -132,12 +142,12 @@ console.log(myFunc(1, 2));
   />
 <script>
   function bigImg(x){
-    x.style.height="64px";
-    x.style.width="64px";
+    x.style.height='64px';
+    x.style.width='64px';
   }
   function normalImg(x){
-    x.style.height="32px";
-    x.style.width="32px";
+    x.style.height='32px';
+    x.style.width='32px';
   }
 </script>
 </body>
@@ -308,7 +318,7 @@ function myFunction() {
     var atpos = x.indexOf('@');
     var dotpos = x.lastIndexOf('.');
     if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
-      alert("不是一个有效的e-mail地址");
+      alert('不是一个有效的e-mail地址');
       return false;
     }
   }
@@ -332,7 +342,7 @@ function myFunction() {
     if (inpObj.checkValidity() == false) {
       document.getElementById('demo').innerHTML = inpObj.validationMessage;
     } else {
-      document.getElementById("demo").innerHTML = '输入正确';
+      document.getElementById('demo').innerHTML = '输入正确';
     }
   }
 </script>
@@ -498,6 +508,8 @@ asyncFunc();
 ```
 
 ## JavaScript高级教程
+
+***
 
   + 函数
 
@@ -696,8 +708,206 @@ for (var i = 0; i < myCollection.length; i++) {
 ```
 
 ```javascript
+/* NodeList */
 var myNodeList = document.querySelectorAll('p');
 for (var i = 0; i < myNodelist.length; i++) {
-    myNodelist[i].style.backgroundColor = "red";
+    myNodelist[i].style.backgroundColor = 'red';
 }
 ```
+
+  + 高级
+
+    - prototype（原型对象）：给已有的函数对象增加属性或者方法。
+
+    - Number对象
+
+    - String对象
+
+    - Date对象
+
+    - Array对象
+
+    - Boolean对象
+
+    - Math对象
+
+    - RegExp对象
+
+```javascript
+// prototype
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+Person.prototype.name = function() {
+  return this.firstName + ' ' + this.lastName;
+}
+// 如果在一个函数前面带上new来调用该函数，那么
+// 将创建一个隐藏连接到该函数的prototype成员
+// 的新对象，同时this将被绑定到那个新对象上。
+var myFather = new Person('John', 'Doe', 50, 'blue');
+
+// Number
+var x = 0.2 + 0.1;                  // 输出结果为 0.30000000000000004
+while (myNumber != Infinity) {}     // 无穷大
+isNaN(myNumber);                    // 判断是否为非数字
+isInteger(myNumber);                // 判断是否为整数
+Number.MAX_VALUE;                   // 最大值
+Number.MIN_VALUE;                   // 最小值
+Number.NaN;                         // 非数字
+var y = 123; typeof(y);             // return 'number'
+var z = new Number(123); typeof(z); // return 'object'
+(y === z);                          // return false
+
+// String
+var carname = 'Volvo XC60';
+var character = x[7];               // character = 'C'
+carname.length;                     // return 10
+carname.indexOf('olvo');            // return 1
+carname.replace('60', '30');        // 替换，但不修改carname本身
+carname.toUpperCase();              // 大写，但不修改carname本身
+carname.toLowerCase();              // 小写，但不修改carname本身
+var arr = carname.split('o');       // arr = ['V', 'lv', ' XC60']
+
+// Date
+var data = new Date();              // data = Mon Nov 29 2021 22:23:44 GMT+0800 (中国标准时间)
+data.getFullYear();                 // return 2021
+data.getTime();                     // return 1638195824583
+data.getDay();                      // return 1。0代表周日，1代表周一，以此类推。
+data.setFullYear(2100, 0 , 14);     // data = Thu Jan 14 2100 00:00:00 GMT+0800 (中国标准时间)
+var d1 = new Date('October 13, 1975 11:13:00'); // d1 = Mon Oct 13 1975 11:13:00 GMT+0800 (中国标准时间)
+
+// Array
+var mycars = new Array();           // 等价于 var myCars = new Array('Saab', 'Volvo', 'BMW');
+mycars[0] = 'Saab';
+mycars[1] = 'Volvo';
+mycars[2] = 'BMW';
+mycars.length;                      // return 3
+var arr3 = arr1.concat(arr2);       // 合并数组
+arr1.join();                        // 用数组的元素组成字符串，不修改本身
+arr1.push('abc');                   // 末尾添加新元素
+arr1.pop('abc');                    // 删除最后一个元素
+arr1.sort();                        // 排序，修改本身
+
+// Boolean
+var myBoolean = new Boolean();      // myBoolean = false
+// 使用 0, -0, null, '', false, undefined, NaN 初始化值，结果都是false，否则其值为true
+
+// Math
+Math.round(2.5);                    // return 3
+Math.round(2.4);                    // return 2
+Math.random();                      // 返回0到1之间的随机数
+Math.max(value1, value2);           // 返回最大值
+Math.min(value1, value2);           // 返回最小值
+Math.E;                             // return 2.718281828459045
+Math.PI;                            // return 3.141592653589793
+Math.SQRT2;                         // return 1.4142135623730951
+
+// RegExp: Regular Expression
+// var patt = new RegExp(pattern, modifiers);
+// var patt = /pattern/modifiers;
+// i - 修饰符用来执行不区分大小写的匹配
+var str = 'Visit RUNoob';
+var patt = /runoob/i;
+str.match(patt);                     // return ['RUNoob']
+// g - 修饰符用于执行全文搜索
+var str = 'Is this all there is?';
+var patt = /is/g;
+str.match(patt);                     // return  ['is', 'is']
+// test函数：搜索字符串指定的值，根据结果返回真假
+var patt = new RegExp('e');
+patt.test('The best things in life are free'); // return true
+// exec函数：找到返回本身，没找到返回null
+var patt = new RegExp('eo');
+patt.exec('Hello, World');           // return null
+```
+
+  + 浏览器对象模型（Browser Object Model）
+
+    - Window对象
+
+      - 所有浏览器都支持window对象。它表示浏览器窗口。
+
+      - 所有JavaScript全局对象、函数以及变量均自动成为window对象的成员。
+
+      - 全局变量是window对象的属性。
+
+      - 全局函数是window对象的方法。
+
+      - 甚至DOM中document也是window对象的属性之一。
+
+    - window.screen
+
+    - window.location
+
+    - window.history
+
+    - window.navigator：信息具有误导性，数据可以被浏览器使用者更改。
+
+    - 弹窗（Popup）
+
+      - window.alert
+
+      - window.confirm
+
+      - window.prompt
+
+    - Cookie：以名/值对形式存储。
+
+```javascript
+// 两者等价
+window.document.getElementById('header');
+document.getElementById('header');
+
+// 窗口尺寸
+window.innerHeight;                    // 可见尺寸
+window.innerWidth;
+document.documentElement.clientHeight; // 可见尺寸，不包括滚动条
+document.documentElement.clientWidth;
+document.body.clientHeight;            // 页面尺寸，页面如果支持滚动会比可见尺寸大
+document.body.clientWidth;
+
+// 其他window方法
+window.open();                         // 打开窗口
+window.close();                        // 关闭窗口
+
+// screen
+screen.availHeight;                    // 可用尺寸
+screen.availWidth;
+
+// location
+location.hostname;                     // 域名
+location.pathname;                     // 当前页面的路径和文件名
+location.href;                         // hostname + pathname
+location.port;                         // 返回端口
+location.protocol;                     // 返回web协议
+location.assign('https://www.runoob.com'); // 转到runoob主页面
+
+// history
+history.back();                        // 与在浏览器中点击退后按钮相同
+history.forward();                     // 与在浏览器中点击向前按钮相同
+
+// navigator
+navigator.appCodeName;                 // return 'Mozilla'
+navigator.appName;                     // return 'Netscape'
+navigator.appVersion;                  // return '5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
+
+// 弹窗
+window.alert('Hello\nHow are you?');   // 警告框
+window.confirm('按下按钮');             // 确认框
+window.prompt('请输入你的名字', 'Harry Potter'); // 提示框
+
+// cookie
+document.cookie;                       // 查看网页的cookie
+document.cookie="username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT"; // 创建cookie
+var data = document.cookie;            // 读取cookie
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // 删除cookie
+```
+
+  + 内容分发网络（Content Delivery Network）：CDN是包含分享代码库的服务器网络。
+
+    - [国内CDN](https://staticfile.org/)
+
+    - [国外CDN](https://cdnjs.com/)
