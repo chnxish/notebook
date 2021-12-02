@@ -24,15 +24,63 @@
 
     - 容器都有填充左右内边距，顶部和底部没有填充内边距。
 
+  + 网格系统
+
+    - Bootstrap提供了一套响应式、移动设备优先的流式网格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。
+
+    - Bootstrap的网格系统是响应式的，列会根据屏幕大小自动重新排列。请确保每一行中列的总和等于或小于12。
+
+    - ![Grid System Col Class](./resources/gridsystem_colclass.png)
+
+    - 网格每一行需要放置在容器中，这样可以自动设置一些外边距与内边距。
+
+    - .row设置行
+
+    - .col-*-*设置列
+
+    - .offset-*-*设置偏移
+
+```html
+<!-- 让 Bootstrap 自动处理布局 -->
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col p-3 bg-primary text-white">.col</div>
+    <div class="col p-3 bg-dark text-white">.col</div>
+    <div class="col p-3 bg-primary text-white">.col</div>
+  </div>
+</div>
+<!-- 控制列的宽度及在不同的设备上如何显示 -->
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-*-* p-3 bg-primary text-white">.col</div>
+    <div class="col-*-* p-3 bg-dark text-white">.col</div>
+    <div class="col-*-* p-3 bg-primary text-white">.col</div>
+  </div>
+</div>
+<!-- 多端响应式布局 -->
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-sm-3 col-md-6 col-lg-4 col-xl-2 p-3 bg-primary text-white">.col</div>
+    <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10 p-3 bg-dark text-white">.col</div>
+  </div>
+</div>
+```
+
+  + 文字排版
+
+    - Bootstrap5默认设置：font-size为16px，line-height为1.5。默认的font-family为<kbd>"Helvetica Neue", Helvetica, Arial, sans-serif</kbd>。所有的p元素margin-top为0，margin-bottom为1rem（16px）。
+
+    - src: bootstrap_text_layout.html
+
+  + 颜色
+
+    - src: bootstrap_color.html
+
+  + 表格
+
+    - src: bootstrap_table.html
+
 ## Bootstrap其余类
-
-  + background-color
-
-    - bg-primary, bg-secondary, .bg-light, bg-dark, bg-black, bg-white
-
-  + text-color
-
-    - text-primary, text-secondary, .text-light, text-dark, text-black, text-white
 
   + margin
 
