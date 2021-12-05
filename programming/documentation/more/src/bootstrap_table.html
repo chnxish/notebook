@@ -206,9 +206,80 @@
       <h2>指定意义的颜色类</h2>
       <p>通过指定意义的颜色类可以为表格的行或者单元格设置颜色：</p>
       <table class="table">
+        <!-- 表头同样可以使用颜色类 -->
         <thead>
           <tr>
             <th>Class</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>none</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+          <tr class="table-primary">
+            <th>table-primary</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+          <tr class="table-secondary">
+            <th>table-secondary</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+          <tr class="table-light">
+            <th>table-light</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+          <tr class="table-dark text-white">
+            <th>table-dark</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+          <tr class="table-success">
+            <th>table-success</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+          <tr class="table-info">
+            <th>table-info</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+          <tr class="table-warning">
+            <th>table-warning</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+          <tr class="table-danger">
+            <th>table-danger</th>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card mb-3 p-4">
+      <h2>较小的表格</h2>
+      <p>通过添加 .table-sm 类来设置一个较小的表格：</p>
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
@@ -232,6 +303,53 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="card mb-3 p-4">
+      <h2>响应式表格</h2>
+      <p>通过添加 .table-responsive 类来设置一个较小的表格：</p>
+      <!-- 
+        .table-responsive
+        .table-responsive-sm        < 576px
+        .table-responsive-md        < 768px
+        .table-responsive-lg        < 992px
+        .table-responsive-xl        < 1200px
+        .table-responsive-xxl       < 1400px
+       -->
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Age</th>
+              <th>City</th>
+              <th>Country</th>
+              <th>Sex</th>
+              <th>Example</th>
+              <th>Example</th>
+              <th>Example</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Anna</td>
+              <td>Pitt</td>
+              <td>35</td>
+              <td>New York</td>
+              <td>USA</td>
+              <td>Female</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
   </div>
