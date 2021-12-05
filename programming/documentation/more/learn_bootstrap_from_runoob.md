@@ -80,6 +80,18 @@
 
     - src: bootstrap_table.html
 
+  + 图像形状
+
+    - src: bootstrap_image.html
+
+  + 信息提示框
+
+    - src: bootstrap_alert.html
+
+  + 按钮
+
+    - src: bootstrap_button.html
+
 ## Bootstrap其余类
 
   + margin
