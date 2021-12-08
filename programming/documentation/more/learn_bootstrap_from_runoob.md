@@ -92,6 +92,32 @@
 
     - src: bootstrap_button.html
 
+  + 徽章
+
+    - 徽章（Badges）主要用于突出显示新的或未读的项。如需使用徽章，只需要将.badges类加上带有指定意义的颜色类添加到span元素上即可。徽章可以根据父元素的大小的变化而变化。
+
+    - src: bootstrap_badges.html
+
+  + 进度条
+
+    - src: bootstrap_progressbar.html
+
+  + 加载效果
+
+    - src: bootstrap_spinner.html
+
+  + 分页
+
+    - 网页开发过程，如果碰到内容过多，一般都会做分页处理。
+
+    - src: bootstrap_pagination.html
+
+  + 列表组
+
+    - src: bootstrap_listgroup.html
+
+    - src: bootstrap_listgroup_example.html
+
 ## Bootstrap其余类
 
   + margin
@@ -117,3 +143,44 @@
 | .pe-n | n=(0~5), padding right |
 | .pb-n | n=(0~5), padding bottom |
 | .ps-n | n=(0~5), padding left |
+
+  + display
+
+| Class | Description |
+| ----- | ----------- |
+| .d-n | n=(inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, none) |
+| .d-sm-n | n=(inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, none) |
+| .d-md-n | n=(inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, none) |
+| .d-lg-n | n=(inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, none) |
+| .d-xl-n | n=(inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, none) |
+| .d-xxl-n | n=(inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, none) |
+| .d-print-n | n=(inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, none) |
+
+
+  + gap
+
+    - 使用于.d-grid类中
+
+    - 使用于.d-flex类和style="flex-direction:column;"中
+
+| Class | Description |
+| ----- | ----------- |
+| .gap-n | n=(0~5) |
+| .gap-sm-n | n=(0~5) |
+| .gap-md-n | n=(0~5) |
+| .gap-lg-n | n=(0~5) |
+| .gap-xl-n | n=(0~5) |
+| .gap-xxl-n | n=(0~5) |
+
+  + justify-content
+
+    - 使用于.d-flex类中
+
+| Class | Description |
+| ----- | ----------- |
+| .justify-content-n | n=(start, end, center, between, around, evenly) |
+| .justify-content-sm-n | n=(start, end, center, between, around, evenly) |
+| .justify-content-md-n | n=(start, end, center, between, around, evenly) |
+| .justify-content-lg-n | n=(start, end, center, between, around, evenly) |
+| .justify-content-xl-n | n=(start, end, center, between, around, evenly) |
+| .justify-content-xxl-n | n=(start, end, center, between, around, evenly) |
