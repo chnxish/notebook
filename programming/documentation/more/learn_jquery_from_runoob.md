@@ -150,6 +150,8 @@ $(function() {
 
     - jQuery中非常重要的部分，就是操作DOM的能力。jQuery提供一系列与DOM相关的方法，这使访问和操作元素和属性变得很容易。
 
+    - ![jQuery Size](./resources/jquery_size.png)
+
     - src: jquery_manipulation_methods.html
 
 ```javascript
@@ -175,5 +177,19 @@ $(function() {
  *  删除元素
  *  $(selector).remove();
  *  $(selector).empty();
+ *
+ *  操作CSS
+ *  $(selector).addClass(class_name);
+ *  $(selector).removeClass(class_name);
+ *  $(selector).toggleClass(class_name);
+ *  $(selector).css({attr_name: value, attr_name: value});
+ *
+ *  jQuery尺寸
+ *  $(selector).width();
+ *  $(selector).height();
+ *  $(selector).innerWidth();
+ *  $(selector).innerHeight();
+ *  $(selector).outerWidth();
+ *  $(selector).outerHeight();
 **/
 ```
