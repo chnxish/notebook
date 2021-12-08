@@ -11,7 +11,7 @@
     .card {
       border: 2px solid #ccc;
     }
-    .col-2, .col-3, .col-4, .col-8 {
+    .col-2, .col-3, .col-4, .col-5, .col-8 {
       background-color: #e5eecc;
     }
     .display-content {
@@ -24,8 +24,14 @@
     #set-tbl #text, #set-tbl #html, #set-tbl #val, #set-tbl #attr,
     #append-tbl #append, #append-tbl #prepend, #append-tbl #append-more,
     #append-tbl #after, #append-tbl #before, #append-tbl #clear,
-    #remove-tbl #remove, #remove-tbl #empty, #remove-tbl #remove-tmp {
+    #remove-tbl #remove, #remove-tbl #empty, #remove-tbl #remove-tmp,
+    #set-css-tbl #add-class, #set-css-tbl #remove-class, #set-css-tbl #toggle-class,
+    #set-css-tbl #css-func {
       cursor: pointer;
+    }
+    .important {
+      font-weight: bold;
+      font-size: x-large;
     }
   </style>
   <script>
@@ -89,6 +95,21 @@
       });
       $('#remove-tbl #remove-tmp').click(function() {
         $('#remove-tbl #remove-tmp-content span').remove('#tmp');
+      });
+      $('#set-css-tbl #add-class').click(function() {
+        $('#set-css-tbl #content1').addClass('important');
+      });
+      $('#set-css-tbl #remove-class').click(function() {
+        $('#set-css-tbl #content1').removeClass('important');
+      });
+      $('#set-css-tbl #toggle-class').click(function() {
+        $('#set-css-tbl #content1').toggleClass('important');
+      });
+      $('#set-css-tbl #css-func').click(function() {
+        $('#set-css-tbl #content1').css({
+          'font-weight': 'bold',
+          'font-size': 'x-large'
+        });
       });
     });
   </script>
@@ -191,6 +212,23 @@
         <div id="remove-tmp-content" class="col-8 bg-light border">
           <span>Content</span><span id="tmp"> Tmp</span>
         </div>
+      </div>
+    </div>
+
+    <div id="set-css-tbl" class="card mb-3 p-2">
+      <h3>捕获</h3>
+      <div class="row display-content">
+        <div class="col-10 offset-1 bg-light border">
+          <p id="content1">菜鸟教程</p>
+        </div>
+      </div>
+      <div class="row">
+        <div id="add-class" class="col-5 offset-1 border">addClass</div>
+        <div id="remove-class" class="col-5 border">removeClass</div>
+      </div>
+      <div class="row">
+        <div id="toggle-class" class="col-5 offset-1 border">toggleClass</div>
+        <div id="css-func" class="col-5 border">css</div>
       </div>
     </div>
 
