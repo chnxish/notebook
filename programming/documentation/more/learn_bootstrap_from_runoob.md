@@ -120,6 +120,18 @@
 
 ## Bootstrap其余类
 
+  + width
+
+| Class | Description |
+| ----- | ----------- |
+| .w-n | n=(25, 50, 75, 100, auto) |
+
+  + height
+
+| Class | Description |
+| ----- | ----------- |
+| .h-n | n=(25, 50, 75, 100, auto) |
+
   + margin
 
 | Class | Description |
