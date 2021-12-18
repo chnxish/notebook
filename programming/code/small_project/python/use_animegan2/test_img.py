@@ -11,8 +11,7 @@ model = torch.hub.load('bryandlee/animegan2-pytorch:main', 'generator', pretrain
 
 face2paint = torch.hub.load('bryandlee/animegan2-pytorch:main', 'face2paint', size=512)
 
-img = Image.open('img.jpg').convert('RGB')
+img = Image.open('img.png').convert('RGB')
 
 out = face2paint(model, img)
 out.show()
-out.save()
