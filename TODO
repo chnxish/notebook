@@ -4,15 +4,11 @@
   - pets3
 - math
   - probability_and_mathematical_statistics
+- physics
+  - college physics
 
 - documentation
   - book
-    - subject
-      - college physics
-      - fundamentals of electronic technology
-      - software_engineering
-        - chapter3
-      - ncre
     - cplusplus_primer
       - chapter2
     - python_cookbook
@@ -32,6 +28,11 @@
     - learn xd
     - learn_ai_from_andrew_ng
     - learn_ai_from_hungyi_lee
+  - subject
+    - fundamentals of electronic technology
+    - software_engineering
+      - chapter3
+    - ncre
 
 - python_spider_example
 - google_style_guide

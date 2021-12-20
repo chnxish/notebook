@@ -128,6 +128,18 @@
 
     - src: bootstrap_dropdownmenu_example.html
 
+  + 折叠
+
+    - src: bootstrap_collapse.html
+
+  + 导航
+
+    - src: bootstrap_navigation.html
+
+  + 导航栏
+
+    - src: bootstrap_navigation_bar.html
+
 ## Bootstrap其余类
 
   + width
