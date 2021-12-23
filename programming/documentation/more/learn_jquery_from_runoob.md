@@ -208,9 +208,23 @@ $(function() {
  *  $(selector).parentsUntil();
  *
  *  后代
+ *  $(selector).children();
+ *  $(selector).find();
  *
  *  同胞
+ *  $(selector).siblings();
+ *  $(selector).next();
+ *  $(selector).nextAll();
+ *  $(selector).nextUntil();
+ *  $(selector).prev();
+ *  $(selector).prevAll();
+ *  $(selector).prevUntil();
  *
  *  过滤
+ *  $(selector).first();
+ *  $(selector).last();
+ *  $(selector).eq();
+ *  $(selector).filter();
+ *  $(selector).not();
 **/
 ```
