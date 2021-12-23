@@ -193,3 +193,24 @@ $(function() {
  *  $(selector).outerHeight();
 **/
 ```
+
+  + jQuery 遍历
+
+    - 通过jQuery遍历，能够从被选（当前的）元素开始，轻松地在家族树中向上移动（祖先），向下移动（子孙），水平移动（同胞），这种移动被称为对DOM进行遍历。
+
+    - src: jquery_traversal.html
+
+```javascript
+/**
+ *  祖先
+ *  $(selector).parent();
+ *  $(selector).parents();
+ *  $(selector).parentsUntil();
+ *
+ *  后代
+ *
+ *  同胞
+ *
+ *  过滤
+**/
+```
