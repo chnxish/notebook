@@ -140,6 +140,34 @@
 
     - src: bootstrap_navigation_bar.html
 
+    - src: bootstrap_navigation_bar_example.html
+
+  + 轮播
+
+    - src: bootstrap_carousel.html
+
+  + 模态框
+
+    - src: bootstrap_modal.html
+
+  + 提示框
+
+    - src: bootstrap_promptbox.html
+
+  + 弹出框
+
+    - src: bootstrap_popup.html
+
+  + 滚动监听
+
+    - src: bootstrap_scrollspy.html
+
+  + 侧边栏导航
+
+    - src: bootstrap_offcanvas.html
+
+    - src: bootstrap_offcanvas_exmaple.html
+
 ## Bootstrap其余类
 
   + width
