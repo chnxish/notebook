@@ -18,12 +18,12 @@
     - beginning_linux_programming
       - chapter1
   - more
-    - learn_jquery_from_runoob
-      - 遍历
     - learn photoshop
       - P11
     - learn illustrator
     - learn xd
+    - google_style_guide
+      - c++
     - learn_ai_from_andrew_ng
     - learn_ai_from_hungyi_lee
   - subject
@@ -33,9 +33,8 @@
     - ncre
 
 - python_spider_example
-- google_style_guide
-  - c++
-- bp
+- bf
+- flutter_xianyu
 - bootstrap_example
 - django_example
 - flutter_example
