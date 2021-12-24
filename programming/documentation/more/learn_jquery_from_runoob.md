@@ -228,3 +228,21 @@ $(function() {
  *  $(selector).not();
 **/
 ```
+
+  + AJAX（Asynchronous JavaScript and XML）
+
+    - AJAX是与服务器交换数据的技术，它在不重载全部页面的情况下，实现了对部分网页的更新。
+
+    - jQuery提供多个与AJAX有关的方法。通过jQuery AJAX方法，能够使用HTTP Get和HTTP Post从远程服务器上请求文本、HTML、XML或JSON，同时能够把外部数据直接载入网页的被选元素中。
+
+    - 两种在客户端和服务器端进行请求-响应的常用方法是：GET（从指定的资源请求数据）和POST（向指定的资源提交要处理的数据）。
+
+    - src: open programming/code/small_project/python/example project and run it, then visit localhost:8000/jquery_example/ajax
+
+```javascript
+/**
+ *  $(selector).load();
+ *  $.get();
+ *  $.post();
+**/
+```
