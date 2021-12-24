@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'channels',
     'html_example',
+    'jquery_example',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('html_example/', include('html_example.urls')),
+    path('jquery_example/', include('jquery_example.urls')),
 ]
