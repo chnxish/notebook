@@ -1,39 +1,41 @@
 - (15-16-PCPP-LW, knowledge) to notebook
 
-- english
-  - pets3
-- math
-  - probability_and_mathematical_statistics
-- physics
-  - college physics
-
-- documentation
-  - book
-    - cplusplus_primer
-      - chapter2
-    - python_cookbook
-      - chapter2
-    - python_for_data_analysis
-      - chapter1
-    - beginning_linux_programming
-      - chapter1
-  - more
-    - learn photoshop
-      - P11
-    - learn illustrator
-    - learn xd
-    - google_style_guide
-      - c++
-    - learn_ai_from_andrew_ng
-    - learn_ai_from_hungyi_lee
-  - subject
-    - fundamentals of electronic technology
-    - software_engineering
-      - chapter3
-    - ncre
+- notebook
+  - non-programming
+    - english
+      - pets3
+    - math
+      - probability_and_mathematical_statistics
+    - physics
+      - college physics
+  -programming
+    - documentation
+      - book
+        - cplusplus_primer
+          - chapter2
+        - python_cookbook
+          - chapter2
+        - python_for_data_analysis
+          - chapter1
+        - beginning_linux_programming
+          - chapter1
+      - more
+        - learn photoshop
+          - P11
+        - learn illustrator
+        - learn xd
+        - google_style_guide
+          - c++
+        - learn_ai_from_andrew_ng
+        - learn_ai_from_hungyi_lee
+      - subject
+        - fundamentals of electronic technology
+        - software_engineering
+          - chapter3
+        - ncre
 
 - python_spider_example
 - bootstrap_example
+- react_example
 - django_example
 - flutter_example
-- react_example
