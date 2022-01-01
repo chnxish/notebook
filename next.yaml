@@ -1,5 +1,5 @@
 - xish
-  stack: react + material-ui + nextjs
+  stack: react + redux + material-ui + nextjs + nodejs
 - flutter_xianyu
   stack: flutter + django
 - node_spider
