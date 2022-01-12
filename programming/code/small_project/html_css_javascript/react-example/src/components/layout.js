@@ -21,13 +21,15 @@ import { Link } from 'react-router-dom';
 const drawerWidth = 240;
 
 const pages = {
-  'React': ['FilterableProductTable'],
+  'React': ['FilterableProductTable', 'ContextExample', 'PortalExample'],
   'Redux': ['Test1'],
   'Axios': ['Test2'],
 };
 
 const pageLinks = {
   'FilterableProductTable': '/filterable-product-table',
+  'ContextExample': '/context-example',
+  'PortalExample': '/portal-example',
   'Test1': 'test1',
   'Test2': 'test2',
 }
@@ -158,7 +160,7 @@ const Layout = (props) => {
         </List> */}
         {Object.keys(pages).map(function(k) {
           return (
-            <>
+            <React.Fragment key={k}>
               <Divider />
               <Box key={k} sx={{ ml: 2, mt: 1 }}>
                 <Typography
@@ -180,7 +182,7 @@ const Layout = (props) => {
                 );
               })}
               </List>
-            </>
+            </React.Fragment>
           );
         })}
       </Drawer>
