@@ -757,6 +757,54 @@ class SignUpDialog extends React.Component {
 
       - 对你的应用进行代码分割能够帮助你“懒加载”当前用户所需要的内容，能够显著地提高你的应用性能。尽管并没有减少应用整体的代码体积，但你可以避免加载用户永远不需要的代码，并在初始加载的时候减少所需的加载的代码量。
 
+    - Context
+
+      - Context提供了一种在组件之间共享此类值的方式，而不必显式地通过组件树的逐层传递props。
+
+      - Context设计目的是为了共享那些对于一个组件树而言是“全局”的数据，例如当前认证的用户、主题和首选语言。
+
+      - src: open programming/code/small_project/html_css_javascript/react-example project and run it, then visit localhost:3000/context-example
+
+    - 错误边界（Error Boundaries）
+
+      - 部分UI的JavaScript错误不应该导致整个应用奔溃，为了解决这个问题，React16引入错误边界。
+
+      - 错误边界是一种React组件，这种组件可以捕获并打印发生在其子组件树任何位置的JavaScript错误，并且，它会渲染出备用UI，而不是渲染那些崩溃的子组件树。
+
+      - 错误边界在渲染期间，生命周期方法和整个组件树的构造函数中捕获错误。
+
+      - 注意错误边界仅可以捕获其子组件的错误，它无法捕获其自身的错误。如果一个错误边界无法渲染错误信息，则错误会冒泡至最近的上层错误边界，这也类似JavaScript中catch {} 的工作机制。
+  
+    - Fragments
+
+      - React中的一个常见模式是一个组件返回多个元素。Fragments允许你将子列表分组，而无需向DOM添加额外节点。
+
+    - 高阶组件
+
+      - 高阶组件（HOC）是React中用于复用组件逻辑的一种高级技巧。HOC自身不是React API的一部分，它是一种基于React的组合特性而形成的设计模式。
+
+      - 具体而言，高阶组件是参数为组件，返回值为新组件的函数。
+
+      - 组件是将props转换为UI，而高阶组件是将组件转换为另一个组件。
+
+    - 与第三方库协同
+
+      - React不会理会React自身之外的DOM操作。它根据内部虚拟DOM来决定是否需要更新，而且如果同一个DOM节点被另一个库操作了，React会觉得困惑并且没有办法恢复。
+
+    - 深入JSX
+
+      - 实际上，JSX仅仅只是`React.createElement()`函数的语法糖。
+
+    - 性能优化
+
+      - UI更新需要昂贵的DOM操作，而React内部使用几种巧妙的技术以便最小化DOM操作次数。对于大部分应用而言，使用React时无需专门优化就已拥有高性能的用户界面。尽管如此，你仍然有办法来加速你的React应用。
+
+    - Portals
+
+      - Protal提供了一种将子节点渲染到存在于父组件以外的DOM节点的优秀的方案。
+
+      - src: open programming/code/small_project/html_css_javascript/react-example project and run it, then visit localhost:3000/portal-example
+
 ```javascript
 // 无障碍
 <input
@@ -840,4 +888,656 @@ export const MyUnusedComponent = /* ... */;
 export { MyComponent as default } from './ManyComponents.js';
 // MyApp.js
 const MyComponent = lazy(() => import('./MyComponents.js'));
+
+/* Context */
+const ThemeContext = React.createContext('light');
+
+class App extends React.Component {
+  render() {
+    return (
+      <ThemeContext.Provider value="dark">
+        <Toolbar />
+      </ThemeContext.Provider>
+    );
+  }
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <ThemeButton />
+    </div>
+  );
+}
+
+class ThemeButton extends React.Component {
+  static contextType = ThemeContext;
+
+  render() {
+    return <Button theme={this.context} />;
+  }
+}
+
+/* 错误边界 */
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // 更新 state 使下一次渲染能够显示降级后的UI
+    return { hasError: true };
+  }
+
+  componentDidiCatch(error, errorInfo) {
+    // 你同样可以将错误日志上报给服务器
+    logErrorToMyService(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+
+<ErrorBoundary>
+  <MyWidget />
+</ErrorBoundary>
+
+/* Fragments */
+// 可以用 <></> 代替 <React.Fragment></React.Fragment>
+<React.Fragment>
+  <ChildA />
+  <ChildB />
+  <ChildC />
+</React.Fragment>
+
+/* 高阶组件 */
+class CommentList extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.data.map((comment) => (
+          <Comment comment={comment} key={comment.id} />
+        ))}
+      </div>
+    );
+  }
+}
+
+class BlogPost extends React.Component {
+  render() {
+    return <TextBlock text={this.props.data} />;
+  }
+}
+
+function withSubscription(WrappedComponent, selectData) {
+  return class extends React.Component {
+    constructor(props) {
+      super(props);
+      this.handleChange = this.handleChange.bind(this);
+      this.state = {
+        data: selectData(DataSource, props)
+      };
+    }
+
+    componentDidMount() {
+      DataSource.addChangeListener(this.handleChange);
+    }
+
+    componentWillUnmount() {
+      DataSource.removeChangeListener(this.handleChange);
+    }
+
+    handleChange() {
+      this.setState({
+        data: selectData(DataSource, this.props)
+      });
+    }
+
+    render() {
+      return <WrappedComponent data={this.state.data} {...this.props} />;
+    }
+  };
+}
+
+const CommentListWithSubscription = withSubscription(
+  CommentList,
+  (DataSource) => DataSource.getComments()
+);
+
+const BlogPostWithSubscription = withSubscription(
+  BlogPost,
+  (DataSource, props) => DataSource.getBlogPost(props.id)
+);
+
+// 约定：将不相关的 props 传递给被包裹的组件
+render() {
+  // 过滤掉非此 HOC 额外的 props，且不要进行透传
+  const { extraProp, ...passThroughProps } = this.props;
+
+  // 将 props 注入到被包装的组件中
+  // 通常为 state 的值或者实例方法
+  const injectedProp = someStateOrInstanceMethod;
+
+  return (
+    <WrappedComponent 
+      injectedProp={injectedProp}
+      {...passThroughProps}
+    />
+  );
+}
+
+/* 深入JSX */
+<MyButton color="blue" shadowSize={2}>
+  Click Me
+</MyButton>
+
+// 等价于
+React.createElement(
+  MyButton,
+  {color: 'blue', shadowSize: 2},
+  'Click Me'
+)
+
+// 在JSX类型中使用点语法
+import React from 'react';
+
+const MyComponents = {
+  DatePicker: function DatePicker(props) {
+    return <div>Imagine a {props.color} datepicker here.</div>;
+  }
+}
+
+function BlueDatePicker() {
+  return <MyComponents.DatePicker color="blue" />;
+}
+
+// Props 默认值为 True，完全不推荐这样使用
+<MyTextBox autocomplete /> // autocomplete = True
+
+// 属性展开，使用 ... 运算符
+function App() {
+  const props = { firstName: 'Ben', lastName: 'Hector' };
+  return <Greeting {...props} />;
+}
+
+const Button = props => {
+  const { kind, ...other } = props;
+  const className = kind === 'primary' ? 'PrimaryButton' : 'SecondaryButton';
+  return <button className={className} {...other} />;
+}
+
+// JavaScript 表达式作为子元素
+function Item(props) {
+  return <li>{props.message}</li>;
+}
+
+function TodoList() {
+  const todos = ['finish doc', 'submit pr', 'nag dan to review'];
+  return (
+    <ul>
+      {todos.map((message) => <Item key={message} message={message} />)}
+    </ul>
+  );
+}
+
+// 函数作为 props.children
+function Repeat(props) {
+  let items = [];
+  for (let i = 0; i < props.numTimes; i++) {
+    items.push(props.children(i));
+  }
+  return <div>{items}</div>;
+}
+
+function ListOfTenThings() {
+  return (
+    <Repeat numTimes={10}>
+      {(index) => <div key={index}>This is item {index} in the list</div>}
+    </Repeat>
+  );
+}
+
+// 布尔值判断
+<div>
+  {showHeader && <Header/>}
+  <Content />
+</div>
+
+<div>
+  {props.message.length > 0 &&
+    <MessageList messages={props.message} />
+  }
+</div>
+```
+
+  + HOOK
+
+    - Hook简介
+
+      - Hook是React 16.8的新增特性，它可以让你在不编写class情况下使用state以及其他的React特性。
+
+      - Hook是一个特殊的函数，它可以让你“钩入”React的特性。
+
+      - 如果你在编写函数组件并意识到需要向其添加一些state时，就应该使用Hook。
+
+    - 使用State Hook
+
+      - State只在组件首次渲染的时候被创建。在下一次重新渲染时，`useState`返回给我们当前的state。
+
+      - 当我们使用`useState`定义state变量时候，它返回一个有两个值的数组。第一个值是当前的state，第二个值是更新state的函数。
+
+    - 使用Effect Hook
+
+      - Effect Hook可以让你在函数组件中执行副作用操作。
+
+      - 如果你熟悉React Class的生命周期，你可以把useEffect Hook看作componentDidMount，componentDidUpdate和componentWillUnmount这三个函数的组合。
+
+      - 在React组件中有两种常见副作用操作：需要清除的和不需要清除的。
+
+      - 无需清除的Effect：在React更新DOM之后运行一些额外的代码。比如发送网络请求，手动变更DOM，记录日志，这些都是常见的无需清除的操作。
+
+      - 需要清除的Effect：例如订阅外部数据源。
+
+    - Hook规则
+
+      - Hook本质就是JavaScript函数，但是在使用它时需要遵循两条规则。也可以使用linter插件强制执行这些规则。
+
+      - 两条规则：只在最顶层使用Hook，不要在循环、条件或嵌套函数中调用Hook。只在React函数中调用Hook，不要在普通的JavaScript函数中调用Hook。
+
+    - 自定义Hook
+
+      - 通过自定义Hook，可以将组件逻辑提取到可重用的函数中。
+
+      - 自定义Hook是一个函数，其名称以“use”开头，函数内部可以调用其他的Hook。
+
+    - Hook API索引
+
+      - `const [state, setState] = useState(initialState);`
+
+        - 返回一个state，以及更新state的函数。
+
+        - 在初始渲染期间，返回的状态（state）与传入的第一个参数（initialState）相同。
+
+        - setState函数用于更新state。它接受一个新的state值并将组件的一次重新渲染加入队列。
+
+        - 在后续的重新渲染中，useState返回的第一个值将始终是更新后最新的state。
+
+      - `useEffect(didUpdate);`
+
+        - 该Hook接受一个包含命令式、且可能有副作用代码的函数。
+
+        - 在函数组件主体内（这里指在React渲染阶段）改变DOM、添加订阅、设置定时器、记录日志以及执行其他包含副作用的操作都是不被允许的，因为这可能会产生莫名其妙的bug并破坏UI的一致性。
+
+        - 使用useEffect完成副作用操作。赋值给useEffect的函数会在组件渲染到屏幕之后执行。可以把effect看作从React的纯函数式世界通往命令式世界的逃生通道。
+
+        - 默认情况下，effect将在每轮渲染结束后执行，但你可以选择让它在只有某些值改变的时候才执行。
+
+        - effect的执行时机：与componentDidMount，componentDidUpdate不同的是，在浏览器完成布局与绘制之后，传给useEffect的函数会延迟调用。虽然useEffect会在浏览器绘制后延迟执行，但会保证在任何新的渲染前执行，这样用户才不会感觉到视觉上的不一致。
+
+        - effect的条件执行：默认情况下，effect会在每轮组件渲染完成后执行。这样的话，一旦effect的依赖发生变化，它就会被重新创建。然而，在某些场景下这样做可能会矫枉过正。有时候不需要在每次组件更新时都创建新的订阅，而是仅需要prop改变时重新创建。
+
+      - `const value = useContext(MyContext);`
+
+        - 接收一个context对象（React.createContext的返回值）并返回该context的当前值。当前的context值由上层组件中距离当前组件最近的`<MyContext.Provider>`的value prop决定。
+
+        - 当组件上层最近的`<MyContext.Provider>`更新时，该Hook会触发重渲染，并使用最新传递给MyContext Provider的context value值。
+
+      - `const [state, dispatch] = useReducer(reducer, initialArg, init);`
+
+        - useState的替代方案。它接收一个形如(state, action) => newState的reducer，并返回当前的state以及与其配置的dispatch方法。
+
+        - 在某些场景下，useReducer会比useState更适用，例如state逻辑较复杂且包含多个子值，或者下一个state依赖于之前的state等。
+
+      - `const memoizedCallback = useCallback(() => { doSomething(a, b); }, [a, b] );`
+
+        - 返回一个memoized回调函数。
+
+        - 把内联回调函数及依赖项数组作为参数传入useCallback，它将返回该回调函数的memoized版本，该回调函数仅在某些依赖项改变时才会更新。
+
+      - `const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);`
+
+        - 返回一个memoized值。
+
+        - 把创建函数和依赖项数组作为参数传给useMemo，它仅会在某个依赖项改变时才重新计算memoized值。这种优化有助于避免在每次渲染时都进行高开销的计算。
+
+      - `const refContainer = useRef(initialValue);`
+
+        - useRef返回一个可变的ref对象，其.current属性被初始化为传入的参数（initialValue）。返回的ref对象在组件的整个生命周期内保持不变。
+
+      - `useImperativeHandle(ref, createHandle, [deps]);`
+
+        - useImperativeHandle可以让你在使用ref时自定义暴露给父组件的实例值。
+
+        - useImperativeHandle应当与forwardRef一起使用。
+
+
+      - `useLayoutEffect`
+
+        - 其函数签名与useEffect相同，但它会在所有的DOM变更之后同步调用effect。
+
+        - 尽可能使用标准的useEffect以避免阻塞视觉更新。
+
+      - `useDebugValue(value);`
+
+        - useDebugValue可用于在React开发者工具中显示自定义hook标签。
+
+```javascript
+/* State Hook */
+import React, { useReact } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click Me
+      </button>
+    </div>
+  );
+}
+
+/* Effect Hook */
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click Me
+      </button>
+    </div>
+  );
+}
+
+// 清除函数
+import React, { useState, useEffect } from 'react';
+
+function FriendStatus(props) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  useEffect(() => {
+    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+    ChatAPI.subscribeToFriendStatus(props.friend.id, hangleStatusChange);
+    // Specify how to clean up after this effect:
+    return function cleanup() {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+
+  if (isOnline === null) {
+    return 'Loading...';
+  }
+  return isOnline ? 'Online' : 'Offline';
+}
+
+/* 自定义Hook */
+import React, { useState, useEffect } from 'react';
+
+function useFriendStatus(friendID) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  useEffect(() => {
+    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
+    };
+  });
+}
+
+function FriendStatus(props) {
+  const isOnline = useFriendStatus(props.friend.id);
+
+  if (isOnline === null) {
+    return 'Loading...';
+  }
+  return isOnline ? 'Online' : 'Offline';
+}
+
+function FriendListItem(props) {
+  const isOnline = useFriendStatus(props.friend.id);
+
+  return (
+    <li style={{ color: isOnline ? 'green' : 'black' }}>
+      {props.friend.name}
+    </li>
+  );
+}
+
+// 在多个Hook之间传递信息
+const friendList = [
+  { id: 1, name: 'Phoebe' },
+  { id: 2, name: 'Rachel' },
+  { id: 3, name: 'Ross' },
+];
+
+function ChatRecipientPicker() {
+  const [recipientID, setRecipientID] = useState(1);
+  const isRecipientOnline = useFriendStatus(recipientID);
+
+  return (
+    <>
+      <Circle color={ isRecipientOnline ? 'green' : 'red' } />
+      <select
+        value={recipientID}
+        onChange={e => setRecipientID(Number(e.target.value))}
+      >
+        {friendList.map(friend => (
+          <option key={friend.id} value={friend.id}>
+            {friend.name}
+          </option>
+        ))}
+      </select>
+    </>
+  );
+}
+
+/* Hook API 索引 */
+// useState
+function Counter({initialCount}) {
+  const [count, setCount] = useState(initialCount);
+  return (
+    <>
+      Count: {count}
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+    </>
+  );
+}
+
+// useEffect
+useEffect(() => {
+  const subscription = props.source.subscribe();
+  return () => {
+    subscription.unsubscribe();
+  };
+});
+
+// effect的条件执行
+useEffect(
+  () => {
+    const subscription = props.source.subscribe();
+    return () => {
+      subscription.unsubscribe();
+    };
+  },
+  [props.source],
+);
+
+// useContext
+const themes = {
+  light: {
+    foreground: '#000000',
+    background: '#eeeeee',
+  },
+  dark: {
+    foreground: '#ffffff',
+    background: '#222222',
+  }
+};
+
+const ThemeContext = React.createContext(themes.light);
+
+function App() {
+  return (
+    <ThemeContext.Provider value={themes.dark}>
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}
+
+function Toolbar(props) {
+  return (
+    <div>
+      <ThemeButton />
+    </div>
+  );
+}
+
+function ThemeButton() {
+  const theme = useContext(ThemeContext);
+  return (
+    <button style={{ background: theme.background, color: theme.foreground }}>
+      I am styled by theme context!
+    </button>
+  );
+}
+
+// useReducer
+const initialState = {count: 0};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+
+// useReducer 惰性初始化
+function init(initialCount) {
+  return {count: initialCount};
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    case 'reset':
+      return init(action.payload);
+    default:
+      throw new Error();
+  }
+}
+
+function Counter({initialCount}) {
+  const [state, dispatch] = useReducer(reducer, initialCount, init);
+  return (
+    <>
+      Count: {state.count}
+      <button
+        onClick={() => dispatch({type: 'reset', payload: initialCount})}>
+        Reset
+      </button>
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+
+// useRef
+function TextInputWithFocusButton() {
+  const inputEl = useRef(null);
+  const onButtonClick = () => {
+    // current 指向已挂载到 DOM 上的文本输入元素
+    inputEl.current.focus();
+  }
+  return (
+    <>
+      <input ref={inputEl} type="text" />
+      <button onClick={onButtonClick}>Focus the input</button>
+    </>
+  );
+}
+
+// do not use useImperativeHandle
+import React, { useRef, forwardRef } from 'react';
+
+const MyInput = forwardRef((props, ref) => {
+  return <input type="text" ref={ref} />;
+});
+
+function ForwardDemo() {
+  const inputRef = useRef(null);
+  return (
+    <div>
+      <MyInput ref={inputRef} />
+      <button onClick={e => inputRef.current.focus()}>Focus</button>
+    </div>
+  );
+}
+
+// use useImperativeHandle
+import React, { useRef, forwardRef, useImperativeHandle } from 'react';
+
+const MyInput = forwardRef((props, ref) => {
+  const inputRef = useRef();
+
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current.focus()
+    }
+  }), [inputRef]);
+
+  return <input type="text" ref={inputRef} />;
+})
+
+function UseImperativeHandle() {
+  const inputRef = useRef();
+  return (
+    <div>
+      <MyInput ref={inputRef} />
+      <button onClick={e => inputRef.current.focus()}>Focus</button>
+    </div>
+  );
+}
 ```
