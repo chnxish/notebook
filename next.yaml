@@ -1,6 +1,6 @@
 - xish
   stack: react + redux + material-ui + nextjs + nodejs
-- flutter_xianyu
+- flutter_fish
   stack: flutter + django
 - node_spider
   stack: python
