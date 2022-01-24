@@ -4,14 +4,12 @@ import Layout from '../components/layout';
 
 import PortalExample from '../components/portal-example';
 
-const PE = () => {
+const PortalExamplePage = () => {
   return (
     <Layout name="Portal Example">
-      <div>
-        <PortalExample />
-      </div>
+      <PortalExample />
     </Layout>
   );
 }
 
-export default PE;
+export default PortalExamplePage;

@@ -4,14 +4,12 @@ import Layout from '../components/layout';
 
 import FilterableProductTable from '../components/filterable-product-table';
 
-const FPT = () => {
+const FilterableProductTablePage = () => {
   return (
     <Layout name="Filterable Product Table">
-      <div>
-        <FilterableProductTable />
-      </div>
+      <FilterableProductTable />
     </Layout>
   );
 }
 
-export default FPT;
+export default FilterableProductTablePage;

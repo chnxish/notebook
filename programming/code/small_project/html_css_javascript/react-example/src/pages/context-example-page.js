@@ -4,14 +4,12 @@ import Layout from '../components/layout';
 
 import ContextExample from '../components/context-example';
 
-const CE = () => {
+const ContextExamplePage = () => {
   return (
     <Layout name="Context Example">
-      <div>
-        <ContextExample />
-      </div>
+      <ContextExample />
     </Layout>
   );
 }
 
-export default CE;
+export default ContextExamplePage;

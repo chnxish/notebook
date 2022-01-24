@@ -21,17 +21,25 @@ import { Link } from 'react-router-dom';
 const drawerWidth = 240;
 
 const pages = {
-  'React': ['FilterableProductTable', 'ContextExample', 'PortalExample'],
+  'React': ['FilterableProductTable', 'ContextExample', 'PortalExample',
+            'ProfilerExample'],
   'Redux': ['Test1'],
   'Axios': ['Test2'],
+  'React-Spring': ['ReactSpringExample', 'AnimatedCard', 'AnimatedTree', 'DraggableList', 'Masonry'],
 };
 
 const pageLinks = {
   'FilterableProductTable': '/filterable-product-table',
   'ContextExample': '/context-example',
   'PortalExample': '/portal-example',
+  'ProfilerExample': '/profiler-example',
   'Test1': 'test1',
   'Test2': 'test2',
+  'ReactSpringExample': '/react-spring-example',
+  'AnimatedCard': '/animated-card',
+  'AnimatedTree': '/animated-tree',
+  'DraggableList': '/draggable-list',
+  'Masonry': '/masonry',
 }
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -92,7 +100,7 @@ const Layout = (props) => {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>

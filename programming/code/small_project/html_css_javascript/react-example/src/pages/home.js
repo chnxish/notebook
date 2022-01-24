@@ -5,9 +5,7 @@ import Layout from '../components/layout';
 const Home = () => {
   return (
     <Layout name='Home'>
-      <div>
-        Home
-      </div>
+      Home
     </Layout>
   );
 }

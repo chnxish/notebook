@@ -2,7 +2,7 @@ import React from 'react';
 
 import { makeStyles } from '@mui/styles';
 
-import groupingArray from '../util/grouping-array';
+import groupingArray from '../utils/grouping-array';
 
 const useStyles = makeStyles({
   root: {

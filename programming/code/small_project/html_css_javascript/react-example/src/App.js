@@ -7,19 +7,31 @@ import {
 import './App.css';
 
 import Home from './pages/home';
-import FPT from './pages/fpt';
-import CE from './pages/ce';
-import PE from './pages/pe';
 import NotFound from './pages/notfound';
+import FilterableProductTablePage from './pages/filterable-product-table-page';
+import ContextExamplePage from './pages/context-example-page';
+import PortalExamplePage from './pages/portal-example-page';
+import ProfilerExamplePage from './pages/profiler-example-page';
+import ReactSpringExamplePage from './pages/react-spring-example-page';
+import AnimatedCardPage from './pages/animated-card-page';
+import AnimatedTreePage from './pages/animated-tree-page';
+import DraggableListPage from './pages/draggable-list-page';
+import MasonryPage from './pages/masonry-page';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/filterable-product-table" element={<FPT />} />
-        <Route path="/context-example" element={<CE />} />
-        <Route path="/portal-example" element={<PE />} />
+        <Route path="/filterable-product-table" element={<FilterableProductTablePage />} />
+        <Route path="/context-example" element={<ContextExamplePage />} />
+        <Route path="/portal-example" element={<PortalExamplePage />} />
+        <Route path="/profiler-example" element={<ProfilerExamplePage />} />
+        <Route path="/react-spring-example" element={<ReactSpringExamplePage />} />
+        <Route path="/animated-card" element={<AnimatedCardPage />} />
+        <Route path="/animated-tree" element={<AnimatedTreePage />} />
+        <Route path="/draggable-list" element={<DraggableListPage />} />
+        <Route path="/masonry" element={<MasonryPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
