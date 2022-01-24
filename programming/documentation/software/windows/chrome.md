@@ -58,6 +58,8 @@
 
     - GitZip
 
+    - React Developer Tools
+
 ## Question
 
 ***
