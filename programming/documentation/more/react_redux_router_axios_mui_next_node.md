@@ -45,6 +45,8 @@
 
       - 编译器，比如Babel。它能让你编写的新版本JavaScript代码，在旧版浏览器中依然能够工作。
 
+    - React Devtools：React官方提供的浏览器扩展插件。
+
   + 核心概念
 
     - JSX简介
@@ -805,6 +807,14 @@ class SignUpDialog extends React.Component {
 
       - src: open programming/code/small_project/html_css_javascript/react-example project and run it, then visit localhost:3000/portal-example
 
+    - Profiler
+
+      - Profiler测量渲染一个React应用多久渲染一次以及渲染一次的“代价”。它的目的是识别出应用中渲染较慢的部分，或是可以使用类似memoization优化的部分，并从相关优化中获益
+
+      - Profiling增加了额外的开支，所以它在`生产构建`中会被禁用，需要其他特殊的生产构建环境。
+
+      - src: open programming/code/small_project/html_css_javascript/react-example project and run it, then visit localhost:3000/profiler-example
+
 ```javascript
 // 无障碍
 <input
@@ -1181,6 +1191,8 @@ function ListOfTenThings() {
         - effect的执行时机：与componentDidMount，componentDidUpdate不同的是，在浏览器完成布局与绘制之后，传给useEffect的函数会延迟调用。虽然useEffect会在浏览器绘制后延迟执行，但会保证在任何新的渲染前执行，这样用户才不会感觉到视觉上的不一致。
 
         - effect的条件执行：默认情况下，effect会在每轮组件渲染完成后执行。这样的话，一旦effect的依赖发生变化，它就会被重新创建。然而，在某些场景下这样做可能会矫枉过正。有时候不需要在每次组件更新时都创建新的订阅，而是仅需要prop改变时重新创建。
+
+        - 如果effect的第二个参数为空则函数组件每次被渲染；如果第二个参数为一个空数组，那么仅会在组件第一次被渲染时执行。其他的情况都是在数组内元素完全相同时才不执行。
 
       - `const value = useContext(MyContext);`
 
