@@ -62,6 +62,8 @@
 
     - Markdown All in one
 
+    - Material Icon Theme
+
     - MySQL(cweijan)
 
     - MySQL Syntax
