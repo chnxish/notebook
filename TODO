@@ -20,8 +20,12 @@
         - beginning_linux_programming
           - chapter1
       - more
-        - react_redux_router_axios_mui_next_node
-        - dart_flutter_django
+        - learn_typescript_from_runoob
+        - react_redux_router_axios_mui_next
+        - node_express
+        - babel_webpack_reactspring
+        - dart_flutter
+        - django_djangorestframework
         - learn photoshop
           - P11
         - learn illustrator
@@ -36,8 +40,9 @@
           - chapter3
         - ncre
 
-- python_spider_example
-- bootstrap_example
-- react_example
-- django_example
-- flutter_example
+- example
+  - python_spider_example
+  - bootstrap_example
+  - react_example
+  - django_example
+  - flutter_example
