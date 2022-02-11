@@ -22,7 +22,7 @@ const drawerWidth = 240;
 
 const pages = {
   'React': ['FilterableProductTable', 'ContextExample', 'PortalExample',
-            'ProfilerExample'],
+            'ProfilerExample', 'RenderPropsExample'],
   'Redux': ['Test1'],
   'Axios': ['Test2'],
   'React-Spring': ['ReactSpringExample', 'AnimatedCard', 'AnimatedTree', 'DraggableList', 'Masonry'],
@@ -33,6 +33,7 @@ const pageLinks = {
   'ContextExample': '/context-example',
   'PortalExample': '/portal-example',
   'ProfilerExample': '/profiler-example',
+  'RenderPropsExample': '/render-props-example',
   'Test1': 'test1',
   'Test2': 'test2',
   'ReactSpringExample': '/react-spring-example',

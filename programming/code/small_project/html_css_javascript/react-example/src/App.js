@@ -8,10 +8,13 @@ import './App.css';
 
 import Home from './pages/home';
 import NotFound from './pages/notfound';
+// react
 import FilterableProductTablePage from './pages/filterable-product-table-page';
 import ContextExamplePage from './pages/context-example-page';
 import PortalExamplePage from './pages/portal-example-page';
 import ProfilerExamplePage from './pages/profiler-example-page';
+import RenderPropsExamplePage from './pages/render-props-example-page';
+// react-spring
 import ReactSpringExamplePage from './pages/react-spring-example-page';
 import AnimatedCardPage from './pages/animated-card-page';
 import AnimatedTreePage from './pages/animated-tree-page';
@@ -27,6 +30,7 @@ function App() {
         <Route path="/context-example" element={<ContextExamplePage />} />
         <Route path="/portal-example" element={<PortalExamplePage />} />
         <Route path="/profiler-example" element={<ProfilerExamplePage />} />
+        <Route path="/render-props-example" element={<RenderPropsExamplePage  />} />
         <Route path="/react-spring-example" element={<ReactSpringExamplePage />} />
         <Route path="/animated-card" element={<AnimatedCardPage />} />
         <Route path="/animated-tree" element={<AnimatedTreePage />} />
