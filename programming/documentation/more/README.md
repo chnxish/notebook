@@ -12,6 +12,7 @@
 | learn markdown from runoob | 从runoob上学习markdown |
 | learn photoshop | 学习photoshop |
 | learn python from runoob | 从runoob上学习python |
+| learn typescript from runoob | 从runoob上学习typescript |
 | learn uml from plantuml | 从plantuml上学习uml |
 | learn web design | 学习web design |
 | learn xd | 学习xd |
