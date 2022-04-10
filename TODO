@@ -20,7 +20,12 @@
         - beginning_linux_programming
           - chapter1
       - more
-        - learn_typescript_from_runoob
+        - google_style_guide
+          - c++
+          - python
+          - javascript
+          - json
+          - typescript
         - react_redux_router_axios_mui_next
         - node_express
         - babel_webpack_reactspring
@@ -30,8 +35,6 @@
           - P11
         - learn illustrator
         - learn xd
-        - google_style_guide
-          - c++
         - learn_ai_from_andrew_ng
         - learn_ai_from_hungyi_lee
       - subject
