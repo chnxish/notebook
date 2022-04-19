@@ -5,6 +5,7 @@
     - english
       - pets3
     - math
+      - advanced mathematics
       - probability_and_mathematical_statistics
     - physics
       - college physics
@@ -38,6 +39,8 @@
         - learn_ai_from_andrew_ng
         - learn_ai_from_hungyi_lee
       - subject
+        - introduction to operating system
+          - chapter4
         - fundamentals of electronic technology
         - software_engineering
           - chapter3
