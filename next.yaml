@@ -1,5 +1,5 @@
 - xish
-  stack: react + redux + material-ui + nextjs + nodejs + express
+  stack: react + material-ui + nextjs
 - flutter_fish
   stack: flutter + django
 - node_spider
