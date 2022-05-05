@@ -27,6 +27,7 @@
           - javascript
           - json
           - typescript
+        - makefile_cmake
         - react_redux_router_axios_mui_next
         - node_express
         - babel_webpack_reactspring
@@ -39,8 +40,6 @@
         - learn_ai_from_andrew_ng
         - learn_ai_from_hungyi_lee
       - subject
-        - introduction to operating system
-          - chapter4
         - fundamentals of electronic technology
         - software_engineering
           - chapter3
