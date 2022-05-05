@@ -98,7 +98,7 @@ function hello(): void {
  *  null 和 undefined
  *  null是一个只有一个值的特殊类型。表示一个空对象引用。用typeof检测null返回是object。
  *  undefined是一个没有设置值的变量。typeof一个没有值的变量会返回undefined。
- *  null和undefined是其他任何类型（包括void）的子类型，可以赋值给其它类型，如数字类型。而在TypeScript中启用严格的空校验（--strictNullChecks）特性，就可以使得null和undefined只能被赋值给void或本身对应的类型。
+ *  null和undefined是其他任何类型（包括void）的子类型，可以赋值给其他类型，如数字类型。而在TypeScript中启用严格的空校验（--strictNullChecks）特性，就可以使得null和undefined只能被赋值给void或本身对应的类型。
 **/
 // 启用 --strictNullChecks
 let x: number | null | undefined;
@@ -108,7 +108,7 @@ x = null;    // 运行正确
 
 /**
  *  never 
- *  never是其它类型（包括null和undefined）的子类型，代表从不会出现的值。
+ *  never是其他类型（包括null和undefined）的子类型，代表从不会出现的值。
 **/
 let x: never;
 let y: number;
@@ -990,7 +990,7 @@ console.log(invoice.calculateDiscount(500));
 
     - 两个模块之间的关系是通过在文件级别上使用import和export建立的。
 
-    - 模块使用模块加载器去导入其它的模块。在运行时，模块加载器的作用是在执行此模块代码前去查找并执行这个模块的所有依赖。大家最熟知的JavaScript模块加载器是服务于`Node.js`的`CommonJS`和服务于`Web`应用的`Require.js`。
+    - 模块使用模块加载器去导入其他的模块。在运行时，模块加载器的作用是在执行此模块代码前去查找并执行这个模块的所有依赖。大家最熟知的JavaScript模块加载器是服务于`Node.js`的`CommonJS`和服务于`Web`应用的`Require.js`。
 
 ```typescript
 // ishape.ts
