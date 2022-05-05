@@ -52,6 +52,8 @@
 
     - ES7 React/Redux/GraphQL/React-Native snippets
 
+    - ESLint
+
     - Flutter
 
     - HTML CSS Support
@@ -73,6 +75,8 @@
     - PlantUML
 
     - Prettier - Code formatter
+
+    - Project Manager
 
     - Pylance
 
