@@ -72,3 +72,14 @@
       - #define __private_extern__ extern
 
     - 在用gcc编译c++文件时，为了能够使用STL，需要加参数–lstdc++，但这并不代表gcc –lstdc++和g++等价，它们的区别不仅仅是这个。
+
+```shell
+# 预处理
+g++ -E test.cc -o test.i
+# 生成汇编文件
+g++ -S test.i -o test.s
+# 生成二进制文件
+g++ -c test.s -o test.o
+# 生成可执行文件
+g++ test.o *.o -o test
+```
