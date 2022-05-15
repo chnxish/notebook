@@ -3,22 +3,22 @@
 
 template <typename ElemType>
 struct Node {
-    ElemType data;
-    Node *next;
+  ElemType data;
+  Node* next;
 
-    Node();
-    Node(const ElemType &e, Node *p=nullptr);
+  Node();
+  Node(const ElemType& e, Node* p=nullptr);
 };
 
 template <typename ElemType>
 Node<ElemType>::Node() {
-    next = nullptr;
+  next = nullptr;
 }
 
 template <typename ElemType>
-Node<ElemType>::Node(const ElemType &e, Node *p) {
-    data = e;
-    next = p;
+Node<ElemType>::Node(const ElemType& e, Node* p) {
+  data = e;
+  next = p;
 }
 
 #endif 
