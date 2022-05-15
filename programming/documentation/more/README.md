@@ -4,6 +4,8 @@
 | encoding format | 编码格式 |
 | encryption method in python | python中加密的方法 |
 | environment | 环境 |
+| git usage specification and emoji list | git使用规范和emoji列表 |
+| job title abbreviations | 职位缩写 |
 | google style guide | google开源项目风格指南 |
 | learn css from runoob | 从runoob上学习css |
 | learn html from runoob | 从runoob上学习html |
