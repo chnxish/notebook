@@ -127,9 +127,9 @@ namespace mynamespace {
 // 所有声明都置于命名空间中
 // 注意不要使用缩进
 class MyClass {
-    public:
-    ...
-      void Foo();
+ public:
+  ...
+  void Foo();
 };
 
 } // namespace mynamespace
@@ -141,7 +141,7 @@ namespace mynamespace {
 
 // 函数定义都置于命名空间中
 void MyClass::Foo() {
-    ...
+  ...
 }
 
 } // namespace mynamespace
@@ -217,9 +217,9 @@ void Function2();
 // Wrong
 namespace myproject {
 class FooBar {
-  public:
-    static void Function1();
-    static void Function2();
+ public:
+  static void Function1();
+  static void Function2();
 };
 }  // namespace myproject
 ```
@@ -338,9 +338,9 @@ class FooBar {
 
 ```c++
 class MyClass {
-  public:
-    void Analyze(const string &text);
-    void Analyze(const char *text, size_t textlen);
+ public:
+  void Analyze(const string &text);
+  void Analyze(const char *text, size_t textlen);
 };
 ```
 
@@ -536,7 +536,7 @@ for (unsigned int i = foo.Length() - 1; i >= 0; --i) ...
 
   + 0，nullptr和NULL
 
-    - 整数用0，实数用0.0，指针用nullptr(c++11)或NULL(c++03)，字符串用'\0'
+    - 整数用0，实数用0.0，指针用nullptr（C++11）或NULL（c++03），字符串用'\0'
 
   + sizeof
 
@@ -584,16 +584,16 @@ TestFunction2({1, 2, 3});
 
 ```c++
 class MyType {
-  public:
-    // std::initializer_list专门接收init列表
-    // 得以值传递
-    MyType(std::initializer_list<int> init_list) {
-      for (int i : init_list) append(i);
-    }
-    MyType& operator=(std::initializer_list<int> init_list) {
-      clear();
-      for (int i : init_list) append(i);
-    }
+ public:
+  // std::initializer_list专门接收init列表
+  // 得以值传递
+  MyType(std::initializer_list<int> init_list) {
+    for (int i : init_list) append(i);
+  }
+  MyType& operator=(std::initializer_list<int> init_list) {
+    clear();
+    for (int i : init_list) append(i);
+  }
 };
 MyType m{2, 3, 5, 7};
 ```
@@ -604,9 +604,9 @@ double d{1.23};
 // MyOtherType没有std::initializer_list构造函数
 // 直接上接收常规类型的构造函数
 class MyOtherType {
-  public:
-    explicit MyOtherType(string):
-    MyOtherType(int, string);
+ public:
+  explicit MyOtherType(string):
+  MyOtherType(int, string);
 };
 MyOtherType m = {1, "b"};
 // 不过如果构造函数是显式的{explicit}，您就不能用`= {}`了
@@ -709,10 +709,10 @@ string tableName;  // 差 - 混合大小写
 
 class TableInfo {
   ...
-  private:
-    string table_name_;            // 好
-    string tablename_;             // 好
-    static Pool<TableInfo>* pool_; // 好
+ private:
+  string table_name_;            // 好
+  string tablename_;             // 好
+  static Pool<TableInfo>* pool_; // 好
 };
 
 struct UrlTablProperties {
@@ -846,7 +846,7 @@ Iterator* GetIterator() const;
     - 通常变量名本身足以很好说明变量用途。某些情况下，也需要额外的注释说明。
 
 ```c++
-private:
+ private:
   // Used to bounds-check table accesses. -1 means
   // that we don't yet know how many entries the table has.
   int num_total_entries_;
