@@ -7,11 +7,11 @@ insert_final_newline =  = true
 [*]
 charset = utf-8
 
-[*.{c,cc,h,py,dart}]
+[*.{py}]
 indent_style = space
 indent_size = 4
 
-[*.{html,css,scss,js,jsx,ts,tsx,ejs,json,dart,yaml,txt,sql}]
+[*.{c,cc,h,html,css,scss,js,jsx,ts,tsx,ejs,json,dart,yaml,txt,sql}]
 indent_style = space
 indent_size = 2
 
@@ -21,6 +21,10 @@ indent_size = 2
 trim_trailing_whitespace = false
 
 [Makefile]
+indent_style = tab
+indent_size = 8
+
+[*.asm]
 indent_style = tab
 indent_size = 8
 
