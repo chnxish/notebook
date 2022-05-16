@@ -32,10 +32,24 @@ class SalesItem {
   double revenue_;
 };
 
+inline bool operator<(const SalesItem& lhs, const SalesItem& rhs) {
+  return lhs.revenue_ < rhs.revenue_;
+}
+
+inline bool operator==(const SalesItem& lhs, const SalesItem& rhs) {
+  return lhs.units_sold_ == rhs.units_sold_ &&
+      lhs.revenue_ == rhs.revenue_ &&
+      lhs.Isbn() == rhs.Isbn();
+}
+
+inline bool operator!=(const SalesItem& lhs, const SalesItem& rhs) {
+  return !(lhs == rhs);
+}
+
+inline bool CompareIsbn(const SalesItem& lhs, const SalesItem& rhs) {
+  return lhs.Isbn() == rhs.Isbn();
+}
+
 SalesItem operator+(const SalesItem&, const SalesItem&);
-
-bool operator!=(const SalesItem& lhs, const SalesItem& rhs);
-
-bool CompareIsbn(const SalesItem& lhs, const SalesItem& rhs);
 
 #endif

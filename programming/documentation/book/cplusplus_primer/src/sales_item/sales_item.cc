@@ -1,19 +1,5 @@
 #include "sales_item.h"
 
-inline bool operator<(const SalesItem& lhs, const SalesItem& rhs) {
-  return lhs.revenue_ < rhs.revenue_;
-}
-
-inline bool operator==(const SalesItem& lhs, const SalesItem& rhs) {
-  return lhs.units_sold_ == rhs.units_sold_ &&
-      lhs.revenue_ == rhs.revenue_ &&
-      lhs.Isbn() == rhs.Isbn();
-}
-
-bool operator!=(const SalesItem& lhs, const SalesItem& rhs) {
-  return !(lhs == rhs);
-}
-
 SalesItem& SalesItem::operator+=(const SalesItem& rhs) {
   units_sold_ += rhs.units_sold_;
   revenue_ += rhs.revenue_;
@@ -24,10 +10,6 @@ SalesItem operator+(const SalesItem& lhs, const SalesItem& rhs) {
   SalesItem ret(lhs);
   ret += rhs;
   return ret;
-}
-
-bool CompareIsbn(const SalesItem& lhs, const SalesItem& rhs) {
-  return lhs.Isbn() == rhs.Isbn();
 }
 
 double SalesItem::AvgPrice() const {
