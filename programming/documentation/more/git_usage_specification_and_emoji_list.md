@@ -12,6 +12,8 @@
 
   + [Git常用命令](#git常用命令)
 
+  + [Git支持的传输协议](#git支持的传输协议)
+
 ## Git工作区域
 
 ***
@@ -258,8 +260,10 @@ Couple of typos fixed:
 
 | 命令 | 举例	| 说明 |
 | :-: | :-: | :-: |
-| config | git config -global user.name "[name]" | 设置提交的作者的姓名 |
-| | git config -global user.email "[email address]" | 设置提交的作者的电子邮件地址 |
+| config | git config --list --show-origin | 查看所有的配置以及它们所在的文件 |
+| | git config --list | 查看所有的配置 |
+| | git config --global user.name "[name]" | 设置提交的作者的姓名 |
+| | git config --global user.email "[email address]" | 设置提交的作者的电子邮件地址 |
 | init | git init [repository name] | 启用一个新的存储库 |
 | clone | git clone [url] | 从现有 URL 获取存储库 |
 | add | git add [file] | 将某个文件添加到暂存区 |
@@ -296,3 +300,37 @@ Couple of typos fixed:
 | | git push -all [variable name] | 将全部分支发送到你的远程仓库 |
 | | git push [variable name] : [branch name] | 将分支从你的远程仓库删除 |
 | pull | git pull [remote server link] | 获取远程仓库上的更改并将其合并到你的工作目录 |
+
+# Git支持的传输协议
+
+***
+
+  + git可以在各种不同的协议上运行
+
+    - https协议
+
+      - 格式为：https://github.com/project/repo.git。
+
+      - 本协议使用443端口（或http使用80端口），允许匿名读访问，但是写访问需要密码验证。
+
+      - 对防火墙较为友好。
+
+    - ssh协议
+
+      - 格式为：git@github.com:project/repo.git。
+
+      - 本协议使用22端口，允许读写访问，但是需要ssh密钥进行身份验证。
+
+      - 如果你向git提供了公共ssh密钥，ssh协议将使用你的私有密钥进行git身份验证，这样你不需要提用户名密码。
+
+      - 使用ssh协议，你不用每次使用git push命令时都要被要求提供密码，因为ssh协议将使用你的私有密钥与远程仓库进行身份验证。
+
+```shell
+# using https for git
+git config --global url."https://github.com/".insteadOf git@github.com:
+git config --global url."https://".insteadOf git://
+
+# using git for https
+git config --global url."git@github.com:".insteadOf https://github.com/
+git config --global url."git://".insteadOf https://
+```
