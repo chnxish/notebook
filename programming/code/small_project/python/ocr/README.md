@@ -23,7 +23,7 @@ You need to set:
 | Network | -u |
 | Screenshots Required | -s |
 
-```
+```sh
 python3 main.py -l ./image/string.png
 python3 main.py -u url_of_the_image
 python3 main.py -s
