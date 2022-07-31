@@ -1,52 +1,49 @@
-- (15-16-PCPP-LW, knowledge) to notebook
-
-- notebook
-  - non-programming
-    - english
-      - pets3
-    - math
-      - advanced mathematics
-      - probability_and_mathematical_statistics
-    - physics
-      - college physics
-  -programming
-    - documentation
-      - book
-        - cplusplus_primer
-          - chapter2
-        - python_cookbook
-          - chapter2
-        - python_for_data_analysis
-          - chapter1
-        - beginning_linux_programming
-          - chapter1
-      - more
-        - google_style_guide
-          - c++
-          - python
-          - javascript
-          - json
-          - typescript
-        - makefile_cmake
-        - react_redux_router_axios_mui_next
-        - node_express
-        - babel_webpack_reactspring
+notebook:
+  non-programming:
+    english:
+      pets3: chapter1
+    math:
+      advanced mathematics: chapter1
+      discrete mathematics: chapter1
+      probability_and_mathematical_statistics: chapter1
+    physics:
+      college physics: chapter1
+  programming:
+    documentation:
+      book:
+        beginning_linux_programming: chapter1
+        cplusplus_primer: chapter3
+        python_cookbook: chapter1
+        python_for_data_analysis: chapter1
+      more:
+        - google_style_guide:
+            - cpp
+            - css
+            - dart
+            - html
+            - javascript
+            - python
+            - typescript
         - dart_flutter
-        - django_djangorestframework
-        - learn photoshop
-          - P11
-        - learn illustrator
-        - learn xd
+        - django
+        - latex_getting_started
         - learn_ai_from_andrew_ng
         - learn_ai_from_hungyi_lee
-      - subject
-        - fundamentals of electronic technology
-        - software_engineering
-          - chapter3
+        - makefile_cmake_bazel
+        - node_express
+        - react_next
+        - learn photoshop: P11
+        - learn illustrator
+        - learn xd
+      subject:
+        fundamentals of electronic technolog: chapter1
+        software_engineering: chapter3
 
-- example
-  - python_spider_example
-  - bootstrap_example
-  - react_example
-  - django_example
-  - flutter_example
+merge into notebook:
+  - (15-16-PCPP-LW, knowledge) to notebook
+  - example:
+      - python_spider_example
+      - bootstrap_example
+      - react_example
+      - django_example
+      - flutter_example
