@@ -3,7 +3,7 @@ Download videos from bilibili using you-get and ffmpeg.
 
 ## Option
 
-```
+```sh
 python3 main.py url_path episode_num
 ```
 
