@@ -1,8 +1,10 @@
-- xish
+xish:
   stack: react + material-ui + nextjs
-- flutter_fish
+flutter_fish:
   stack: flutter + django
-- node_spider
+taro-du:
+  stack: taro
+node_spider:
   stack: python
-- xin
+xin:
   stack: pytorch
